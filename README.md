@@ -93,11 +93,11 @@ Extended docummentation for using the repository is provided in the `docs/buid/i
 
 ## Contributors
 
-This repository was created by Kianoosh Ashouritaklimi, Devesh Joshi, Samuel Kelso, Yolanda Yang, Joshan Dooki, and Pavel Bozmareov at Imperial College London as part of the "Software Engineering Group Project" course in the Department of Computing. The contacts of the authors are:
+This repository was created by Pavel Bozmarov, Kianoosh Ashouritaklimi, Devesh Joshi, Samuel Kelso, Yolanda Yang, and Joshan Dooki at InstaDeep. The contacts of the authors are:
 
+- Pavel Bozmarov: pb1121@imperial.ac.uk
 - Kianoosh Ashouritaklimi: kianoosh.ashouritaklimi22@imperial.ac.uk
 - Yolanda Yang: xiaoxue.yang22@imperial.ac.uk
-- Pavel Bozmarov: pavel.bozmarov22@imperial.ac.uk
 - Devesh Joshi: devesh.joshi22@imperial.ac.uk
 - Joshan Dooki: joshan.dooki22@imperial.ac.uk
 - Samuel Kelso: samuel.kelso22@imperial.ac.uk
