@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About &mdash; RL-PCB 1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="#" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Installation" href="installation.html" />
+    <link rel="prev" title="RL-PCB Documentation" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html">
+            
+              <img src="_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">About</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#the-pcb-problem">The PCB Problem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#related-work">Related Work</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#our-contribution">Our Contribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#contributors">Contributors</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributors.html">Contributors</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">RL-PCB</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">About</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/about.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="about">
+<h1>About<a class="headerlink" href="#about" title="Permalink to this headline"></a></h1>
+<section id="the-pcb-problem">
+<span id="pcb-problem"></span><h2>The PCB Problem<a class="headerlink" href="#the-pcb-problem" title="Permalink to this headline"></a></h2>
+<p>Printed circuit boards (PCBs) are the core foundation supporting most electronic products used
+today. While the PCB industry has advanced significantly over the decades, increasing the speed
+and capabilities of electronic components whilst simultaneously decreasing their size, the design cycle
+for manufacturing PCBs still has ample room for improvement. Despite decades of research on this
+problem, the current industry procedures still require human experts to manually modify PCBs by
+using placement tools in order to produce solutions.</p>
+</section>
+<section id="related-work">
+<span id="id1"></span><h2>Related Work<a class="headerlink" href="#related-work" title="Permalink to this headline"></a></h2>
+<p>The design of a PCB is broken into 4 steps: (1) schematic design, (2) placement, (3) routing and (4)
+testing. In the placement and routing stages, the designers would iteratively place and route components until specific constraints have been satisfied. The board would then be simulated and tested
+for production. Today much of the PCB design load is automated by Electronic Design Automation (EDA) software packages. But while this automation has improved several processes in the PCB
+production pipeline, the actual component placement and routing task requires designer (human) intervention.</p>
+</section>
+<section id="our-contribution">
+<span id="contribution"></span><h2>Our Contribution<a class="headerlink" href="#our-contribution" title="Permalink to this headline"></a></h2>
+<p>This repository provides a framework for modeling the component placement problem as a reinforcement learning problem. A suite
+of environments, each with a different level of complexity, are provided to facilitate the training of reinforcement learning agents.
+The most complex of these environments is an environment consiting of a grid of size height x width and a number of components of varying
+heights and widths with pins upon them. The goal of the agent is to place the components on the grid in a manner which optimizes the subsequent
+routing of the pins.</p>
+<p>The agents are trained using the Proximal Policy Optimization (PPO) algorithm. The repository provides a number of different agents which can be
+trained on the environments, each of which has a different architecture for the policy network. Besides providing the functionality
+of training reinfrocement learning agents, a web-app implemented using streamlit is also provided for the task of training and visualizing the
+performance of different agents.</p>
+</section>
+<section id="contributors">
+<span id="id2"></span><h2>Contributors<a class="headerlink" href="#contributors" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p>Devesh Joshi    <a class="reference external" href="mailto:devesh&#46;joshi22&#37;&#52;&#48;imperial&#46;ac&#46;uk">devesh<span>&#46;</span>joshi22<span>&#64;</span>imperial<span>&#46;</span>ac<span>&#46;</span>uk</a></p></li>
+<li><p>Samuel Kelso    <a class="reference external" href="mailto:samuel&#46;kelso22&#37;&#52;&#48;imperial&#46;ac&#46;uk">samuel<span>&#46;</span>kelso22<span>&#64;</span>imperial<span>&#46;</span>ac<span>&#46;</span>uk</a></p></li>
+<li><p>Yolanda Yang    <a class="reference external" href="mailto:xiaoxue&#46;yang22&#37;&#52;&#48;imperial&#46;ac&#46;uk">xiaoxue<span>&#46;</span>yang22<span>&#64;</span>imperial<span>&#46;</span>ac<span>&#46;</span>uk</a></p></li>
+<li><p>Pavel Bozmarov    <a class="reference external" href="mailto:pavel&#46;bozmarov22&#37;&#52;&#48;imperial&#46;ac&#46;uk">pavel<span>&#46;</span>bozmarov22<span>&#64;</span>imperial<span>&#46;</span>ac<span>&#46;</span>uk</a></p></li>
+<li><p>Kianoosh Ashouritaklimi    <a class="reference external" href="mailto:kianoosh&#46;ashouritaklimi22&#37;&#52;&#48;imperial&#46;ac&#46;uk">kianoosh<span>&#46;</span>ashouritaklimi22<span>&#64;</span>imperial<span>&#46;</span>ac<span>&#46;</span>uk</a></p></li>
+<li><p>Joshan Dooki    <a class="reference external" href="mailto:joshan&#46;dooki22&#37;&#52;&#48;imperial&#46;ac&#46;uk">joshan<span>&#46;</span>dooki22<span>&#64;</span>imperial<span>&#46;</span>ac<span>&#46;</span>uk</a></p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="RL-PCB Documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="installation.html" class="btn btn-neutral float-right" title="Installation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

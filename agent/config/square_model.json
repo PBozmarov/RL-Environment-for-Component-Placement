@@ -1,0 +1,21 @@
+{   
+    "env_config" : {
+        "type" : "square",
+        "height" : 10,
+        "width" : 10,
+        "component_n" : 2
+    },
+    "model" : {
+        "custom_model_config" : {
+            "height" : 10,
+            "width" : 10,
+            "num_conv_blocks" : 2,
+            "num_conv_filters" : 3,
+            "conv_kernel_size" : 3,
+            "activation" : "relu",
+            "max_pool" : false,
+            "max_pool_kernel_size" : 2
+            
+        }
+    }
+}

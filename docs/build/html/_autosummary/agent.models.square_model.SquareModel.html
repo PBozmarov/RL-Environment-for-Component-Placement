@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>agent.models.square_model.SquareModel &mdash; RL-PCB 1 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="agent.random" href="agent.random.html" />
+    <link rel="prev" title="agent.models.square_model" href="agent.models.square_model.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">Usage</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="environment.html">environment</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="agent.html">agent</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="agent.models.html">agent.models</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="agent.models.model_building_blocks.html">agent.models.model_building_blocks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.models.rectangle_model.html">agent.models.rectangle_model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.models.rectangle_model_factorized.html">agent.models.rectangle_model_factorized</a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.models.rectangle_pin_all_attn_factorized.html">agent.models.rectangle_pin_all_attn_factorized</a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.models.rectangle_pin_attn_all_model_no_grid.html">agent.models.rectangle_pin_attn_all_model_no_grid</a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.models.rectangle_pin_attn_component_model.html">agent.models.rectangle_pin_attn_component_model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.models.rectangle_pin_attn_component_pin_model.html">agent.models.rectangle_pin_attn_component_pin_model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.models.rectangle_pin_factorized_model.html">agent.models.rectangle_pin_factorized_model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.models.rectangle_pin_model.html">agent.models.rectangle_pin_model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.models.rectangle_pin_spatial_model.html">agent.models.rectangle_pin_spatial_model</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="agent.models.square_model.html">agent.models.square_model</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="agent.random.html">agent.random</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html">utils</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../contributors.html">Contributors</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">RL-PCB</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../api.html">API</a></li>
+          <li class="breadcrumb-item"><a href="agent.html">agent</a></li>
+          <li class="breadcrumb-item"><a href="agent.models.html">agent.models</a></li>
+          <li class="breadcrumb-item"><a href="agent.models.square_model.html">agent.models.square_model</a></li>
+      <li class="breadcrumb-item active">agent.models.square_model.SquareModel</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/_autosummary/agent.models.square_model.SquareModel.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="agent-models-square-model-squaremodel">
+<h1>agent.models.square_model.SquareModel<a class="headerlink" href="#agent-models-square-model-squaremodel" title="Permalink to this headline"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="agent.models.square_model.SquareModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">agent.models.square_model.</span></span><span class="sig-name descname"><span class="pre">SquareModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_space</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action_space</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_outputs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.square_model.SquareModel" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ray.rllib.models.tf.tf_modelv2.TFModelV2</span></code></p>
+<p>A model to predict the action logits and value for a square
+component placement task.</p>
+<p>This model takes a 2D grid as input and learns an encoding of the grid using
+a convolutional neural network with:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Convolutional layers</p></li>
+<li><p>Batch normalization</p></li>
+<li><p>ReLU activations</p></li>
+<li><p>Optional max pooling</p></li>
+</ul>
+</div></blockquote>
+<p>The encoding is flattened and passed through two separate dense layers to
+generate action logits and a value prediction. The dimensions of
+the encoding depends on the specified convolutional layers.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.models.square_model.SquareModel.action_space">
+<span class="sig-name descname"><span class="pre">action_space</span></span><a class="headerlink" href="#agent.models.square_model.SquareModel.action_space" title="Permalink to this definition"></a></dt>
+<dd><p>Action space of the environment.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>gym.spaces</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.models.square_model.SquareModel.grid_input">
+<span class="sig-name descname"><span class="pre">grid_input</span></span><a class="headerlink" href="#agent.models.square_model.SquareModel.grid_input" title="Permalink to this definition"></a></dt>
+<dd><p>Input tensor for the grid.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.models.square_model.SquareModel.encoding_grid">
+<span class="sig-name descname"><span class="pre">encoding_grid</span></span><a class="headerlink" href="#agent.models.square_model.SquareModel.encoding_grid" title="Permalink to this definition"></a></dt>
+<dd><p>Encoded grid.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.models.square_model.SquareModel.logits_model">
+<span class="sig-name descname"><span class="pre">logits_model</span></span><a class="headerlink" href="#agent.models.square_model.SquareModel.logits_model" title="Permalink to this definition"></a></dt>
+<dd><p>Logits model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>tf.keras.Model</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.models.square_model.SquareModel.value_model">
+<span class="sig-name descname"><span class="pre">value_model</span></span><a class="headerlink" href="#agent.models.square_model.SquareModel.value_model" title="Permalink to this definition"></a></dt>
+<dd><p>Value model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>tf.keras.Model</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.models.square_model.SquareModel.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_space</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action_space</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_outputs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.square_model.SquareModel.__init__" title="Permalink to this definition"></a></dt>
+<dd><p>Initializes an instance of the SquareModel class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obs_space</strong> (<em>gym.Space</em>) – Observation space of the environment.</p></li>
+<li><p><strong>action_space</strong> (<em>gym.Space</em>) – Action space of the environment.</p></li>
+<li><p><strong>num_outputs</strong> (<em>int</em>) – Number of output neurons.</p></li>
+<li><p><strong>model_config</strong> (<em>Dict</em>) – Model configuration dictionary.</p></li>
+<li><p><strong>name</strong> (<em>str</em>) – Name of the model.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<p class="rubric">Methods</p>
+<table class="autosummary longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#agent.models.square_model.SquareModel.__init__" title="agent.models.square_model.SquareModel.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(obs_space, action_space, ...)</p></td>
+<td><p>Initializes an instance of the SquareModel class.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../agent.models.html#agent.models.square_model.SquareModel.build_encoding_square" title="agent.models.square_model.SquareModel.build_encoding_square"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build_encoding_square</span></code></a>(model_config)</p></td>
+<td><p>Build a convolutional neural network to encode the input grid.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../agent.models.html#agent.models.square_model.SquareModel.build_logits_model_square" title="agent.models.square_model.SquareModel.build_logits_model_square"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build_logits_model_square</span></code></a>()</p></td>
+<td><p>Build a model to calculate the logits.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../agent.models.html#agent.models.square_model.SquareModel.build_value_model_square" title="agent.models.square_model.SquareModel.build_value_model_square"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build_value_model_square</span></code></a>()</p></td>
+<td><p>Build a model to calculate the value function.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">context</span></code>()</p></td>
+<td><p>Returns a contextmanager for the current TF graph.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">custom_loss</span></code>(policy_loss, loss_inputs)</p></td>
+<td><p>Override to customize the loss function used to optimize this model.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../agent.models.html#agent.models.square_model.SquareModel.encode_grid" title="agent.models.square_model.SquareModel.encode_grid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">encode_grid</span></code></a>(model_config)</p></td>
+<td><p>Encode the grid using a convolutional neural network.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../agent.models.html#agent.models.square_model.SquareModel.forward" title="agent.models.square_model.SquareModel.forward"><code class="xref py py-obj docutils literal notranslate"><span class="pre">forward</span></code></a>(input_dict, state, seq_lens)</p></td>
+<td><p>Perform forward pass through the model.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_batch</span></code>(**kwargs)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_initial_state</span></code>()</p></td>
+<td><p>Get the initial recurrent state values for the model.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">import_from_h5</span></code>(h5_file)</p></td>
+<td><p>Imports weights from an h5 file.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_time_major</span></code>()</p></td>
+<td><p>If True, data for calling this ModelV2 must be in time-major format.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">last_output</span></code>()</p></td>
+<td><p>Returns the last output returned from calling the model.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">metrics</span></code>()</p></td>
+<td><p>Override to return custom metrics from your model.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">register_variables</span></code>(variables)</p></td>
+<td><p>Register the given list of variables with this model.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">trainable_variables</span></code>([as_dict])</p></td>
+<td><p>Returns the list of trainable variables for this model.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">update_ops</span></code>()</p></td>
+<td><p>Return the list of update ops for this model.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../agent.models.html#agent.models.square_model.SquareModel.value_function" title="agent.models.square_model.SquareModel.value_function"><code class="xref py py-obj docutils literal notranslate"><span class="pre">value_function</span></code></a>()</p></td>
+<td><p>Calculate the value function of the model.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">variables</span></code>([as_dict])</p></td>
+<td><p>Returns the list (or a dict) of variables for this model.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.models.square_model.SquareModel.build_encoding_square">
+<span class="sig-name descname"><span class="pre">build_encoding_square</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.square_model.SquareModel.build_encoding_square" title="Permalink to this definition"></a></dt>
+<dd><p>Build a convolutional neural network to encode the input grid.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>model_config</strong> (<em>Dict</em>) – Model configuration dictionary.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.models.square_model.SquareModel.build_logits_model_square">
+<span class="sig-name descname"><span class="pre">build_logits_model_square</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.square_model.SquareModel.build_logits_model_square" title="Permalink to this definition"></a></dt>
+<dd><p>Build a model to calculate the logits.</p>
+<p>Use a dense layer from the encoded grid to calculate the logits,
+where the number of output neurons is equal to size of the action space.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.models.square_model.SquareModel.build_value_model_square">
+<span class="sig-name descname"><span class="pre">build_value_model_square</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.square_model.SquareModel.build_value_model_square" title="Permalink to this definition"></a></dt>
+<dd><p>Build a model to calculate the value function.</p>
+<p>Use a dense layer from the encoded grid to calculate the value function,
+where the number of output neurons is equal to 1 (the value of the state).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.models.square_model.SquareModel.encode_grid">
+<span class="sig-name descname"><span class="pre">encode_grid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.square_model.SquareModel.encode_grid" title="Permalink to this definition"></a></dt>
+<dd><p>Encode the grid using a convolutional neural network.</p>
+<p>Process the grid using the specified number of convolutional blocks,
+where each block consists of a convolutional layer, an activation layer,
+and an optimal max pooling layer.</p>
+<p>The encoded grid is flattened and used as input to the logits model. The dimensions
+of the grid are specified in the model configuration dictionary (height and width).
+The dimensions of the encoded grid depend on the specific configuration of the
+ConvBlocks class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>model_config</strong> (<em>Dict</em>) – Model configuration dictionary.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.models.square_model.SquareModel.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seq_lens</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.square_model.SquareModel.forward" title="Permalink to this definition"></a></dt>
+<dd><p>Perform forward pass through the model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>input_dict</strong> (<em>Dict</em>) – Input dictionary containing “obs” and “action_mask” tensors.</p></li>
+<li><p><strong>state</strong> – Model state tensor.</p></li>
+<li><p><strong>seq_lens</strong> – Sequence length tensor.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Logits and model state tensors.</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<dl class="simple">
+<dt>An action mask is applied to the logits to prevent the agent from</dt><dd><p>selecting invalid actions.</p>
+</dd>
+</dl>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.models.square_model.SquareModel.value_function">
+<span class="sig-name descname"><span class="pre">value_function</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.square_model.SquareModel.value_function" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate the value function of the model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Tensor containing the value function.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="agent.models.square_model.html" class="btn btn-neutral float-left" title="agent.models.square_model" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="agent.random.html" class="btn btn-neutral float-right" title="agent.random" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

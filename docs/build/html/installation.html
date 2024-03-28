@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Installation &mdash; RL-PCB 1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Usage" href="usage.html" />
+    <link rel="prev" title="About" href="about.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html">
+            
+              <img src="_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="about.html">About</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#linux-installation">Linux Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#macos-installation">MacOS Installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#download-miniconda">Download Miniconda</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#miniconda">Miniconda</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#deactivate-the-base-environment">Deactivate the Base Environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-the-new-environment">Create the New Environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#activate-the-new-environment">Activate the New Environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#install-dependencies-from-requirements">Install Dependencies from Requirements</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributors.html">Contributors</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">RL-PCB</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Installation</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/installation.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline"></a></h1>
+<p>This repository runs on Python 3.9. Due to compatibility issues with Tensorflow and Windows, the repository is only supported on Linux and MacOS. Additionally, due to compatibility issues with Tensorflow and MacOS separate requirements files are provided for Linux and MacOS.</p>
+<section id="linux-installation">
+<span id="linux"></span><h2>Linux Installation<a class="headerlink" href="#linux-installation" title="Permalink to this headline"></a></h2>
+<p>To install and use the repository on Linux, run the following shell commands:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/kiaashour/InstaDeep-Software-Engineering-Project.git
+<span class="nb">cd</span><span class="w"> </span>InstaDeep-Software-Engineering-Project
+python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
+<span class="nb">source</span><span class="w"> </span>venv/bin/activate
+pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements/requirements-linux.txt
+</pre></div>
+</div>
+</section>
+<section id="macos-installation">
+<span id="macos"></span><h2>MacOS Installation<a class="headerlink" href="#macos-installation" title="Permalink to this headline"></a></h2>
+<section id="download-miniconda">
+<h3>Download Miniconda<a class="headerlink" href="#download-miniconda" title="Permalink to this headline"></a></h3>
+<p>Download Miniconda from the following URL: <a class="reference external" href="https://docs.conda.io/en/latest/">https://docs.conda.io/en/latest/</a><a href="#id1"><span class="problematic" id="id2">miniconda.html_</span></a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If this step doesn’t work, you can try to skip it, but it is not guaranteed that the below steps will work.</p>
+</div>
+</section>
+<section id="miniconda">
+<h3>Miniconda<a class="headerlink" href="#miniconda" title="Permalink to this headline"></a></h3>
+<p>Next, you should install the xcode-select command-line utilities. Use the following command to install:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xcode-select<span class="w"> </span>--install
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If the above command gives an error, you should install XCode from the App Store. You can skip this step (the Jupyter one) if you have it.</p>
+</div>
+</section>
+<section id="deactivate-the-base-environment">
+<h3>Deactivate the Base Environment<a class="headerlink" href="#deactivate-the-base-environment" title="Permalink to this headline"></a></h3>
+<p>First, we need to deactivate the base environment.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>deactivate
+</pre></div>
+</div>
+</section>
+<section id="create-the-new-environment">
+<h3>Create the New Environment<a class="headerlink" href="#create-the-new-environment" title="Permalink to this headline"></a></h3>
+<p>Next, we will install the Apple Silicon tensorflow.yml file provided. Run the following command from the same directory that contains tensorflow.yml.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>requirements
+conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>tensorflow.yml
+</pre></div>
+</div>
+</section>
+<section id="activate-the-new-environment">
+<h3>Activate the New Environment<a class="headerlink" href="#activate-the-new-environment" title="Permalink to this headline"></a></h3>
+<p>To enter this environment, you must use the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>activate<span class="w"> </span>tensorflow-apple
+</pre></div>
+</div>
+</section>
+<section id="install-dependencies-from-requirements">
+<h3>Install Dependencies from Requirements<a class="headerlink" href="#install-dependencies-from-requirements" title="Permalink to this headline"></a></h3>
+<p>Now, install the dependencies from the requirements-macos.txt file.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements-macos.txt
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A separate requirements file is provided for development, <code class="docutils literal notranslate"><span class="pre">`requirements/requirements-dev.txt`</span></code>.</p>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="about.html" class="btn btn-neutral float-left" title="About" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="usage.html" class="btn btn-neutral float-right" title="Usage" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

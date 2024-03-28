@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>environment.wrapper_square.FlatteningActionMaskObservationWrapper &mdash; RL-PCB 1 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="environment.wrapper_square.FlatteningActionWrapper" href="environment.wrapper_square.FlatteningActionWrapper.html" />
+    <link rel="prev" title="environment.wrapper_square" href="environment.wrapper_square.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">Usage</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">API</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="environment.html">environment</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="environment.dummy_env_rectangular.html">environment.dummy_env_rectangular</a></li>
+<li class="toctree-l3"><a class="reference internal" href="environment.dummy_env_rectangular_pin.html">environment.dummy_env_rectangular_pin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="environment.dummy_env_rectangular_pin_spatial.html">environment.dummy_env_rectangular_pin_spatial</a></li>
+<li class="toctree-l3"><a class="reference internal" href="environment.dummy_env_square.html">environment.dummy_env_square</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="environment.wrapper_square.html">environment.wrapper_square</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">environment.wrapper_square.FlatteningActionMaskObservationWrapper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="environment.wrapper_square.FlatteningActionWrapper.html">environment.wrapper_square.FlatteningActionWrapper</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="agent.html">agent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html">utils</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../contributors.html">Contributors</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">RL-PCB</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../api.html">API</a></li>
+          <li class="breadcrumb-item"><a href="environment.html">environment</a></li>
+          <li class="breadcrumb-item"><a href="environment.wrapper_square.html">environment.wrapper_square</a></li>
+      <li class="breadcrumb-item active">environment.wrapper_square.FlatteningActionMaskObservationWrapper</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/_autosummary/environment.wrapper_square.FlatteningActionMaskObservationWrapper.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="environment-wrapper-square-flatteningactionmaskobservationwrapper">
+<h1>environment.wrapper_square.FlatteningActionMaskObservationWrapper<a class="headerlink" href="#environment-wrapper-square-flatteningactionmaskobservationwrapper" title="Permalink to this headline"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="environment.wrapper_square.FlatteningActionMaskObservationWrapper">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">environment.wrapper_square.</span></span><span class="sig-name descname"><span class="pre">FlatteningActionMaskObservationWrapper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#environment.wrapper_square.FlatteningActionMaskObservationWrapper" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">gym.core.ObservationWrapper</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="environment.wrapper_square.FlatteningActionMaskObservationWrapper.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#environment.wrapper_square.FlatteningActionMaskObservationWrapper.__init__" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<p class="rubric">Methods</p>
+<table class="autosummary longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#environment.wrapper_square.FlatteningActionMaskObservationWrapper.__init__" title="environment.wrapper_square.FlatteningActionMaskObservationWrapper.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(env)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">class_name</span></code>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">close</span></code>()</p></td>
+<td><p>Override close in your subclass to perform any necessary cleanup.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../environment.html#environment.wrapper_square.FlatteningActionMaskObservationWrapper.observation" title="environment.wrapper_square.FlatteningActionMaskObservationWrapper.observation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">observation</span></code></a>(observation)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">render</span></code>([mode])</p></td>
+<td><p>Renders the environment.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">reset</span></code>(**kwargs)</p></td>
+<td><p>Resets the environment to an initial state and returns an initial observation.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">seed</span></code>([seed])</p></td>
+<td><p>Sets the seed for this env's random number generator(s).</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">step</span></code>(action)</p></td>
+<td><p>Run one timestep of the environment's dynamics.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Attributes</p>
+<table class="autosummary longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">action_space</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">metadata</span></code></p></td>
+<td><p>dict() -&gt; new empty dictionary dict(mapping) -&gt; new dictionary initialized from a mapping object's     (key, value) pairs dict(iterable) -&gt; new dictionary initialized as if via:     d = {}     for k, v in iterable:         d[k] = v dict(<a href="#id1"><span class="problematic" id="id2">**</span></a>kwargs) -&gt; new dictionary initialized with the name=value pairs     in the keyword argument list. For example:  dict(one=1, two=2).</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">np_random</span></code></p></td>
+<td><p>Initializes the np_random field if not done already.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">observation_space</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">reward_range</span></code></p></td>
+<td><p>Built-in immutable sequence.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">spec</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">unwrapped</span></code></p></td>
+<td><p>Completely unwrap this env.</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="environment.wrapper_square.html" class="btn btn-neutral float-left" title="environment.wrapper_square" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="environment.wrapper_square.FlatteningActionWrapper.html" class="btn btn-neutral float-right" title="environment.wrapper_square.FlatteningActionWrapper" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+{   
+    "env_config" : {
+        "type" : "rectangle_factorized",
+        "height" : 10,
+        "width" : 10,
+        "min_component_w" : 2,
+        "min_component_h" : 2,
+        "max_component_w" : 4,
+        "max_component_h" : 4,
+        "max_num_components" : 20,
+        "min_num_components" : 20
+    },
+    "model" : {
+        "custom_action_dist" : "factorised_action_dist",
+        "custom_model_config" : {
+            "factorization": "coordinates",
+            "height" : 10,
+            "width" : 10,
+            "max_num_components" : 20,
+            "min_num_components" : 20,
+            "component_feature_vector_width" : 5,
+            "num_conv_blocks" : 2,
+            "num_conv_filters" : 3,
+            "conv_kernel_size" : 3,
+            "activation" : "relu",
+            "max_pool" : false,
+            "max_pool_kernel_size" : 2,
+            "component_feature_encoding_dimension" : 64
+        }
+    }
+}

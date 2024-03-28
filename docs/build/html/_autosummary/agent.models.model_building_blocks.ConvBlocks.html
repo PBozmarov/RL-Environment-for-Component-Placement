@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>agent.models.model_building_blocks.ConvBlocks &mdash; RL-PCB 1 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="agent.models.rectangle_model" href="agent.models.rectangle_model.html" />
+    <link rel="prev" title="agent.models.model_building_blocks.ConvBlock" href="agent.models.model_building_blocks.ConvBlock.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">Usage</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="environment.html">environment</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="agent.html">agent</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="agent.models.html">agent.models</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="agent.models.model_building_blocks.html">agent.models.model_building_blocks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.models.rectangle_model.html">agent.models.rectangle_model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.models.rectangle_model_factorized.html">agent.models.rectangle_model_factorized</a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.models.rectangle_pin_all_attn_factorized.html">agent.models.rectangle_pin_all_attn_factorized</a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.models.rectangle_pin_attn_all_model_no_grid.html">agent.models.rectangle_pin_attn_all_model_no_grid</a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.models.rectangle_pin_attn_component_model.html">agent.models.rectangle_pin_attn_component_model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.models.rectangle_pin_attn_component_pin_model.html">agent.models.rectangle_pin_attn_component_pin_model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.models.rectangle_pin_factorized_model.html">agent.models.rectangle_pin_factorized_model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.models.rectangle_pin_model.html">agent.models.rectangle_pin_model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.models.rectangle_pin_spatial_model.html">agent.models.rectangle_pin_spatial_model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.models.square_model.html">agent.models.square_model</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="agent.random.html">agent.random</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html">utils</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../contributors.html">Contributors</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">RL-PCB</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../api.html">API</a></li>
+          <li class="breadcrumb-item"><a href="agent.html">agent</a></li>
+          <li class="breadcrumb-item"><a href="agent.models.html">agent.models</a></li>
+          <li class="breadcrumb-item"><a href="agent.models.model_building_blocks.html">agent.models.model_building_blocks</a></li>
+      <li class="breadcrumb-item active">agent.models.model_building_blocks.ConvBlocks</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/_autosummary/agent.models.model_building_blocks.ConvBlocks.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="agent-models-model-building-blocks-convblocks">
+<h1>agent.models.model_building_blocks.ConvBlocks<a class="headerlink" href="#agent-models-model-building-blocks-convblocks" title="Permalink to this headline"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="agent.models.model_building_blocks.ConvBlocks">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">agent.models.model_building_blocks.</span></span><span class="sig-name descname"><span class="pre">ConvBlocks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_conv_blocks</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_conv_filters</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">conv_kernel_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">activation=&lt;function</span> <span class="pre">relu&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_pool=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_pool_kernel_size=4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">conv_padding='valid'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.model_building_blocks.ConvBlocks" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class for creating multiple convolution blocks.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.models.model_building_blocks.ConvBlocks.num_conv_blocks">
+<span class="sig-name descname"><span class="pre">num_conv_blocks</span></span><a class="headerlink" href="#agent.models.model_building_blocks.ConvBlocks.num_conv_blocks" title="Permalink to this definition"></a></dt>
+<dd><p>The number of convolution blocks to create.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.models.model_building_blocks.ConvBlocks.num_conv_filters">
+<span class="sig-name descname"><span class="pre">num_conv_filters</span></span><a class="headerlink" href="#agent.models.model_building_blocks.ConvBlocks.num_conv_filters" title="Permalink to this definition"></a></dt>
+<dd><p>The number of filters in each convolution block.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.models.model_building_blocks.ConvBlocks.conv_kernel_size">
+<span class="sig-name descname"><span class="pre">conv_kernel_size</span></span><a class="headerlink" href="#agent.models.model_building_blocks.ConvBlocks.conv_kernel_size" title="Permalink to this definition"></a></dt>
+<dd><p>The size of the convolution kernel.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int or tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.models.model_building_blocks.ConvBlocks.activation">
+<span class="sig-name descname"><span class="pre">activation</span></span><a class="headerlink" href="#agent.models.model_building_blocks.ConvBlocks.activation" title="Permalink to this definition"></a></dt>
+<dd><p>The activation function to use after each convolutional layer. Default is tf.nn.relu.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>function</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.models.model_building_blocks.ConvBlocks.max_pool">
+<span class="sig-name descname"><span class="pre">max_pool</span></span><a class="headerlink" href="#agent.models.model_building_blocks.ConvBlocks.max_pool" title="Permalink to this definition"></a></dt>
+<dd><p>Whether or not to use max pooling after each convolutional layer. Default is False.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.models.model_building_blocks.ConvBlocks.max_pool_kernel_size">
+<span class="sig-name descname"><span class="pre">max_pool_kernel_size</span></span><a class="headerlink" href="#agent.models.model_building_blocks.ConvBlocks.max_pool_kernel_size" title="Permalink to this definition"></a></dt>
+<dd><p>The size of the max pooling kernel. Default is 4.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int or tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.models.model_building_blocks.ConvBlocks.conv_padding">
+<span class="sig-name descname"><span class="pre">conv_padding</span></span><a class="headerlink" href="#agent.models.model_building_blocks.ConvBlocks.conv_padding" title="Permalink to this definition"></a></dt>
+<dd><p>The padding to use for convolutional layers. Default is “valid”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.models.model_building_blocks.ConvBlocks.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_conv_blocks</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_conv_filters</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">conv_kernel_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">activation=&lt;function</span> <span class="pre">relu&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_pool=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_pool_kernel_size=4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">conv_padding='valid'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.model_building_blocks.ConvBlocks.__init__" title="Permalink to this definition"></a></dt>
+<dd><p>Initializes an instance of the ConvBlocks class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>num_conv_blocks</strong> (<em>int</em>) – The number of convolution blocks to create.</p></li>
+<li><p><strong>num_conv_filters</strong> (<em>int</em>) – The number of filters in each convolution block.</p></li>
+<li><p><strong>conv_kernel_size</strong> (<em>int</em><em> or </em><em>tuple</em>) – The size of the convolution kernel.</p></li>
+<li><p><strong>activation</strong> (<em>function</em>) – The activation function to use after each convolutional layer. Default is tf.nn.relu.</p></li>
+<li><p><strong>max_pool</strong> (<em>bool</em>) – Whether or not to use max pooling after each convolutional layer. Default is False.</p></li>
+<li><p><strong>max_pool_kernel_size</strong> (<em>int</em><em> or </em><em>tuple</em>) – The size of the max pooling kernel. Default is 4.</p></li>
+<li><p><strong>conv_padding</strong> (<em>str</em>) – The padding to use for convolutional layers. Default is “valid”.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<p class="rubric">Methods</p>
+<table class="autosummary longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#agent.models.model_building_blocks.ConvBlocks.__init__" title="agent.models.model_building_blocks.ConvBlocks.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(num_conv_blocks, num_conv_filters, ...)</p></td>
+<td><p>Initializes an instance of the ConvBlocks class.</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="agent.models.model_building_blocks.ConvBlock.html" class="btn btn-neutral float-left" title="agent.models.model_building_blocks.ConvBlock" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="agent.models.rectangle_model.html" class="btn btn-neutral float-right" title="agent.models.rectangle_model" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

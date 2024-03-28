@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>agent.models.rectangle_pin_factorized_model.RectanglePinFactorizedModel &mdash; RL-PCB 1 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="agent.models.rectangle_pin_model" href="agent.models.rectangle_pin_model.html" />
+    <link rel="prev" title="agent.models.rectangle_pin_factorized_model" href="agent.models.rectangle_pin_factorized_model.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">Usage</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="environment.html">environment</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="agent.html">agent</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="agent.models.html">agent.models</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="agent.models.model_building_blocks.html">agent.models.model_building_blocks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.models.rectangle_model.html">agent.models.rectangle_model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.models.rectangle_model_factorized.html">agent.models.rectangle_model_factorized</a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.models.rectangle_pin_all_attn_factorized.html">agent.models.rectangle_pin_all_attn_factorized</a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.models.rectangle_pin_attn_all_model_no_grid.html">agent.models.rectangle_pin_attn_all_model_no_grid</a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.models.rectangle_pin_attn_component_model.html">agent.models.rectangle_pin_attn_component_model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.models.rectangle_pin_attn_component_pin_model.html">agent.models.rectangle_pin_attn_component_pin_model</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="agent.models.rectangle_pin_factorized_model.html">agent.models.rectangle_pin_factorized_model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.models.rectangle_pin_model.html">agent.models.rectangle_pin_model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.models.rectangle_pin_spatial_model.html">agent.models.rectangle_pin_spatial_model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.models.square_model.html">agent.models.square_model</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="agent.random.html">agent.random</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html">utils</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../contributors.html">Contributors</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">RL-PCB</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../api.html">API</a></li>
+          <li class="breadcrumb-item"><a href="agent.html">agent</a></li>
+          <li class="breadcrumb-item"><a href="agent.models.html">agent.models</a></li>
+          <li class="breadcrumb-item"><a href="agent.models.rectangle_pin_factorized_model.html">agent.models.rectangle_pin_factorized_model</a></li>
+      <li class="breadcrumb-item active">agent.models.rectangle_pin_factorized_model.RectanglePinFactorizedModel</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/_autosummary/agent.models.rectangle_pin_factorized_model.RectanglePinFactorizedModel.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="agent-models-rectangle-pin-factorized-model-rectanglepinfactorizedmodel">
+<h1>agent.models.rectangle_pin_factorized_model.RectanglePinFactorizedModel<a class="headerlink" href="#agent-models-rectangle-pin-factorized-model-rectanglepinfactorizedmodel" title="Permalink to this headline"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_factorized_model.RectanglePinFactorizedModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">agent.models.rectangle_pin_factorized_model.</span></span><span class="sig-name descname"><span class="pre">RectanglePinFactorizedModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_space</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action_space</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_outputs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.rectangle_pin_factorized_model.RectanglePinFactorizedModel" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="../agent.models.html#agent.models.rectangle_pin_model.RectanglePinModel" title="agent.models.rectangle_pin_model.RectanglePinModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">agent.models.rectangle_pin_model.RectanglePinModel</span></code></a></p>
+<p>A model to predict the action logits and value for placing components
+with pins on a 2D grid.</p>
+<p>This model takes as inputs a 2D grid, a component features array,
+a component pin features array corresponding to the features of pins
+on components, and a placement mask array. The model learns an encoding of
+these features by using the encodings for:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>The grid (same as RectanglePinModel)</p></li>
+<li><p>The component features</p></li>
+<li><p>The component pin features</p></li>
+<li><p>The placement mask</p></li>
+</ul>
+</div></blockquote>
+<p>The grid encoding is created like in RectanglePinModel. The component features
+array is encoded by passing the features for each component through a
+dense layer. The component pin features array is encoded by:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>For each component, passing the features for each pin through a dense layer</p></li>
+<li><dl class="simple">
+<dt>Summing the encoded pin features for each component to get a single</dt><dd><p>encoded feature vector for each component.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+<p>The placement mask is encoded by simply one-hot encoding it. The encodings
+component features, component pin features, and placement mask are
+concatenated along the feature axis to get an encoding of dimensions
+(max_num_components, component_encoding_dim + pin_encoding_dim + 4).
+This encoding is then flattened and concatenated with the flattened grid encoding to
+get a single encoding.</p>
+<p>This new encoding is passed through a dense layer for value prediction. The encoding is also
+concatenated with the flattened action mask and outputted in the forward pass. The agent uses
+this output to sample actions from the factorized action space by first splitting the encoding
+from the action mask and using the encoding as inputs for the action models and using the action
+mask to mask invalid actions during sampling.</p>
+<p>To sample actions from the factorized action space, the model samples from
+action models for each component, conditioned on previous components. This sampling
+is done using the FactorizedActionDistribution classes.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_factorized_model.RectanglePinFactorizedModel.encoding">
+<span class="sig-name descname"><span class="pre">encoding</span></span><a class="headerlink" href="#agent.models.rectangle_pin_factorized_model.RectanglePinFactorizedModel.encoding" title="Permalink to this definition"></a></dt>
+<dd><p>Encoding of the input features.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>tf.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_factorized_model.RectanglePinFactorizedModel.encoding_model">
+<span class="sig-name descname"><span class="pre">encoding_model</span></span><a class="headerlink" href="#agent.models.rectangle_pin_factorized_model.RectanglePinFactorizedModel.encoding_model" title="Permalink to this definition"></a></dt>
+<dd><p>Model to create the encoding.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>tf.keras.Model</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_factorized_model.RectanglePinFactorizedModel.value_model">
+<span class="sig-name descname"><span class="pre">value_model</span></span><a class="headerlink" href="#agent.models.rectangle_pin_factorized_model.RectanglePinFactorizedModel.value_model" title="Permalink to this definition"></a></dt>
+<dd><p>Model to predict the value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>tf.keras.Model</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_factorized_model.RectanglePinFactorizedModel.action_model">
+<span class="sig-name descname"><span class="pre">action_model</span></span><a class="headerlink" href="#agent.models.rectangle_pin_factorized_model.RectanglePinFactorizedModel.action_model" title="Permalink to this definition"></a></dt>
+<dd><p>Model to predict the action logits.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>tf.keras.Model</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_factorized_model.RectanglePinFactorizedModel.action_space_size">
+<span class="sig-name descname"><span class="pre">action_space_size</span></span><a class="headerlink" href="#agent.models.rectangle_pin_factorized_model.RectanglePinFactorizedModel.action_space_size" title="Permalink to this definition"></a></dt>
+<dd><p>Size of the action space.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_factorized_model.RectanglePinFactorizedModel.action_space_shape">
+<span class="sig-name descname"><span class="pre">action_space_shape</span></span><a class="headerlink" href="#agent.models.rectangle_pin_factorized_model.RectanglePinFactorizedModel.action_space_shape" title="Permalink to this definition"></a></dt>
+<dd><p>Shape of the action space.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>Tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_factorized_model.RectanglePinFactorizedModel.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_space</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action_space</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_outputs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.rectangle_pin_factorized_model.RectanglePinFactorizedModel.__init__" title="Permalink to this definition"></a></dt>
+<dd><p>Initialize the RectangleFactorizedModel object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obs_space</strong> (<em>gym.spaces.Dict</em>) – Oobservation space.</p></li>
+<li><p><strong>action_space</strong> (<em>gym.spaces.Tuple</em>) – Action space.</p></li>
+<li><p><strong>num_outputs</strong> (<em>int</em>) – Number of outputs.</p></li>
+<li><p><strong>model_config</strong> (<em>Dict</em>) – Model configuration dictionary.</p></li>
+<li><p><strong>name</strong> (<em>str</em>) – Name of the model.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<p class="rubric">Methods</p>
+<table class="autosummary longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#agent.models.rectangle_pin_factorized_model.RectanglePinFactorizedModel.__init__" title="agent.models.rectangle_pin_factorized_model.RectanglePinFactorizedModel.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(obs_space, action_space, ...)</p></td>
+<td><p>Initialize the RectangleFactorizedModel object.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../agent.models.html#agent.models.rectangle_pin_factorized_model.RectanglePinFactorizedModel.build_action_models_coordinates" title="agent.models.rectangle_pin_factorized_model.RectanglePinFactorizedModel.build_action_models_coordinates"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build_action_models_coordinates</span></code></a>(...)</p></td>
+<td><p>Build the action models for the orientation, x and y actions.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../agent.models.html#agent.models.rectangle_pin_factorized_model.RectanglePinFactorizedModel.build_action_models_orientation" title="agent.models.rectangle_pin_factorized_model.RectanglePinFactorizedModel.build_action_models_orientation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build_action_models_orientation</span></code></a>(...)</p></td>
+<td><p>Build the action models for the orientation, x and y actions.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../agent.models.html#agent.models.rectangle_pin_factorized_model.RectanglePinFactorizedModel.build_encoding_model_factorized" title="agent.models.rectangle_pin_factorized_model.RectanglePinFactorizedModel.build_encoding_model_factorized"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build_encoding_model_factorized</span></code></a>()</p></td>
+<td><p>Build the encoding layer.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">build_encoding_rectangle</span></code>(model_config)</p></td>
+<td><p>Build the encoding layer.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">build_encoding_rectangle_pin</span></code>(model_config)</p></td>
+<td><p>Build the encoding for the RectanglePinModel.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">build_encoding_square</span></code>(model_config)</p></td>
+<td><p>Build a convolutional neural network to encode the input grid.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">build_logits_model_rectangle</span></code>()</p></td>
+<td><p>Build the logits model.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">build_logits_model_rectangle_pin</span></code>()</p></td>
+<td><p>Build the logits model.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">build_logits_model_square</span></code>()</p></td>
+<td><p>Build a model to calculate the logits.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../agent.models.html#agent.models.rectangle_pin_factorized_model.RectanglePinFactorizedModel.build_value_model_factorized" title="agent.models.rectangle_pin_factorized_model.RectanglePinFactorizedModel.build_value_model_factorized"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build_value_model_factorized</span></code></a>(encoding_size)</p></td>
+<td><p>Build the value model.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">build_value_model_rectangle</span></code>()</p></td>
+<td><p>Build the value model.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">build_value_model_rectangle_pin</span></code>()</p></td>
+<td><p>Build the value model.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">build_value_model_square</span></code>()</p></td>
+<td><p>Build a model to calculate the value function.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">context</span></code>()</p></td>
+<td><p>Returns a contextmanager for the current TF graph.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">custom_loss</span></code>(policy_loss, loss_inputs)</p></td>
+<td><p>Override to customize the loss function used to optimize this model.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">encode_component_feature</span></code>(model_config)</p></td>
+<td><p>Encode the component feature array.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">encode_flattened_component_feature</span></code>(model_config)</p></td>
+<td><p>Encode the component feature using a dense layer.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">encode_grid</span></code>(model_config)</p></td>
+<td><p>Encode the grid using a convolutional neural network.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">encode_pin_feature</span></code>(model_config)</p></td>
+<td><p>Encode the component pin feature array.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">encode_placement_mask</span></code>(model_config)</p></td>
+<td><p>Encode the placement mask by one hot encoding it.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../agent.models.html#agent.models.rectangle_pin_factorized_model.RectanglePinFactorizedModel.forward" title="agent.models.rectangle_pin_factorized_model.RectanglePinFactorizedModel.forward"><code class="xref py py-obj docutils literal notranslate"><span class="pre">forward</span></code></a>(input_dict, state, seq_lens)</p></td>
+<td><p>Forward pass of the model.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_batch</span></code>(**kwargs)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_initial_state</span></code>()</p></td>
+<td><p>Get the initial recurrent state values for the model.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">import_from_h5</span></code>(h5_file)</p></td>
+<td><p>Imports weights from an h5 file.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_time_major</span></code>()</p></td>
+<td><p>If True, data for calling this ModelV2 must be in time-major format.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">last_output</span></code>()</p></td>
+<td><p>Returns the last output returned from calling the model.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">metrics</span></code>()</p></td>
+<td><p>Override to return custom metrics from your model.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">preprocess</span></code>(obs_dict)</p></td>
+<td><p>Preprocess the obs_dict.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">register_variables</span></code>(variables)</p></td>
+<td><p>Register the given list of variables with this model.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">trainable_variables</span></code>([as_dict])</p></td>
+<td><p>Returns the list of trainable variables for this model.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">update_ops</span></code>()</p></td>
+<td><p>Return the list of update ops for this model.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">value_function</span></code>()</p></td>
+<td><p>Calculate the value function of the model.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">variables</span></code>([as_dict])</p></td>
+<td><p>Returns the list (or a dict) of variables for this model.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_factorized_model.RectanglePinFactorizedModel.build_action_models_coordinates">
+<span class="sig-name descname"><span class="pre">build_action_models_coordinates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">encoding_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action_space</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.rectangle_pin_factorized_model.RectanglePinFactorizedModel.build_action_models_coordinates" title="Permalink to this definition"></a></dt>
+<dd><p>Build the action models for the orientation, x and y actions.</p>
+<p>The distribution of orientation, x and y actions are modelled using the following
+factorization:</p>
+<blockquote>
+<div><p><span class="math notranslate nohighlight">\(p(\text{orientation}, x, y) = p(\text{x})p(y \mid x) p (\text{orientation} \mid x, y)\)</span></p>
+</div></blockquote>
+<p>The x action model is created by taking the encoding as an input and using a
+dense layer to output logits of size equal to the number of x values.</p>
+<p>The y action model is created by taking the encoding and x input as an input and
+using a dense layer to output logits of size equal to the number of y values.</p>
+<p>The orientation model is created by taking the encoding, the x input and the y input
+as an input and using a dense layer to output logits of size equal to the number
+of orientations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>encoding_size</strong> (<em>int</em>) – Size of the encoding.</p></li>
+<li><p><strong>action_space</strong> (<em>gym.spaces.Tuple</em>) – Action space.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>The x inputs and y inputs to the y action model and orientation model</dt><dd><p>are processed to be in the range of[0, 1] by dividing by the maximum x
+and y values respectively during sampling.</p>
+</dd>
+</dl>
+</li>
+<li><p>The sampling is done using the FactorizedActionDistribution classes.</p></li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_factorized_model.RectanglePinFactorizedModel.build_action_models_orientation">
+<span class="sig-name descname"><span class="pre">build_action_models_orientation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">encoding_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action_space</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.rectangle_pin_factorized_model.RectanglePinFactorizedModel.build_action_models_orientation" title="Permalink to this definition"></a></dt>
+<dd><p>Build the action models for the orientation, x and y actions.</p>
+<p>The distribution of orientation, x and y actions are modelled using the following
+factorization:</p>
+<blockquote>
+<div><p><span class="math notranslate nohighlight">\(p(\text{orientation}, x, y) = p(\text{orientation})p(x \mid \text{orientation}) p (y \mid \text{orientation}, x)\)</span></p>
+</div></blockquote>
+<p>The orientation model is created by taking the encoding as an input and using a
+dense layer to output logits of size equal to the number of orientations.</p>
+<p>The x action model is created by taking the encoding and the one hot encoded orientation
+as an input and using a dense layer to output logits of size equal to the number
+of x values.</p>
+<p>The y action model is created by taking the encoding, the one hot encoded orientation
+and the x input as an input and using a dense layer to output logits of size equal
+to the number of y values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>encoding_size</strong> (<em>int</em>) – Size of the encoding.</p></li>
+<li><p><strong>action_space</strong> (<em>gym.spaces.Tuple</em>) – Action space.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>The x inputs to the y action model are processed to be in the range of</dt><dd><p>[0, 1] by dividing by the maximum x value during sampling.</p>
+</dd>
+</dl>
+</li>
+<li><p>The sampling is done using the FactorizedActionDistribution classes.</p></li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_factorized_model.RectanglePinFactorizedModel.build_encoding_model_factorized">
+<span class="sig-name descname"><span class="pre">build_encoding_model_factorized</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.rectangle_pin_factorized_model.RectanglePinFactorizedModel.build_encoding_model_factorized" title="Permalink to this definition"></a></dt>
+<dd><p>Build the encoding layer.</p>
+<p>This layer creates an encoding model to create encodings like for
+the RectanglePinModel. The encoding concatenates the encoded grid
+and encoded component features which are encoded like in the
+RectanglePinModel.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>model_config</strong> (<em>Dict</em>) – Model configuration dictionary.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_factorized_model.RectanglePinFactorizedModel.build_value_model_factorized">
+<span class="sig-name descname"><span class="pre">build_value_model_factorized</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">encoding_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.rectangle_pin_factorized_model.RectanglePinFactorizedModel.build_value_model_factorized" title="Permalink to this definition"></a></dt>
+<dd><p>Build the value model.</p>
+<p>This model calculates the value using a dense layer from the encoding layer,
+where the dense layer has 1 output neuron corresponding to the value of the state.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>encoding_size</strong> (<em>int</em>) – Size of the encoding.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_factorized_model.RectanglePinFactorizedModel.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seq_lens</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.rectangle_pin_factorized_model.RectanglePinFactorizedModel.forward" title="Permalink to this definition"></a></dt>
+<dd><p>Forward pass of the model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>input_dict</strong> (<em>dict</em>) – Input dictionary containing the observation.</p></li>
+<li><p><strong>state</strong> (<em>List</em>) – List of state tensors.</p></li>
+<li><p><strong>seq_lens</strong> (<em>Tensor</em>) – Tensor containing the sequence length.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Tuple of action logits and state.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Tuple[Tensor, List]</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<dl class="simple">
+<dt>The output and the actions models are used to sample actions in the</dt><dd><p>FactorizedActionDistribution classes.</p>
+</dd>
+</dl>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="agent.models.rectangle_pin_factorized_model.html" class="btn btn-neutral float-left" title="agent.models.rectangle_pin_factorized_model" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="agent.models.rectangle_pin_model.html" class="btn btn-neutral float-right" title="agent.models.rectangle_pin_model" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

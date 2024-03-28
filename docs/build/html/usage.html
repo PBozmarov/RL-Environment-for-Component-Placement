@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Usage &mdash; RL-PCB 1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="API" href="api.html" />
+    <link rel="prev" title="Installation" href="installation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html">
+            
+              <img src="_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#environments">Environments</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#square-environment">Square Environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rectangle-environment">Rectangle Environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rectangle-pin-environment">Rectangle Pin Environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rectangle-pin-spatial-environment">Rectangle Pin Spatial Environment</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#agents">Agents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#training-with-a-random-policy">Training with a Random Policy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#training-with-a-ppo-agent">Training with a PPO Agent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#viewing-results-with-tensorboard">Viewing Results with Tensorboard</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#viewing-sample-rollouts">Viewing Sample Rollouts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#comparing-multiple-agents">Comparing Multiple Agents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#web-app">Web App</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#train-agents">Train agents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#trained-agents">Trained agents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#comparison-analysis">Comparison analysis</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributors.html">Contributors</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">RL-PCB</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Usage</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/usage.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="usage">
+<h1>Usage<a class="headerlink" href="#usage" title="Permalink to this headline"></a></h1>
+<p>This page covers examples for the various functionalities provided by this repository.
+More detailed descriptions of these functionalities can be found in the <a class="reference internal" href="api.html"><span class="doc">API</span></a> section.</p>
+<section id="environments">
+<span id="id1"></span><h2>Environments<a class="headerlink" href="#environments" title="Permalink to this headline"></a></h2>
+<p>This repository provides four different environments of increasing complexity, where
+each environment builds on the previous one. The base environment for all of these
+environments is the <code class="docutils literal notranslate"><span class="pre">gym.Env</span></code> class from <a class="reference external" href="https://gym.openai.com/docs">OpenAI Gym</a>.</p>
+<p>The environments are detailed in the modules:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="environment.html#module-environment.dummy_env_square" title="environment.dummy_env_square"><code class="xref py py-mod docutils literal notranslate"><span class="pre">environment.dummy_env_square</span></code></a></p></li>
+<li><p><code class="xref py py-mod docutils literal notranslate"><span class="pre">environment.dummy_env_rectangle</span></code></p></li>
+<li><p><code class="xref py py-mod docutils literal notranslate"><span class="pre">environment.dummy_env_rectangle_pin</span></code></p></li>
+<li><p><code class="xref py py-mod docutils literal notranslate"><span class="pre">environment.dummy_env_rectangle_pin_spatial</span></code></p></li>
+</ul>
+<section id="square-environment">
+<span id="square"></span><h3>Square Environment<a class="headerlink" href="#square-environment" title="Permalink to this headline"></a></h3>
+<p>The square environment consists of a grid of size height x width with components of fixed
+size n x n. The goal of the agent is to place all components on the grid; this is achieved using
+a dense reward where the agent receives a reward of 1 for each component placed on the grid and
+0 otherwise.</p>
+<p>The agent places components on the grid by specifying the top-left coordinates of the component
+on the grid. An episode is terminated once no more components can be placed on the grid, i.e.
+when the action mask is all zeros.</p>
+<p>A typical example usage would be:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">gym</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">environment.dummy_env_square</span> <span class="kn">import</span> <span class="n">DummyPlacementEnv</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">env</span> <span class="o">=</span> <span class="n">DummyPlacementEnv</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">component_n</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">env</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">env</span><span class="o">.</span><span class="n">step</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+</section>
+<section id="rectangle-environment">
+<span id="rectangle"></span><h3>Rectangle Environment<a class="headerlink" href="#rectangle-environment" title="Permalink to this headline"></a></h3>
+<p>The rectangle environment is similar to the square environment, except that the components
+are now rectangular and of variable size. As components are now rectangular, the agent must
+specify the top-left coordinates of the component on the grid as well as the orientation of
+the component (horizontal or vertical).</p>
+<p>Additionally, at reset the agent samples a list of components of random sizes where the goal is now
+to place these components, in the order that they are sampled, on the grid. Again, an episode is
+terminated once no more components can be placed on the grid, or there are no more remaining components.</p>
+<p>A typical example usage would be:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">gym</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">environment.dummy_env_rectangular</span> <span class="kn">import</span> <span class="n">DummyPlacementEnv</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">env</span> <span class="o">=</span> <span class="n">DummyPlacementEnv</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">height</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">width</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">min_component_w</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">max_component_w</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">min_component_h</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">max_component_h</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">max_num_components</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">min_num_components</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+<span class="gp">... </span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">env</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">env</span><span class="o">.</span><span class="n">step</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+</section>
+<section id="rectangle-pin-environment">
+<span id="rectangle-pin"></span><h3>Rectangle Pin Environment<a class="headerlink" href="#rectangle-pin-environment" title="Permalink to this headline"></a></h3>
+<p>The rectangle pin environment builds on the rectangle environment with several additional
+features. Firstly, components now include pins and the concept of “nets” is introduced: a net
+is a set of pins that must be connected. The agent must place components on the grid such that
+nets are connected in the most “optimal” way possible.</p>
+<p>As the goal of the agent no longer is to place all components on the grid, the reward function
+is modified to be sparse: the agent receives a non-zero reward <span class="math notranslate nohighlight">\(R\)</span> at the end of an episode and
+0 otherwise. The reward <span class="math notranslate nohighlight">\(R\)</span> relates to how optimally the nets can be connected on the grid. To
+approximate this, the nets are connected using either a “centroid” or “beam” search routing
+algorithm, then the number of intersections between connections from different nets and the total
+wirelength of the routing are used to calculate the reward:</p>
+<div class="math notranslate nohighlight">
+\[R = \alpha \cdot \text{intersections} + \beta \cdot \text{wirelength}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span> are weights that can be specified by the user. In the case where not all
+the components are placed, an upper bound for <span class="math notranslate nohighlight">\(\text{intersections}\)</span> and <span class="math notranslate nohighlight">\(\text{wirelength}\)</span> is used
+to encourage the agent to place as many components as possible on the grid.</p>
+<p>Moreover, the reset mechanism is also now more sophisticated and includes sampling and
+distributing pins amongst components and nets. Again, an episode is terminated once no
+more components can be placed on the grid, i.e. when the action mask is all zeros.</p>
+<p>A typical example usage would be:</p>
+<blockquote>
+<div><p>height: int,
+width: int,
+net_distribution: int,
+pin_spread: int,
+min_component_w: int,
+max_component_w: int,
+min_component_h: int,
+max_component_h: int,
+max_num_components: int,
+min_num_components: int,
+min_num_nets: int,
+max_num_nets: int,
+max_num_pins_per_net: int,
+min_num_pins_per_net: int = 2,
+reward_type: str = “both”,
+reward_beam_width: int = 2,
+weight_wirelength: float = 0.5,
+weight_num_intersections: float = 0.5,</p>
+</div></blockquote>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">gym</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">environment.dummy_env_rectangular_pin</span> <span class="kn">import</span> <span class="n">DummyPlacementEnv</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">env</span> <span class="o">=</span> <span class="n">DummyPlacementEnv</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">height</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">width</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">net_distribution</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">pin_spread</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">min_component_w</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">max_component_w</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">min_component_h</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">max_component_h</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">max_num_components</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">min_num_components</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">min_num_nets</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">max_num_nets</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">max_num_pins_per_net</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">min_num_pins_per_net</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+<span class="gp">... </span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">env</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">env</span><span class="o">.</span><span class="n">step</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+</section>
+<section id="rectangle-pin-spatial-environment">
+<span id="rectangle-pin-spatial"></span><h3>Rectangle Pin Spatial Environment<a class="headerlink" href="#rectangle-pin-spatial-environment" title="Permalink to this headline"></a></h3>
+<p>The rectangle pin spatial environment works similarly to the rectangle pin environment, except
+that the observations space is now modified to include spatial information about the components,
+pins and nets.</p>
+<hr class="docutils" />
+</section>
+</section>
+<section id="agents">
+<span id="id2"></span><h2>Agents<a class="headerlink" href="#agents" title="Permalink to this headline"></a></h2>
+<p>This repository provides a number of agents that can be used to train on the different environments provided. The agents
+are implemented using the <code class="docutils literal notranslate"><span class="pre">RLlib</span></code> library and are based on the PPO algorithm. An agent with a random policy is also provided
+as a baseline.</p>
+<p>The <a class="reference internal" href="agent.models.html#module-agent.models" title="agent.models"><code class="xref py py-mod docutils literal notranslate"><span class="pre">agent.models</span></code></a> module contains the neural network architectures which are used as the policy network in the PPO algorithm and
+the <a class="reference internal" href="agent.random.html#module-agent.random" title="agent.random"><code class="xref py py-mod docutils literal notranslate"><span class="pre">agent.random</span></code></a> module contains the random policy for the different environments. For the rectangular pin environment, a random policy
+is only provided for the non-spatial version of the environment as the policy would be identical for the spatial version of the environment.
+Detailed description of the models can be found in the modules.</p>
+<p>We describe ways to train different agents, view and compare results below.</p>
+<hr class="docutils" />
+<section id="training-with-a-random-policy">
+<span id="train-random"></span><h3>Training with a Random Policy<a class="headerlink" href="#training-with-a-random-policy" title="Permalink to this headline"></a></h3>
+<p>The <code class="xref py py-mod docutils literal notranslate"><span class="pre">experiments.random_policy</span></code> module contains the script for running a random policy on the different environments provided. The
+results of the experiments are saved in the <code class="docutils literal notranslate"><span class="pre">results</span></code> directory.</p>
+<p>As an example, to run a random policy on the square environment with a grid of size 10 x 10, components of size 2 x 2
+and 1000 episodes the following command should be ryn from the root directory of the repository:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>experiments/random_policy/run_policy_square.py<span class="w"> </span>--policy_type<span class="w"> </span>random<span class="w"> </span>--num_episodes<span class="w"> </span><span class="m">1000</span><span class="w"> </span>--env_height<span class="w"> </span><span class="m">10</span><span class="w"> </span>--env_width<span class="w"> </span><span class="m">10</span><span class="w"> </span>--component_size<span class="w"> </span><span class="m">2</span>
+</pre></div>
+</div>
+<p>The episde returns of the experiment will be saved in the <code class="docutils literal notranslate"><span class="pre">results</span></code> directory as <code class="docutils literal notranslate"><span class="pre">square_env_random_policy_episode_returns.png</span></code>:</p>
+<a class="reference internal image-reference" href="_images/square_env_random_policy_episode_returns.png"><img alt="_images/square_env_random_policy_episode_returns.png" class="align-center" src="_images/square_env_random_policy_episode_returns.png" style="width: 100%;" /></a>
+<hr class="docutils" />
+</section>
+<section id="training-with-a-ppo-agent">
+<span id="train-ppo"></span><h3>Training with a PPO Agent<a class="headerlink" href="#training-with-a-ppo-agent" title="Permalink to this headline"></a></h3>
+<p>The <a class="reference internal" href="agent.models.html#module-agent.models" title="agent.models"><code class="xref py py-mod docutils literal notranslate"><span class="pre">agent.models</span></code></a> module contains the neural network architectures which are used as the policy network in the PPO algorithm
+for the different environments. A brief description of these models is given in the table below and a more detailed description can be
+found in the module.</p>
+<table class="colwidths-given docutils align-default" id="id9">
+<caption><span class="caption-text">Model descriptions</span><a class="headerlink" href="#id9" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Model</p></th>
+<th class="head"><p>Environment</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">agent.models.SquareEnvModel</span></code></p></td>
+<td><p>Square</p></td>
+<td><p>Encodes the grid using a CNN and uses this encoding to predict the action logits and value function with a dense layer.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">agent.models.RectangleModel</span></code></p></td>
+<td><p>Rectangular</p></td>
+<td><p>Encodes the grid using a CNN and encodes the component features using a dense layer. These encodings are concatenated and passed through a dense layer to predict the action logits and value function.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">agent.models.RectangleFactorizedModel</span></code></p></td>
+<td><p>Rectangular</p></td>
+<td><p>Same as <code class="xref py py-class docutils literal notranslate"><span class="pre">agent.models.RectangleModel</span></code> except that now the action space is factorised and there are three separate action models for the x, y and orientation actions; all these models are dense layers and use the grid and component features encodings.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">agent.models.RectanglePinModel</span></code></p></td>
+<td><p>Rectangular pin</p></td>
+<td><p>Uses the same grid encoding as <code class="xref py py-class docutils literal notranslate"><span class="pre">agent.models.SquareEnvModel</span></code> with the addition of encodings for the component features, pin feautres and placement mask. These encodings are created with dense layers and used to predict the action logits and value function.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">agent.models.RectanglePinAttnCompModel</span></code></p></td>
+<td><p>Rectangular pin</p></td>
+<td><p>Same as <code class="xref py py-class docutils literal notranslate"><span class="pre">agent.models.RectanglePinModel</span></code> except that the final encoding is now passed through a self-attention layer before being used to predict the action logits and value function.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">agent.models.RectanglePinAttnCompPinModel</span></code></p></td>
+<td><p>Rectangular pin</p></td>
+<td><p>Same as <code class="xref py py-class docutils literal notranslate"><span class="pre">agent.models.RectanglePinAttnCompModel</span></code> except that the encoding of the pin features is created using a self-attention layer.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">agent.models.RectanglePinAttnAllNoGridModel</span></code></p></td>
+<td><p>Rectangular pin</p></td>
+<td><p>Same as <code class="xref py py-class docutils literal notranslate"><span class="pre">agent.models.RectanglePinAttnCompPinModel</span></code> except that the encoding of the grid is no longer used.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">agent.models.RectanglePinSpatialModel</span></code></p></td>
+<td><p>Rectangular pin spatial</p></td>
+<td><p>Creates endcodings of the grid, pins and component features using a CNN by representing them all together spatially. These encodings are concatenated and passed through a dense layer to predict the action logits and value function.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">agent.models.RectanglePinFactorizedModel</span></code></p></td>
+<td><p>Rectangular pin</p></td>
+<td><p>Same as <code class="xref py py-class docutils literal notranslate"><span class="pre">agent.models.RectanglePinModel</span></code> except that now the action space is factorised and there are three separate action models for the x, y and orientation actions; all these models are dense layers and use the grid and component features encodings.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">agent.models.RectanglePinAllAttnFactorized</span></code></p></td>
+<td><p>Rectangular pin</p></td>
+<td><p>Same as <code class="xref py py-class docutils literal notranslate"><span class="pre">agent.models.RectanglePinFactorizedModel</span></code> except that the encodings are created in the same way as <code class="xref py py-class docutils literal notranslate"><span class="pre">agent.models.RectanglePinAttnCompPinModel</span></code>.</p></td>
+</tr>
+</tbody>
+</table>
+<p>To train an agent using one of the above policy networks, the corresponding config file in the <code class="docutils literal notranslate"><span class="pre">agent/configs</span></code> directory
+should first be modified. The config files includes the hyperparameters for the PPO algorithm policy network as well as the environment configuration.</p>
+<p>Once the corresponding config file has been modified in the desired way, an agent can be trained by running the following command
+from the root repository, where in this example we are training the <code class="xref py py-class docutils literal notranslate"><span class="pre">agent.models.RectanglePinAttnCompPinModel</span></code> model on the
+rectangular pin environment:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>experiments/PPO/PPO.py<span class="w"> </span>--type<span class="w"> </span>rectangle_pin_attn_all
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">type</span></code> refers the neural network architecture used for the policy network (this also implicitly specifies the type of the environment).</p>
+<hr class="docutils" />
+</section>
+<section id="viewing-results-with-tensorboard">
+<span id="tensorboard"></span><h3>Viewing Results with Tensorboard<a class="headerlink" href="#viewing-results-with-tensorboard" title="Permalink to this headline"></a></h3>
+<p>Once an experiment has been run, the results are by default saved in <code class="docutils literal notranslate"><span class="pre">~/ray_results/</span></code>; the location of the results
+can be changed by changing the <code class="docutils literal notranslate"><span class="pre">local_dir</span></code> parameter in the <code class="docutils literal notranslate"><span class="pre">tune.run()</span></code> function in the <code class="docutils literal notranslate"><span class="pre">agent/PPO.py</span></code> script. The
+results include the checkpoints of the agent at different points during training as well as the logs of the training
+process.</p>
+<p>The directory strucutre of the saved results looks like the following:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>.
+└──<span class="w"> </span>ray_results
+<span class="w">    </span>└──<span class="w"> </span>experiment_name
+<span class="w">        </span>├──<span class="w"> </span>checkpoint_000001
+<span class="w">        </span>│<span class="w">   </span>├──<span class="w"> </span>checkpoint
+<span class="w">        </span>│<span class="w">   </span>├──<span class="w"> </span>params.pkl
+<span class="w">        </span>│<span class="w">   </span>└──<span class="w"> </span>tune_metadata
+<span class="w">        </span>├──<span class="w"> </span>checkpoint_000002
+<span class="w">        </span>│<span class="w">   </span>├──<span class="w"> </span>checkpoint
+<span class="w">        </span>│<span class="w">   </span>├──<span class="w"> </span>params.pkl
+<span class="w">        </span>│<span class="w">   </span>└──<span class="w"> </span>tune_metadata
+<span class="w">        </span>├──<span class="w"> </span>checkpoint_000003
+<span class="w">        </span>│<span class="w">   </span>├──<span class="w"> </span>checkpoint
+<span class="w">        </span>│<span class="w">   </span>├──<span class="w"> </span>params.pkl
+<span class="w">        </span>│<span class="w">   </span>└──<span class="w"> </span>tune_metadata
+<span class="w">        </span>├──<span class="w"> </span>...
+<span class="w">        </span>├──<span class="w"> </span>log_syncer.out
+<span class="w">        </span>├──<span class="w"> </span>params.json
+<span class="w">        </span>└──<span class="w"> </span>progress.csv
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">progress.csv</span></code> file contains information about the training progress, such as the training and evaluation metrics for
+each checkpoint. The <code class="docutils literal notranslate"><span class="pre">params.json</span></code> file contains the hyperparameters for the experiment in JSON format. The
+log_syncer.out file contains the log output from the experiment.</p>
+<p>The logs can be viewed using <a class="reference external" href="https://www.tensorflow.org/tensorboard/get_started#:~:text=TensorBoard%20is%20a%20tool%20for,dimensional%20space%2C%20and%20much%20more.">Tensorboard</a> by running the following commands from the root directory of the repository:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~
+tensorboard<span class="w"> </span>--logdir<span class="w"> </span>~/ray_results/PPO/&lt;experiment_name&gt;
+</pre></div>
+</div>
+<p>The logs can be viewed in a web browser at the address <code class="docutils literal notranslate"><span class="pre">localhost:6006</span></code>:</p>
+<a class="reference internal image-reference" href="_images/tensorboard_prev.png"><img alt="_images/tensorboard_prev.png" class="align-center" src="_images/tensorboard_prev.png" style="width: 100%;" /></a>
+<hr class="docutils" />
+</section>
+<section id="viewing-sample-rollouts">
+<span id="rollouts"></span><h3>Viewing Sample Rollouts<a class="headerlink" href="#viewing-sample-rollouts" title="Permalink to this headline"></a></h3>
+<p>In order to analyse the performance of a trained agent, it is useful to view sample rollouts of the policy, particularly
+as the agent improves during training. For a trained agent, sample rollouts of the policy for a given checkpoint can be
+retrieved by running the following code:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">utils.agent.utils</span> <span class="kn">import</span> <span class="n">sample_rollout</span><span class="p">,</span> <span class="n">get_config</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model_type</span> <span class="o">=</span> <span class="s2">&quot;rectangle_pin_attn_all&quot;</span>  <span class="c1"># type of the agent trained</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">checkpoint_path</span> <span class="o">=</span> <span class="s2">&quot;path/to/checkpoint&quot;</span>  <span class="c1"># path to the checkpoint of the agent</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">config</span> <span class="o">=</span> <span class="n">get_config</span><span class="p">(</span><span class="n">model_type</span><span class="p">)</span>  <span class="c1"># get the config for the agent</span>
+<span class="gp">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">samples_components</span><span class="p">,</span> <span class="n">samples_actions</span> <span class="o">=</span> <span class="n">sample_rollout</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="n">checkpoint_path</span><span class="p">,</span> <span class="n">model_type</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The above code will return the components and actions for the sample rollouts. To view this result as a series of images,
+the following code can be run:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">web_app</span> <span class="kn">import</span> <span class="n">visualization_grid</span> <span class="k">as</span> <span class="n">vg</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">height</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s2">&quot;env_config&quot;</span><span class="p">][</span><span class="s2">&quot;height&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">width</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s2">&quot;env_config&quot;</span><span class="p">][</span><span class="s2">&quot;width&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sample_num</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># sample number to view</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">samples_actions</span><span class="p">[</span><span class="n">sample_num</span><span class="p">])</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">fig</span> <span class="o">=</span> <span class="n">vg</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">samples_components</span><span class="p">[</span><span class="n">sample_num</span><span class="p">][:</span><span class="n">i</span><span class="p">],</span> <span class="n">samples_actions</span><span class="p">[</span><span class="n">sample_num</span><span class="p">][:</span><span class="n">i</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;results/rollout_</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">.png&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>An example of a rollout for a trained <code class="xref py py-class docutils literal notranslate"><span class="pre">agent.models.RectanglePinAttnCompPinModel</span></code> model is shown below:</p>
+<a class="reference internal image-reference" href="_images/rollout.gif"><img alt="_images/rollout.gif" class="align-center" src="_images/rollout.gif" style="width: 100%;" /></a>
+<p>In the above plot, the pins are coloured according to the net that they belong to. An alternative, faster way to view
+sample rollouts is also discussed in the <a class="reference internal" href="#web-app"><span class="std std-ref">Web App</span></a> section.</p>
+<hr class="docutils" />
+</section>
+<section id="comparing-multiple-agents">
+<span id="id4"></span><h3>Comparing Multiple Agents<a class="headerlink" href="#comparing-multiple-agents" title="Permalink to this headline"></a></h3>
+<p>It is also possible to compare the performance of multiple agents by viewing the evaluation metrics for each agent
+on a single plot. The easiest way to do this, is to extract the <code class="docutils literal notranslate"><span class="pre">progress.csv</span></code> files for each agent from the
+results directory and place them in a separate directory. Then, the results of all the agents can be condensed into
+a list of dataframes to use for plotting:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="gp">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dir_path</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">Path</span><span class="o">.</span><span class="n">home</span><span class="p">())</span> <span class="o">+</span> <span class="s2">&quot;/ray_results/experiments_csvs/&quot;</span>  <span class="c1"># path to directory containing the progress.csv files from the home directory</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">path_to_experiment_data</span> <span class="o">=</span> <span class="n">dir_path</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">experiment_ids</span> <span class="o">=</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">]</span>  <span class="c1"># experiment ids of agents to compare</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">experiment_dfs</span> <span class="o">=</span> <span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path_to_experiment_data</span> <span class="o">+</span> <span class="s2">&quot;experiment-&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">experiment_id</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;.csv&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">experiment_id</span> <span class="ow">in</span> <span class="n">experiment_ids</span><span class="p">]</span> <span class="c1"># name the progress.csv files according to their experiment id</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">experiment_dfs</span></code> list contains the dataframes for each agent. These dataframes can then be used to plot the evaluation
+metrics for each agent on a single plot:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="gp">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s2">&quot;whitegrid&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">evaluation_metric</span> <span class="o">=</span> <span class="s1">&#39;episode_reward_mean&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="nb">id</span><span class="p">,</span> <span class="n">experiment_df</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">experiment_dfs</span><span class="p">,</span> <span class="mi">8</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">experiment_df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;training_iteration&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">evaluation_metric</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Experiment </span><span class="si">{</span><span class="nb">id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="gp">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">metric_name</span> <span class="o">=</span> <span class="s2">&quot;Mean Reward&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">metric_name</span><span class="si">}</span><span class="s2"> for Varied Intersection Weights&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Iteration&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="go">&gt;&gt;&gt;ax.set_ylabel(metric_name, fontsize=12)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">labelsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">1.01</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper left&#39;</span><span class="p">,</span> <span class="n">borderaxespad</span><span class="o">=</span><span class="mf">0.</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>An example of training different agents with a fixed value for <span class="math notranslate nohighlight">\(\beta\)</span> and varying values for <span class="math notranslate nohighlight">\(\alpha\)</span> is shown below:</p>
+<a class="reference internal image-reference" href="_images/rect_pin_rewards_weights.png"><img alt="_images/rect_pin_rewards_weights.png" class="align-center" src="_images/rect_pin_rewards_weights.png" style="width: 100%;" /></a>
+<hr class="docutils" />
+</section>
+</section>
+<section id="web-app">
+<span id="id5"></span><h2>Web App<a class="headerlink" href="#web-app" title="Permalink to this headline"></a></h2>
+<p>The repository also contains a streamlit web app that can be used to:</p>
+<ul class="simple">
+<li><p>Train agents</p></li>
+<li><p>View training results</p></li>
+<li><p>View sample rollouts of trained agents</p></li>
+<li><p>Compare the performance of multiple agents</p></li>
+</ul>
+<p>The web app can be run by running the following command from the root directory of the repository:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>streamlit<span class="w"> </span>run<span class="w"> </span>web_app/home.py
+</pre></div>
+</div>
+<p>A brief description of the different pages is given in the table below:</p>
+<table class="colwidths-given docutils align-default" id="id10">
+<caption><span class="caption-text">Page description</span><a class="headerlink" href="#id10" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 29%" />
+<col style="width: 71%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Page</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Home</p></td>
+<td><p>The home page of the web app. From here, the user can navigate to the other pages of the web app.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Train agent</p></td>
+<td><p>This page allows you to train agents on specific environments.</p></td>
+</tr>
+<tr class="row-even"><td><p>Trained agents</p></td>
+<td><p>This page allows you to view the statistics of past trained agents on specific environments.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Comparison analysis</p></td>
+<td><p>This page allows you to compare the performance of different trained agents on specific environments.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="yellow-note admonition note">
+<p class="admonition-title">Note</p>
+<p>Currently the web can only be used for the <code class="xref py py-mod docutils literal notranslate"><span class="pre">agent.models.RectanglePinModel</span></code> model.</p>
+</div>
+<hr class="docutils" />
+<section id="train-agents">
+<span id="id6"></span><h3>Train agents<a class="headerlink" href="#train-agents" title="Permalink to this headline"></a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">Train</span> <span class="pre">agent</span></code> page allows you to train agents on specific environments. To train an agent, select the environment
+configurations and agent hyperparameters and click the <code class="docutils literal notranslate"><span class="pre">Run</span> <span class="pre">model!</span></code> button. The training progress can be viewed in the
+<code class="docutils literal notranslate"><span class="pre">Trained</span> <span class="pre">agents</span></code> page. The <code class="docutils literal notranslate"><span class="pre">Train</span> <span class="pre">agent</span></code> page is shown below:</p>
+<a class="reference internal image-reference" href="_images/web_app_train_agent.png"><img alt="_images/web_app_train_agent.png" class="align-center" src="_images/web_app_train_agent.png" style="width: 100%;" /></a>
+<p>By default, the results of the training will be saved in the <code class="docutils literal notranslate"><span class="pre">ray_results</span></code> directory.</p>
+<hr class="docutils" />
+</section>
+<section id="trained-agents">
+<span id="id7"></span><h3>Trained agents<a class="headerlink" href="#trained-agents" title="Permalink to this headline"></a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">Trained</span> <span class="pre">agents</span></code> page allows you to:</p>
+<ul class="simple">
+<li><p>View the training progress of past trained agents on specific environments</p></li>
+<li><p>View sample rollouts of past trained agents</p></li>
+<li><p>View the tensorboard logs of past trained agents</p></li>
+</ul>
+<p>To select a trained agent, select the timestap corresponding to the desired agent under the <code class="docutils literal notranslate"><span class="pre">List</span> <span class="pre">of</span> <span class="pre">previous</span>
+<span class="pre">experiments</span></code> dropdown. This then displays the input parameters for the selected environment, mean rewards for each
+iteration and a plot of the mean reward vs iteration. An example of the results for a trained agent shown below:</p>
+<a class="reference internal image-reference" href="../_figures/web_app_trained_agents.png"><img alt="../_figures/web_app_trained_agents.png" class="align-center" src="../_figures/web_app_trained_agents.png" style="width: 100%;" /></a>
+<p>A sample rollout of the selected agent (using the last saved checkpoint) can be viewed by clicking the <code class="docutils literal notranslate"><span class="pre">Display</span> <span class="pre">Policy</span> <span class="pre">Rollout</span></code>
+button.</p>
+<p>Lastly, the Tensorboard for the selected agent can be viewed by clicking the <code class="docutils literal notranslate"><span class="pre">Display</span> <span class="pre">Tensorboard</span></code> button:</p>
+<a class="reference internal image-reference" href="_images/web_app_trained_agents_tensorboard.png"><img alt="_images/web_app_trained_agents_tensorboard.png" class="align-center" src="_images/web_app_trained_agents_tensorboard.png" style="width: 100%;" /></a>
+<hr class="docutils" />
+</section>
+<section id="comparison-analysis">
+<span id="id8"></span><h3>Comparison analysis<a class="headerlink" href="#comparison-analysis" title="Permalink to this headline"></a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">Comparison</span> <span class="pre">analysis</span></code> page allows you to compare the performance of different trained agents. A dataframe of the
+previously trained agents is shown in the <code class="docutils literal notranslate"><span class="pre">Input</span> <span class="pre">parameters</span></code> table. To select the agents to compare, choose the
+agents from the <code class="docutils literal notranslate"><span class="pre">Select</span> <span class="pre">your</span> <span class="pre">desired</span> <span class="pre">models</span></code> dropdown. This displays the mean reward vs iteration plot for the selected agents
+as well as two additional plots for the normalized wirelength and normalized number of intersections vs iterations for the
+selected agents. An example of two identical agents with different reward weights is shown below:</p>
+<a class="reference internal image-reference" href="_images/web_app_comparison_analysis.png"><img alt="_images/web_app_comparison_analysis.png" class="align-center" src="_images/web_app_comparison_analysis.png" style="width: 100%;" /></a>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="installation.html" class="btn btn-neutral float-left" title="Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="api.html" class="btn btn-neutral float-right" title="API" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

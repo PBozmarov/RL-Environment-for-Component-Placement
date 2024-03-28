@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>environment.dummy_env_rectangular_pin.Component &mdash; RL-PCB 1 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="environment.dummy_env_rectangular_pin.DummyPlacementEnv" href="environment.dummy_env_rectangular_pin.DummyPlacementEnv.html" />
+    <link rel="prev" title="environment.dummy_env_rectangular_pin.sample_truncated_multinomial" href="environment.dummy_env_rectangular_pin.sample_truncated_multinomial.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">Usage</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">API</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="environment.html">environment</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="environment.dummy_env_rectangular.html">environment.dummy_env_rectangular</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="environment.dummy_env_rectangular_pin.html">environment.dummy_env_rectangular_pin</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="environment.dummy_env_rectangular_pin.sample_truncated_multinomial.html">environment.dummy_env_rectangular_pin.sample_truncated_multinomial</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">environment.dummy_env_rectangular_pin.Component</a></li>
+<li class="toctree-l4"><a class="reference internal" href="environment.dummy_env_rectangular_pin.DummyPlacementEnv.html">environment.dummy_env_rectangular_pin.DummyPlacementEnv</a></li>
+<li class="toctree-l4"><a class="reference internal" href="environment.dummy_env_rectangular_pin.Pin.html">environment.dummy_env_rectangular_pin.Pin</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="environment.dummy_env_rectangular_pin_spatial.html">environment.dummy_env_rectangular_pin_spatial</a></li>
+<li class="toctree-l3"><a class="reference internal" href="environment.dummy_env_square.html">environment.dummy_env_square</a></li>
+<li class="toctree-l3"><a class="reference internal" href="environment.wrapper_square.html">environment.wrapper_square</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="agent.html">agent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html">utils</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../contributors.html">Contributors</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">RL-PCB</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../api.html">API</a></li>
+          <li class="breadcrumb-item"><a href="environment.html">environment</a></li>
+          <li class="breadcrumb-item"><a href="environment.dummy_env_rectangular_pin.html">environment.dummy_env_rectangular_pin</a></li>
+      <li class="breadcrumb-item active">environment.dummy_env_rectangular_pin.Component</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/_autosummary/environment.dummy_env_rectangular_pin.Component.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="environment-dummy-env-rectangular-pin-component">
+<h1>environment.dummy_env_rectangular_pin.Component<a class="headerlink" href="#environment-dummy-env-rectangular-pin-component" title="Permalink to this headline"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin.Component">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">environment.dummy_env_rectangular_pin.</span></span><span class="sig-name descname"><span class="pre">Component</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">h</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comp_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pins</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../environment.html#environment.dummy_env_rectangular_pin.Pin" title="environment.dummy_env_rectangular_pin.Pin"><span class="pre">environment.dummy_env_rectangular_pin.Pin</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">placed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#environment.dummy_env_rectangular_pin.Component" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A component object to be placed on the grid.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin.Component.h">
+<span class="sig-name descname"><span class="pre">h</span></span><a class="headerlink" href="#environment.dummy_env_rectangular_pin.Component.h" title="Permalink to this definition"></a></dt>
+<dd><p>The height of the component.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin.Component.w">
+<span class="sig-name descname"><span class="pre">w</span></span><a class="headerlink" href="#environment.dummy_env_rectangular_pin.Component.w" title="Permalink to this definition"></a></dt>
+<dd><p>The width of the component.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin.Component.area">
+<span class="sig-name descname"><span class="pre">area</span></span><a class="headerlink" href="#environment.dummy_env_rectangular_pin.Component.area" title="Permalink to this definition"></a></dt>
+<dd><p>The area of the component.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin.Component.comp_id">
+<span class="sig-name descname"><span class="pre">comp_id</span></span><a class="headerlink" href="#environment.dummy_env_rectangular_pin.Component.comp_id" title="Permalink to this definition"></a></dt>
+<dd><p>The id of the component relative to other components.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin.Component.placed">
+<span class="sig-name descname"><span class="pre">placed</span></span><a class="headerlink" href="#environment.dummy_env_rectangular_pin.Component.placed" title="Permalink to this definition"></a></dt>
+<dd><p>Whether the component has been placed on the grid.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin.Component.position">
+<span class="sig-name descname"><span class="pre">position</span></span><a class="headerlink" href="#environment.dummy_env_rectangular_pin.Component.position" title="Permalink to this definition"></a></dt>
+<dd><p>The position of the component on the grid.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>Tuple[float, float]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin.Component.pins">
+<span class="sig-name descname"><span class="pre">pins</span></span><a class="headerlink" href="#environment.dummy_env_rectangular_pin.Component.pins" title="Permalink to this definition"></a></dt>
+<dd><p>The pins to be added to the component.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>List[<a class="reference internal" href="../environment.html#environment.dummy_env_rectangular_pin.Pin" title="environment.dummy_env_rectangular_pin.Pin">Pin</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin.Component.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">h</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comp_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pins</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../environment.html#environment.dummy_env_rectangular_pin.Pin" title="environment.dummy_env_rectangular_pin.Pin"><span class="pre">environment.dummy_env_rectangular_pin.Pin</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">placed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#environment.dummy_env_rectangular_pin.Component.__init__" title="Permalink to this definition"></a></dt>
+<dd><p>Initializes the component.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>h</strong> (<em>int</em>) – The height of the component.</p></li>
+<li><p><strong>w</strong> (<em>int</em>) – The width of the component.</p></li>
+<li><p><strong>comp_id</strong> (<em>int</em>) – The id of the component relative to other components.</p></li>
+<li><p><strong>pins</strong> (<em>List</em><em>[</em><a class="reference internal" href="../environment.html#environment.dummy_env_rectangular_pin.Pin" title="environment.dummy_env_rectangular_pin.Pin"><em>Pin</em></a><em>]</em>) – The pins to be added to the component.</p></li>
+<li><p><strong>placed</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether the component has been placed on the grid.
+Defaults to False.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<p class="rubric">Methods</p>
+<table class="autosummary longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#environment.dummy_env_rectangular_pin.Component.__init__" title="environment.dummy_env_rectangular_pin.Component.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(h, w, comp_id, pins[, placed])</p></td>
+<td><p>Initializes the component.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../environment.html#environment.dummy_env_rectangular_pin.Component.area_ratio" title="environment.dummy_env_rectangular_pin.Component.area_ratio"><code class="xref py py-obj docutils literal notranslate"><span class="pre">area_ratio</span></code></a>(grid_area)</p></td>
+<td><p>Returns the ratio of the component area to the grid area.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../environment.html#environment.dummy_env_rectangular_pin.Component.calculate_feature" title="environment.dummy_env_rectangular_pin.Component.calculate_feature"><code class="xref py py-obj docutils literal notranslate"><span class="pre">calculate_feature</span></code></a>(grid_area)</p></td>
+<td><p>Calculates the feature vector for the component.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../environment.html#environment.dummy_env_rectangular_pin.Component.place_component" title="environment.dummy_env_rectangular_pin.Component.place_component"><code class="xref py py-obj docutils literal notranslate"><span class="pre">place_component</span></code></a>(orientation, x, y)</p></td>
+<td><p>Places the component on the grid.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin.Component.area_ratio">
+<span class="sig-name descname"><span class="pre">area_ratio</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grid_area</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#environment.dummy_env_rectangular_pin.Component.area_ratio" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the ratio of the component area to the grid area.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>grid_area</strong> (<em>int</em>) – Total area of the grid</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The ratio of the component area to the grid area</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin.Component.calculate_feature">
+<span class="sig-name descname"><span class="pre">calculate_feature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grid_area</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">numpy.ndarray</span></span></span><a class="headerlink" href="#environment.dummy_env_rectangular_pin.Component.calculate_feature" title="Permalink to this definition"></a></dt>
+<dd><p>Calculates the feature vector for the component.</p>
+<blockquote>
+<div><dl class="simple">
+<dt>The feature vector contains:</dt><dd><ul class="simple">
+<li><p>the height of the component</p></li>
+<li><p>the width of the component</p></li>
+<li><p>the x position of the component</p></li>
+<li><p>the y position of the component</p></li>
+<li><p>the ratio of the component area to the grid area</p></li>
+</ul>
+</dd>
+</dl>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>grid_area</strong> (<em>int</em>) – The area of the grid</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The feature vector for the component</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin.Component.place_component">
+<span class="sig-name descname"><span class="pre">place_component</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">orientation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#environment.dummy_env_rectangular_pin.Component.place_component" title="Permalink to this definition"></a></dt>
+<dd><p>Places the component on the grid.</p>
+<blockquote>
+<div><p>Places the component on the grid by updating its position and
+by updating the relative and absolute positions of the pins
+based on the orientation of the component.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>orientation</strong> (<em>int</em>) – The orientation of the component. 0 is the original
+orientation, 1 is 90 degrees clockwise, 2 is 180 degrees
+clockwise, and 3 is 270 degrees clockwise.</p></li>
+<li><p><strong>x</strong> (<em>int</em>) – The x position of the top-left corner of the component.</p></li>
+<li><p><strong>y</strong> (<em>int</em>) – The y position of the top-left corner of the component.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="environment.dummy_env_rectangular_pin.sample_truncated_multinomial.html" class="btn btn-neutral float-left" title="environment.dummy_env_rectangular_pin.sample_truncated_multinomial" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="environment.dummy_env_rectangular_pin.DummyPlacementEnv.html" class="btn btn-neutral float-right" title="environment.dummy_env_rectangular_pin.DummyPlacementEnv" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

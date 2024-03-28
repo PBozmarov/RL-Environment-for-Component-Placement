@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>utils.environment package &mdash; RL-PCB 1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html">
+            
+              <img src="_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributors.html">Contributors</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">RL-PCB</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">utils.environment package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/utils.environment.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="utils-environment-package">
+<h1>utils.environment package<a class="headerlink" href="#utils-environment-package" title="Permalink to this headline"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline"></a></h2>
+</section>
+<section id="module-utils.environment.env_wrappers">
+<span id="utils-environment-env-wrappers-module"></span><h2>utils.environment.env_wrappers module<a class="headerlink" href="#module-utils.environment.env_wrappers" title="Permalink to this headline"></a></h2>
+<p>Environment wrappers for the rectangular and square environments.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="utils.environment.env_wrappers.FlatteningActionMaskObservationWrapperRect">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">utils.environment.env_wrappers.</span></span><span class="sig-name descname"><span class="pre">FlatteningActionMaskObservationWrapperRect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.environment.env_wrappers.FlatteningActionMaskObservationWrapperRect" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">gym.core.ObservationWrapper</span></code></p>
+<p>A Gym environment observation wrapper for the rectangular
+environment.</p>
+<p>This wrapper flattens the action mask in the observation space.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils.environment.env_wrappers.FlatteningActionMaskObservationWrapperRect.observation_space">
+<span class="sig-name descname"><span class="pre">observation_space</span></span><a class="headerlink" href="#utils.environment.env_wrappers.FlatteningActionMaskObservationWrapperRect.observation_space" title="Permalink to this definition"></a></dt>
+<dd><p>The observation space.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>gym.spaces.Dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.environment.env_wrappers.FlatteningActionMaskObservationWrapperRect.observation">
+<span class="sig-name descname"><span class="pre">observation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">observation</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.environment.env_wrappers.FlatteningActionMaskObservationWrapperRect.observation" title="Permalink to this definition"></a></dt>
+<dd><p>Overrides the default method of the superclass to
+flatten the “action_mask” space in the observation dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>observation</strong> (<em>dict</em>) – The original observation dictionary.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>The modified observation dictionary with the “action_mask” space</dt><dd><p>flattened.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="utils.environment.env_wrappers.FlatteningActionMaskObservationWrapperSquare">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">utils.environment.env_wrappers.</span></span><span class="sig-name descname"><span class="pre">FlatteningActionMaskObservationWrapperSquare</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.environment.env_wrappers.FlatteningActionMaskObservationWrapperSquare" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">gym.core.ObservationWrapper</span></code></p>
+<p>A Gym environment observation wrapper for the square
+environment.</p>
+<p>This wrapper flattens the action mask in the observation space.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils.environment.env_wrappers.FlatteningActionMaskObservationWrapperSquare.observation_space">
+<span class="sig-name descname"><span class="pre">observation_space</span></span><a class="headerlink" href="#utils.environment.env_wrappers.FlatteningActionMaskObservationWrapperSquare.observation_space" title="Permalink to this definition"></a></dt>
+<dd><p>The observation space.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>gym.spaces.Dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.environment.env_wrappers.FlatteningActionMaskObservationWrapperSquare.observation">
+<span class="sig-name descname"><span class="pre">observation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">observation</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.environment.env_wrappers.FlatteningActionMaskObservationWrapperSquare.observation" title="Permalink to this definition"></a></dt>
+<dd><p>Overrides the default method of the superclass to
+flatten the “action_mask” space in the observation dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>observation</strong> (<em>dict</em>) – The original observation dictionary.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>The modified observation dictionary with the “action_mask” space</dt><dd><p>flattened.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="utils.environment.env_wrappers.FlatteningActionWrapperRect">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">utils.environment.env_wrappers.</span></span><span class="sig-name descname"><span class="pre">FlatteningActionWrapperRect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.environment.env_wrappers.FlatteningActionWrapperRect" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">gym.core.ActionWrapper</span></code></p>
+<p>A Gym environment action wrapper for the rectangular
+environment.</p>
+<p>Action wrapper which flattens a tuple of discrete actions into
+a single discrete action for the rectangular environment.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils.environment.env_wrappers.FlatteningActionWrapperRect.factor_sizes">
+<span class="sig-name descname"><span class="pre">factor_sizes</span></span><a class="headerlink" href="#utils.environment.env_wrappers.FlatteningActionWrapperRect.factor_sizes" title="Permalink to this definition"></a></dt>
+<dd><p>The list of the sizes of the discrete action spaces.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils.environment.env_wrappers.FlatteningActionWrapperRect.action_space">
+<span class="sig-name descname"><span class="pre">action_space</span></span><a class="headerlink" href="#utils.environment.env_wrappers.FlatteningActionWrapperRect.action_space" title="Permalink to this definition"></a></dt>
+<dd><p>The discrete action space.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>gym.spaces.Discrete</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.environment.env_wrappers.FlatteningActionWrapperRect.action">
+<span class="sig-name descname"><span class="pre">action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">action</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.environment.env_wrappers.FlatteningActionWrapperRect.action" title="Permalink to this definition"></a></dt>
+<dd><p>Overrides the default method of the superclass to translate a discrete action
+into a tuple of discrete actions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>action</strong> (<em>int</em>) – The discrete action.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A list of discrete actions.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.environment.env_wrappers.FlatteningActionWrapperRect.validate_action">
+<span class="sig-name descname"><span class="pre">validate_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">action</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.environment.env_wrappers.FlatteningActionWrapperRect.validate_action" title="Permalink to this definition"></a></dt>
+<dd><p>Overrides the default method of the superclass to
+validate the action.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>action</strong> (<em>int</em>) – The action to be validated.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if the action is valid, False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="utils.environment.env_wrappers.FlatteningActionWrapperSquare">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">utils.environment.env_wrappers.</span></span><span class="sig-name descname"><span class="pre">FlatteningActionWrapperSquare</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.environment.env_wrappers.FlatteningActionWrapperSquare" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">gym.core.ActionWrapper</span></code></p>
+<p>A Gym environment action wrapper for the square
+environment.</p>
+<p>Action wrapper which flattens a tuple of discrete actions into
+a single discrete action for the square environment.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils.environment.env_wrappers.FlatteningActionWrapperSquare.factor_sizes">
+<span class="sig-name descname"><span class="pre">factor_sizes</span></span><a class="headerlink" href="#utils.environment.env_wrappers.FlatteningActionWrapperSquare.factor_sizes" title="Permalink to this definition"></a></dt>
+<dd><p>The list of the sizes of the discrete action spaces.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils.environment.env_wrappers.FlatteningActionWrapperSquare.action_space">
+<span class="sig-name descname"><span class="pre">action_space</span></span><a class="headerlink" href="#utils.environment.env_wrappers.FlatteningActionWrapperSquare.action_space" title="Permalink to this definition"></a></dt>
+<dd><p>The discrete action space.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>gym.spaces.Discrete</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.environment.env_wrappers.FlatteningActionWrapperSquare.action">
+<span class="sig-name descname"><span class="pre">action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">action</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.environment.env_wrappers.FlatteningActionWrapperSquare.action" title="Permalink to this definition"></a></dt>
+<dd><p>Overrides the default method of the superclass to translate a discrete action
+into a tuple of discrete actions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>action</strong> (<em>int</em>) – The discrete action.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A list of discrete actions.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.environment.env_wrappers.FlatteningActionWrapperSquare.validate_action">
+<span class="sig-name descname"><span class="pre">validate_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">action</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.environment.env_wrappers.FlatteningActionWrapperSquare.validate_action" title="Permalink to this definition"></a></dt>
+<dd><p>Overrides the default method of the superclass to
+validate the action.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>action</strong> (<em>int</em>) – The action to be validated.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if the action is valid, False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-utils.environment">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-utils.environment" title="Permalink to this headline"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

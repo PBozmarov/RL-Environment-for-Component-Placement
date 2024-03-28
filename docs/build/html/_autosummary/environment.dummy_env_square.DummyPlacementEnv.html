@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>environment.dummy_env_square.DummyPlacementEnv &mdash; RL-PCB 1 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="environment.wrapper_square" href="environment.wrapper_square.html" />
+    <link rel="prev" title="environment.dummy_env_square" href="environment.dummy_env_square.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">Usage</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">API</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="environment.html">environment</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="environment.dummy_env_rectangular.html">environment.dummy_env_rectangular</a></li>
+<li class="toctree-l3"><a class="reference internal" href="environment.dummy_env_rectangular_pin.html">environment.dummy_env_rectangular_pin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="environment.dummy_env_rectangular_pin_spatial.html">environment.dummy_env_rectangular_pin_spatial</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="environment.dummy_env_square.html">environment.dummy_env_square</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">environment.dummy_env_square.DummyPlacementEnv</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="environment.wrapper_square.html">environment.wrapper_square</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="agent.html">agent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html">utils</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../contributors.html">Contributors</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">RL-PCB</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../api.html">API</a></li>
+          <li class="breadcrumb-item"><a href="environment.html">environment</a></li>
+          <li class="breadcrumb-item"><a href="environment.dummy_env_square.html">environment.dummy_env_square</a></li>
+      <li class="breadcrumb-item active">environment.dummy_env_square.DummyPlacementEnv</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/_autosummary/environment.dummy_env_square.DummyPlacementEnv.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="environment-dummy-env-square-dummyplacementenv">
+<h1>environment.dummy_env_square.DummyPlacementEnv<a class="headerlink" href="#environment-dummy-env-square-dummyplacementenv" title="Permalink to this headline"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="environment.dummy_env_square.DummyPlacementEnv">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">environment.dummy_env_square.</span></span><span class="sig-name descname"><span class="pre">DummyPlacementEnv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">height</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">component_n</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#environment.dummy_env_square.DummyPlacementEnv" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">gym.core.Env</span></code></p>
+<p>A NumPy-based dummy environment for component placement.</p>
+<p>The environment is a grid of size height x width. The agent can place
+components on the grid, where the components are square n x n arrays. At
+each time step, the agent places a component on the grid by specifying the
+position of the top-left corner of the component on the grid, where the goal
+is to maximize the number of components placed on the grid.</p>
+<p>The observation space consists of the “grid” and “action_mask”. The reward
+for the environment is 1 for each time step where a component is placed
+on the grid, and 0 otherwise. The environment is terminated when
+it is not possible to place any more components on the grid.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="environment.dummy_env_square.DummyPlacementEnv.height">
+<span class="sig-name descname"><span class="pre">height</span></span><a class="headerlink" href="#environment.dummy_env_square.DummyPlacementEnv.height" title="Permalink to this definition"></a></dt>
+<dd><p>Height of the grid.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="environment.dummy_env_square.DummyPlacementEnv.width">
+<span class="sig-name descname"><span class="pre">width</span></span><a class="headerlink" href="#environment.dummy_env_square.DummyPlacementEnv.width" title="Permalink to this definition"></a></dt>
+<dd><p>Width of the grid.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="environment.dummy_env_square.DummyPlacementEnv.component_n">
+<span class="sig-name descname"><span class="pre">component_n</span></span><a class="headerlink" href="#environment.dummy_env_square.DummyPlacementEnv.component_n" title="Permalink to this definition"></a></dt>
+<dd><p>Size of square component.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="environment.dummy_env_square.DummyPlacementEnv.action_space">
+<span class="sig-name descname"><span class="pre">action_space</span></span><a class="headerlink" href="#environment.dummy_env_square.DummyPlacementEnv.action_space" title="Permalink to this definition"></a></dt>
+<dd><p>The action space which is a grid of size height x width.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>gym.spaces.Tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="environment.dummy_env_square.DummyPlacementEnv.observation_space">
+<span class="sig-name descname"><span class="pre">observation_space</span></span><a class="headerlink" href="#environment.dummy_env_square.DummyPlacementEnv.observation_space" title="Permalink to this definition"></a></dt>
+<dd><p>The observation space which is a dictionary with two keys: “grid” and “action_mask”:
+- The grid is a NumPy array of shape (height, width) contining 1 for occupied cells and 0 for unoccupied cells.
+- The action mask is a NumPy array of shape (height, width) contining 1 for valid actions and 0 for invalid actions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>gym.spaces.Dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In this case observation space fully reflects the state of the environment.</p>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="environment.dummy_env_square.DummyPlacementEnv.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">height</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">component_n</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#environment.dummy_env_square.DummyPlacementEnv.__init__" title="Permalink to this definition"></a></dt>
+<dd><p>Insantiates a new DummyPlacementEnv.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>height</strong> (<em>int</em>) – Height of the grid.</p></li>
+<li><p><strong>width</strong> (<em>int</em>) – Width of the grid.</p></li>
+<li><p><strong>component_n</strong> (<em>int</em>) – Size of square component.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If the grid size is less than or equal to 0 or if the component size is greater than the grid size.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p class="rubric">Methods</p>
+<table class="autosummary longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#environment.dummy_env_square.DummyPlacementEnv.__init__" title="environment.dummy_env_square.DummyPlacementEnv.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(height, width, component_n)</p></td>
+<td><p>Insantiates a new DummyPlacementEnv.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">close</span></code>()</p></td>
+<td><p>Override close in your subclass to perform any necessary cleanup.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../environment.html#environment.dummy_env_square.DummyPlacementEnv.compute_if_done" title="environment.dummy_env_square.DummyPlacementEnv.compute_if_done"><code class="xref py py-obj docutils literal notranslate"><span class="pre">compute_if_done</span></code></a>()</p></td>
+<td><p>Computes whether the episode is terminated.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">render</span></code>([mode])</p></td>
+<td><p>Renders the environment.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../environment.html#environment.dummy_env_square.DummyPlacementEnv.reset" title="environment.dummy_env_square.DummyPlacementEnv.reset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reset</span></code></a>([verbose])</p></td>
+<td><p>Resets the environment.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">seed</span></code>([seed])</p></td>
+<td><p>Sets the seed for this env's random number generator(s).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../environment.html#environment.dummy_env_square.DummyPlacementEnv.step" title="environment.dummy_env_square.DummyPlacementEnv.step"><code class="xref py py-obj docutils literal notranslate"><span class="pre">step</span></code></a>(action[, verbose])</p></td>
+<td><p>Steps the environment.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../environment.html#environment.dummy_env_square.DummyPlacementEnv.update_action_mask" title="environment.dummy_env_square.DummyPlacementEnv.update_action_mask"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update_action_mask</span></code></a>(x, y)</p></td>
+<td><p>Updates the action mask with an action.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../environment.html#environment.dummy_env_square.DummyPlacementEnv.update_action_mask_diagonal" title="environment.dummy_env_square.DummyPlacementEnv.update_action_mask_diagonal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update_action_mask_diagonal</span></code></a>(x, y)</p></td>
+<td><p>Updates the action mask diagonally (upwards and left) with</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../environment.html#environment.dummy_env_square.DummyPlacementEnv.update_action_mask_horizontal" title="environment.dummy_env_square.DummyPlacementEnv.update_action_mask_horizontal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update_action_mask_horizontal</span></code></a>(x, y)</p></td>
+<td><p>Updates the action mask horizontally (left) with an action.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../environment.html#environment.dummy_env_square.DummyPlacementEnv.update_action_mask_vertical" title="environment.dummy_env_square.DummyPlacementEnv.update_action_mask_vertical"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update_action_mask_vertical</span></code></a>(x, y)</p></td>
+<td><p>Updates the action mask vertically (upwards) with an action.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../environment.html#environment.dummy_env_square.DummyPlacementEnv.update_grid" title="environment.dummy_env_square.DummyPlacementEnv.update_grid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update_grid</span></code></a>(x, y)</p></td>
+<td><p>Updates the grid with an action.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../environment.html#environment.dummy_env_square.DummyPlacementEnv.validate_action" title="environment.dummy_env_square.DummyPlacementEnv.validate_action"><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate_action</span></code></a>(x, y)</p></td>
+<td><p>Validates an action.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Attributes</p>
+<table class="autosummary longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">metadata</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">np_random</span></code></p></td>
+<td><p>Initializes the np_random field if not done already.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">reward_range</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">spec</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">unwrapped</span></code></p></td>
+<td><p>Completely unwrap this env.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="environment.dummy_env_square.DummyPlacementEnv.compute_if_done">
+<span class="sig-name descname"><span class="pre">compute_if_done</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#environment.dummy_env_square.DummyPlacementEnv.compute_if_done" title="Permalink to this definition"></a></dt>
+<dd><p>Computes whether the episode is terminated.</p>
+<p>The episode is terminated when it is not possible to place any more
+components on the grid.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Whether the episode is terminated.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="environment.dummy_env_square.DummyPlacementEnv.reset">
+<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#environment.dummy_env_square.DummyPlacementEnv.reset" title="Permalink to this definition"></a></dt>
+<dd><p>Resets the environment.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>verbose</strong> (<em>bool</em>) – Whether to print the grid and action mask after the
+environment is reset.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The initial observation.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>observation (dict)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="environment.dummy_env_square.DummyPlacementEnv.step">
+<span class="sig-name descname"><span class="pre">step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">action</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">bool</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#environment.dummy_env_square.DummyPlacementEnv.step" title="Permalink to this definition"></a></dt>
+<dd><p>Steps the environment.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>action</strong> (<em>tuple</em>) – A tuple of (x,y) for the action to take.</p></li>
+<li><p><strong>verbose</strong> (<em>bool</em>) – Whether to print the grid and action mask after the
+action is taken.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The observation after the action is taken.
+reward (float): The reward for taking the action.
+done (bool): Whether the episode is terminated.
+info (dict): Additional information.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>observation (dict)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="environment.dummy_env_square.DummyPlacementEnv.update_action_mask">
+<span class="sig-name descname"><span class="pre">update_action_mask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#environment.dummy_env_square.DummyPlacementEnv.update_action_mask" title="Permalink to this definition"></a></dt>
+<dd><p>Updates the action mask with an action.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>int</em>) – x coordinate of the action.</p></li>
+<li><p><strong>y</strong> (<em>int</em>) – y coordinate of the action.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="environment.dummy_env_square.DummyPlacementEnv.update_action_mask_diagonal">
+<span class="sig-name descname"><span class="pre">update_action_mask_diagonal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#environment.dummy_env_square.DummyPlacementEnv.update_action_mask_diagonal" title="Permalink to this definition"></a></dt>
+<dd><dl class="simple">
+<dt>Updates the action mask diagonally (upwards and left) with</dt><dd><p>an action.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>int</em>) – x coordinate of the action.</p></li>
+<li><p><strong>y</strong> (<em>int</em>) – y coordinate of the action.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="environment.dummy_env_square.DummyPlacementEnv.update_action_mask_horizontal">
+<span class="sig-name descname"><span class="pre">update_action_mask_horizontal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#environment.dummy_env_square.DummyPlacementEnv.update_action_mask_horizontal" title="Permalink to this definition"></a></dt>
+<dd><p>Updates the action mask horizontally (left) with an action.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>int</em>) – x coordinate of the action.</p></li>
+<li><p><strong>y</strong> (<em>int</em>) – y coordinate of the action.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="environment.dummy_env_square.DummyPlacementEnv.update_action_mask_vertical">
+<span class="sig-name descname"><span class="pre">update_action_mask_vertical</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#environment.dummy_env_square.DummyPlacementEnv.update_action_mask_vertical" title="Permalink to this definition"></a></dt>
+<dd><p>Updates the action mask vertically (upwards) with an action.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>int</em>) – x coordinate of the action.</p></li>
+<li><p><strong>y</strong> (<em>int</em>) – y coordinate of the action.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="environment.dummy_env_square.DummyPlacementEnv.update_grid">
+<span class="sig-name descname"><span class="pre">update_grid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#environment.dummy_env_square.DummyPlacementEnv.update_grid" title="Permalink to this definition"></a></dt>
+<dd><p>Updates the grid with an action.</p>
+<p>The action is to place a component on the cell (x, y),
+where the tuple represents the top-left corner of the component.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>int</em>) – x coordinate of the action.</p></li>
+<li><p><strong>y</strong> (<em>int</em>) – y coordinate of the action.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="environment.dummy_env_square.DummyPlacementEnv.validate_action">
+<span class="sig-name descname"><span class="pre">validate_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#environment.dummy_env_square.DummyPlacementEnv.validate_action" title="Permalink to this definition"></a></dt>
+<dd><p>Validates an action.</p>
+<p>The action is invalid if it would cause the component to go out of
+bounds or if any of cells that the component would occupy are already
+occupied. Note that the action mask both checks if the action is out
+of bounds and if any of the cells are already occupied.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>int</em>) – x coordinate of the action.</p></li>
+<li><p><strong>y</strong> (<em>int</em>) – y coordinate of the action.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Whether the action is valid.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="environment.dummy_env_square.html" class="btn btn-neutral float-left" title="environment.dummy_env_square" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="environment.wrapper_square.html" class="btn btn-neutral float-right" title="environment.wrapper_square" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>utils.agent.factorized_action_distributions.FactorisedActionDistributionOrientation &mdash; RL-PCB 1 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="utils.agent.utils" href="utils.agent.utils.html" />
+    <link rel="prev" title="utils.agent.factorized_action_distributions.FactorisedActionDistributionCoordinates" href="utils.agent.factorized_action_distributions.FactorisedActionDistributionCoordinates.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">Usage</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="environment.html">environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="agent.html">agent</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="utils.html">utils</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="utils.agent.html">utils.agent</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="utils.agent.callbacks.html">utils.agent.callbacks</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="utils.agent.factorized_action_distributions.html">utils.agent.factorized_action_distributions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="utils.agent.utils.html">utils.agent.utils</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="utils.environment.html">utils.environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="utils.visualization.html">utils.visualization</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../contributors.html">Contributors</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">RL-PCB</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../api.html">API</a></li>
+          <li class="breadcrumb-item"><a href="utils.html">utils</a></li>
+          <li class="breadcrumb-item"><a href="utils.agent.html">utils.agent</a></li>
+          <li class="breadcrumb-item"><a href="utils.agent.factorized_action_distributions.html">utils.agent.factorized_action_distributions</a></li>
+      <li class="breadcrumb-item active">utils.agent.factorized_action_distributions.FactorisedActionDistributionOrientation</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/_autosummary/utils.agent.factorized_action_distributions.FactorisedActionDistributionOrientation.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="utils-agent-factorized-action-distributions-factorisedactiondistributionorientation">
+<h1>utils.agent.factorized_action_distributions.FactorisedActionDistributionOrientation<a class="headerlink" href="#utils-agent-factorized-action-distributions-factorisedactiondistributionorientation" title="Permalink to this headline"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="utils.agent.factorized_action_distributions.FactorisedActionDistributionOrientation">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">utils.agent.factorized_action_distributions.</span></span><span class="sig-name descname"><span class="pre">FactorisedActionDistributionOrientation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.agent.factorized_action_distributions.FactorisedActionDistributionOrientation" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ray.rllib.models.tf.tf_action_dist.TFActionDistribution</span></code></p>
+<p>Factorised action distribution for discrete action spaces.</p>
+<dl class="simple">
+<dt>The factorization of the action space used is:</dt><dd><p><span class="math notranslate nohighlight">\(p(\text{orientation}, x, y) = p(\text{orientation})p(x \mid \text{orientation}) p (y \mid \text{orientation}, x)\)</span></p>
+</dd>
+</dl>
+<p>The distribution takes as input the concatenation of the encoding and the action mask as
+well as the model used to produce the inputs. For sampling, the encoding is used as input
+to the orientation model which produces logits for the orientation. These logits are masked
+using the action mask and then used to sample an orientation, where the distribution being
+sampled from is a categorical distribution over the orientations.</p>
+<p>The sampled orientation is then one-hot encoded and concatenated with the encoding
+as input to the x model. The x model produces logits for the x coordinate. These logits
+are then masked using the given orientation and used to sample an x coordinate, where the
+distribution being sampled from is a categorical distribution over the x coordinates.</p>
+<p>The sampled x coordinate is then normalized and concatenated with the encoding
+and the sampled orientation as input to the y model. The y model produces logits for the
+y coordinate. These logits are then masked using the given orientation and x coordinate
+and used to sample a y coordinate, where the distribution being sampled from is a
+categorical distribution over the y coordinates.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>The sampled x coordinate is normalized by the number of columns in the grid</dt><dd><p>to be in the range [0, 1] wen being used as input to the y model.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.agent.factorized_action_distributions.FactorisedActionDistributionOrientation.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.agent.factorized_action_distributions.FactorisedActionDistributionOrientation.__init__" title="Permalink to this definition"></a></dt>
+<dd><p>Initialise the distribution.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>inputs</strong> (<em>TensorType</em>) – Input vector to sample from.
+The input vector is the concatenation of the encoding and the action mask.</p></li>
+<li><p><strong>model</strong> (<em>ModelV2</em>) – Reference to model producing the inputs.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<p class="rubric">Methods</p>
+<table class="autosummary longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#utils.agent.factorized_action_distributions.FactorisedActionDistributionOrientation.__init__" title="utils.agent.factorized_action_distributions.FactorisedActionDistributionOrientation.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(inputs, model)</p></td>
+<td><p>Initialise the distribution.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../utils.agent.html#utils.agent.factorized_action_distributions.FactorisedActionDistributionOrientation.deterministic_sample" title="utils.agent.factorized_action_distributions.FactorisedActionDistributionOrientation.deterministic_sample"><code class="xref py py-obj docutils literal notranslate"><span class="pre">deterministic_sample</span></code></a>()</p></td>
+<td><p>Sample an action from the distribution by taking the argmax of the logits.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../utils.agent.html#utils.agent.factorized_action_distributions.FactorisedActionDistributionOrientation.entropy" title="utils.agent.factorized_action_distributions.FactorisedActionDistributionOrientation.entropy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">entropy</span></code></a>()</p></td>
+<td><p>Calculate the entropy of the distribution.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../utils.agent.html#utils.agent.factorized_action_distributions.FactorisedActionDistributionOrientation.kl" title="utils.agent.factorized_action_distributions.FactorisedActionDistributionOrientation.kl"><code class="xref py py-obj docutils literal notranslate"><span class="pre">kl</span></code></a>(other)</p></td>
+<td><p>Calculate the KL divergence between this distribution and another.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../utils.agent.html#utils.agent.factorized_action_distributions.FactorisedActionDistributionOrientation.logp" title="utils.agent.factorized_action_distributions.FactorisedActionDistributionOrientation.logp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">logp</span></code></a>(actions)</p></td>
+<td><p>Calculate the log probability of the given actions.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">multi_entropy</span></code>()</p></td>
+<td><p>The entropy of the action distribution.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">multi_kl</span></code>(other)</p></td>
+<td><p>The KL-divergence between two action distributions.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../utils.agent.html#utils.agent.factorized_action_distributions.FactorisedActionDistributionOrientation.required_model_output_shape" title="utils.agent.factorized_action_distributions.FactorisedActionDistributionOrientation.required_model_output_shape"><code class="xref py py-obj docutils literal notranslate"><span class="pre">required_model_output_shape</span></code></a>(action_space, ...)</p></td>
+<td><p>Calculate the required model output shape for the given action space.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">sample</span></code>()</p></td>
+<td><p>Draw a sample from the action distribution.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">sampled_action_logp</span></code>()</p></td>
+<td><p>Returns the log probability of the sampled action.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../utils.agent.html#utils.agent.factorized_action_distributions.FactorisedActionDistributionOrientation.unpack_actions" title="utils.agent.factorized_action_distributions.FactorisedActionDistributionOrientation.unpack_actions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unpack_actions</span></code></a>(actions)</p></td>
+<td><p>Unpack the given actions into orientation, x, and y.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Attributes</p>
+<table class="autosummary longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../utils.agent.html#utils.agent.factorized_action_distributions.FactorisedActionDistributionOrientation.model_output_shape" title="utils.agent.factorized_action_distributions.FactorisedActionDistributionOrientation.model_output_shape"><code class="xref py py-obj docutils literal notranslate"><span class="pre">model_output_shape</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.agent.factorized_action_distributions.FactorisedActionDistributionOrientation.deterministic_sample">
+<span class="sig-name descname"><span class="pre">deterministic_sample</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span></span></span><a class="headerlink" href="#utils.agent.factorized_action_distributions.FactorisedActionDistributionOrientation.deterministic_sample" title="Permalink to this definition"></a></dt>
+<dd><p>Sample an action from the distribution by taking
+the argmax of the logits.</p>
+<p>Sample using the orientation, x and y models.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Action.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>TensorType</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.agent.factorized_action_distributions.FactorisedActionDistributionOrientation.entropy">
+<span class="sig-name descname"><span class="pre">entropy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#utils.agent.factorized_action_distributions.FactorisedActionDistributionOrientation.entropy" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate the entropy of the distribution.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Entropy of the distribution.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>TensorType</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.agent.factorized_action_distributions.FactorisedActionDistributionOrientation.kl">
+<span class="sig-name descname"><span class="pre">kl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ray.rllib.models.action_dist.ActionDistribution</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.agent.factorized_action_distributions.FactorisedActionDistributionOrientation.kl" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate the KL divergence between this distribution and another.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>other</strong> (<em>ActionDistribution</em>) – Other distribution.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>KL divergence between this distribution and the other.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>TensorType</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.agent.factorized_action_distributions.FactorisedActionDistributionOrientation.logp">
+<span class="sig-name descname"><span class="pre">logp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">actions</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.array</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tf.Tensor</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">torch.Tensor</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.array</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tf.Tensor</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">torch.Tensor</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.array</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tf.Tensor</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">torch.Tensor</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.array</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tf.Tensor</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">torch.Tensor</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#utils.agent.factorized_action_distributions.FactorisedActionDistributionOrientation.logp" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate the log probability of the given actions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>actions</strong> (<em>Union</em><em>[</em><em>TensorType</em><em>, </em><em>Tuple</em><em>[</em><em>TensorType</em><em>, </em><em>TensorType</em><em>]</em><em>]</em>) – Actions.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Log probability of the given actions.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>TensorType</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.agent.factorized_action_distributions.FactorisedActionDistributionOrientation.required_model_output_shape">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">required_model_output_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">action_space</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">gym.spaces.space.Space</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_config</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#utils.agent.factorized_action_distributions.FactorisedActionDistributionOrientation.required_model_output_shape" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate the required model output shape for the given action space.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>action_space</strong> (<em>gym.Space</em>) – Action space.</p></li>
+<li><p><strong>model_config</strong> (<em>dict</em>) – Model configuration.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>required model output shape</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils.agent.factorized_action_distributions.FactorisedActionDistributionOrientation.unpack_actions">
+<span class="sig-name descname"><span class="pre">unpack_actions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">actions</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.array</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tf.Tensor</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">torch.Tensor</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.array</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tf.Tensor</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">torch.Tensor</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.array</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tf.Tensor</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">torch.Tensor</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.array</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tf.Tensor</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">torch.Tensor</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.array</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tf.Tensor</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">torch.Tensor</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#utils.agent.factorized_action_distributions.FactorisedActionDistributionOrientation.unpack_actions" title="Permalink to this definition"></a></dt>
+<dd><p>Unpack the given actions into orientation, x, and y.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>actions</strong> (<em>Union</em><em>[</em><em>TensorType</em><em>, </em><em>Tuple</em><em>[</em><em>TensorType</em><em>, </em><em>TensorType</em><em>]</em><em>]</em>) – Actions.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Orientation, x, and y.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Tuple[TensorType, TensorType]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="utils.agent.factorized_action_distributions.FactorisedActionDistributionCoordinates.html" class="btn btn-neutral float-left" title="utils.agent.factorized_action_distributions.FactorisedActionDistributionCoordinates" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="utils.agent.utils.html" class="btn btn-neutral float-right" title="utils.agent.utils" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

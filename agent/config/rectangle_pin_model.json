@@ -1,0 +1,45 @@
+{   
+    "env_config" : {
+        "type" : "rectangle_pin",
+        "height" : 10,
+        "width" : 10,
+        "net_distribution" : 9,
+        "pin_spread" : 9,
+        "min_component_w" : 2,
+        "max_component_w" : 2,
+        "min_component_h" : 2,
+        "max_component_h" : 2,
+        "max_num_components" : 5,
+        "min_num_components" : 5,
+        "min_num_nets" : 3,
+        "max_num_nets" : 3,
+        "max_num_pins_per_net" : 6,
+        "min_num_pins_per_net" : 6,
+        "reward_type" : "centroid",
+        "reward_beam_width" : 2,
+        "weight_wirelength" : 0.5,
+        "weight_num_intersections" : 0.5
+    },
+    "model" : {
+        "custom_model_config" : {
+            "height" : 10,
+            "width" : 10,
+            "max_num_components" : 5,
+            "min_num_components" : 5,
+            "max_component_w" : 2,
+            "max_component_h" : 2,
+            "max_num_pins_per_component" : 4,
+            "max_num_nets" : 3,
+            "component_feature_vector_width" : 5,
+            "pin_feature_vector_width" : 8,
+            "num_conv_blocks" : 2,
+            "num_conv_filters" : 3,
+            "conv_kernel_size" : 3,
+            "activation" : "relu",
+            "max_pool" : false,
+            "max_pool_kernel_size" : 2,
+            "component_feature_encoding_dimension" : 16,
+            "pin_feature_encoding_dimension" : 16
+        }
+    }
+}

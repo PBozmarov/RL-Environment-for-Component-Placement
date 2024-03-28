@@ -1,0 +1,1603 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv &mdash; RL-PCB 1 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="environment.dummy_env_rectangular_pin_spatial.Pin" href="environment.dummy_env_rectangular_pin_spatial.Pin.html" />
+    <link rel="prev" title="environment.dummy_env_rectangular_pin_spatial.Component" href="environment.dummy_env_rectangular_pin_spatial.Component.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">Usage</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">API</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="environment.html">environment</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="environment.dummy_env_rectangular.html">environment.dummy_env_rectangular</a></li>
+<li class="toctree-l3"><a class="reference internal" href="environment.dummy_env_rectangular_pin.html">environment.dummy_env_rectangular_pin</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="environment.dummy_env_rectangular_pin_spatial.html">environment.dummy_env_rectangular_pin_spatial</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="environment.dummy_env_rectangular_pin_spatial.sample_truncated_multinomial.html">environment.dummy_env_rectangular_pin_spatial.sample_truncated_multinomial</a></li>
+<li class="toctree-l4"><a class="reference internal" href="environment.dummy_env_rectangular_pin_spatial.Component.html">environment.dummy_env_rectangular_pin_spatial.Component</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv</a></li>
+<li class="toctree-l4"><a class="reference internal" href="environment.dummy_env_rectangular_pin_spatial.Pin.html">environment.dummy_env_rectangular_pin_spatial.Pin</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="environment.dummy_env_square.html">environment.dummy_env_square</a></li>
+<li class="toctree-l3"><a class="reference internal" href="environment.wrapper_square.html">environment.wrapper_square</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="agent.html">agent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html">utils</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../contributors.html">Contributors</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">RL-PCB</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../api.html">API</a></li>
+          <li class="breadcrumb-item"><a href="environment.html">environment</a></li>
+          <li class="breadcrumb-item"><a href="environment.dummy_env_rectangular_pin_spatial.html">environment.dummy_env_rectangular_pin_spatial</a></li>
+      <li class="breadcrumb-item active">environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/_autosummary/environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="environment-dummy-env-rectangular-pin-spatial-dummyplacementenv">
+<h1>environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv<a class="headerlink" href="#environment-dummy-env-rectangular-pin-spatial-dummyplacementenv" title="Permalink to this headline"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">environment.dummy_env_rectangular_pin_spatial.</span></span><span class="sig-name descname"><span class="pre">DummyPlacementEnv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">height</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">net_distribution</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pin_spread</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_component_w</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_component_w</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_component_h</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_component_h</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_num_components</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_num_components</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_num_nets</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_num_nets</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_num_pins_per_net</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_num_pins_per_net</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reward_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'both'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reward_beam_width</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight_wirelength</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight_num_intersections</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">gym.core.Env</span></code></p>
+<p>A NumPy-based dummy environment for component placement.</p>
+<p>The environment is a grid of size height x width. The agent can place
+components on the grid, where the components are rectangular arrays with
+dimensions between min_component_h x min_component_w and have pins on them.
+The goal is to place the components on the grid such that routing can be done
+as efficiently as possible.</p>
+<p>At reset, a list of components is generated, where the dimensions of each
+component is in the range [min_component_h, max_component_h] and the number
+of components is in the [min_num_components, max_num_components]. The generated
+components also have pins on them which belong to “nets” specifying which pins
+are connected to each other. The agent takes actions by placing components, in
+in the order that they are generated, on the grid by specifying the orientation
+and position of the top-left corner of the component on the grid.</p>
+<dl class="simple">
+<dt>The observation space consists of the “grid”, “pin_grid”, “component_grid”,</dt><dd><p>“action_mask”, “all_components_feature”, “all_pins_num_feature”,
+“all_pins_cat_feature”, “placement_mask”.</p>
+</dd>
+</dl>
+<p>The reward used is sparse and incentivizes the agent to place components on the
+grid in such a way that routing can be done as efficiently as possible:</p>
+<blockquote>
+<div><ul class="simple">
+<li><dl class="simple">
+<dt>If the action taken is valid:</dt><dd><ul>
+<li><dl class="simple">
+<dt>The reward is 0 if the component is not the</dt><dd><p>last component to be placed on the grid.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>If the component is the last component to be placed on the grid,</dt><dd><p>the reward is calculated by first routing the nets in a way which
+approximates the optimal routing. The reward is then calculated
+by finding the number of intersections and the total wirelength
+of the routing and using these as a penalty.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>If the action taken is invalid, then a lower bound for the</dt><dd><p>worst possible reward is returned. This is to encourage the agent
+to place all components on the grid.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+<p>The environment is terminated when either all the components have been placed
+or the action taken is invalid.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.height">
+<span class="sig-name descname"><span class="pre">height</span></span><a class="headerlink" href="#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.height" title="Permalink to this definition"></a></dt>
+<dd><p>The height of the grid.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.width">
+<span class="sig-name descname"><span class="pre">width</span></span><a class="headerlink" href="#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.width" title="Permalink to this definition"></a></dt>
+<dd><p>The width of the grid.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.area">
+<span class="sig-name descname"><span class="pre">area</span></span><a class="headerlink" href="#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.area" title="Permalink to this definition"></a></dt>
+<dd><p>The area of the grid.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.net_distribution">
+<span class="sig-name descname"><span class="pre">net_distribution</span></span><a class="headerlink" href="#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.net_distribution" title="Permalink to this definition"></a></dt>
+<dd><p>An integer between 0 and 9 which determines
+the distribution of pins across nets. A higher value means that
+the pins are more evenly distributed across nets.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.pin_spread">
+<span class="sig-name descname"><span class="pre">pin_spread</span></span><a class="headerlink" href="#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.pin_spread" title="Permalink to this definition"></a></dt>
+<dd><p>An integer between 0 and 9 which determines the
+spread of pins on the components. A higher value means that the
+pins are more evenly distributed across the components.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.min_component_h">
+<span class="sig-name descname"><span class="pre">min_component_h</span></span><a class="headerlink" href="#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.min_component_h" title="Permalink to this definition"></a></dt>
+<dd><p>The minimum height of a component.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.max_component_h">
+<span class="sig-name descname"><span class="pre">max_component_h</span></span><a class="headerlink" href="#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.max_component_h" title="Permalink to this definition"></a></dt>
+<dd><p>The maximum height of a component.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.min_component_w">
+<span class="sig-name descname"><span class="pre">min_component_w</span></span><a class="headerlink" href="#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.min_component_w" title="Permalink to this definition"></a></dt>
+<dd><p>The minimum width of a component.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.max_component_w">
+<span class="sig-name descname"><span class="pre">max_component_w</span></span><a class="headerlink" href="#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.max_component_w" title="Permalink to this definition"></a></dt>
+<dd><p>The maximum width of a component.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.min_num_components">
+<span class="sig-name descname"><span class="pre">min_num_components</span></span><a class="headerlink" href="#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.min_num_components" title="Permalink to this definition"></a></dt>
+<dd><p>The minimum number of components.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.max_num_components">
+<span class="sig-name descname"><span class="pre">max_num_components</span></span><a class="headerlink" href="#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.max_num_components" title="Permalink to this definition"></a></dt>
+<dd><p>The maximum number of components.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.min_num_nets">
+<span class="sig-name descname"><span class="pre">min_num_nets</span></span><a class="headerlink" href="#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.min_num_nets" title="Permalink to this definition"></a></dt>
+<dd><p>The minimum number of nets.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.max_num_nets">
+<span class="sig-name descname"><span class="pre">max_num_nets</span></span><a class="headerlink" href="#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.max_num_nets" title="Permalink to this definition"></a></dt>
+<dd><p>The maximum number of nets.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.min_num_pins_per_net">
+<span class="sig-name descname"><span class="pre">min_num_pins_per_net</span></span><a class="headerlink" href="#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.min_num_pins_per_net" title="Permalink to this definition"></a></dt>
+<dd><p>The minimum number of pins per net.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.max_num_pins_per_net">
+<span class="sig-name descname"><span class="pre">max_num_pins_per_net</span></span><a class="headerlink" href="#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.max_num_pins_per_net" title="Permalink to this definition"></a></dt>
+<dd><p>The maximum number of pins per net.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.max_num_pins_per_component">
+<span class="sig-name descname"><span class="pre">max_num_pins_per_component</span></span><a class="headerlink" href="#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.max_num_pins_per_component" title="Permalink to this definition"></a></dt>
+<dd><p>The maximum number of pins per component.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.action_space">
+<span class="sig-name descname"><span class="pre">action_space</span></span><a class="headerlink" href="#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.action_space" title="Permalink to this definition"></a></dt>
+<dd><p>The space of all possible actions
+which are tuples of three integers (orientation, x, y), where orientation
+is 0 for placing the component in its original orientation and 1, 2, 3
+for placing the component rotated 90, 180, 270 degrees respectively, and
+x and y are the coordinates of the top-left corner of the component.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>gym.spaces.Tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.pins">
+<span class="sig-name descname"><span class="pre">pins</span></span><a class="headerlink" href="#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.pins" title="Permalink to this definition"></a></dt>
+<dd><p>A list of all the pins in the environment.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>List[<a class="reference internal" href="../environment.html#environment.dummy_env_rectangular_pin_spatial.Pin" title="environment.dummy_env_rectangular_pin_spatial.Pin">Pin</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.reward_type">
+<span class="sig-name descname"><span class="pre">reward_type</span></span><a class="headerlink" href="#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.reward_type" title="Permalink to this definition"></a></dt>
+<dd><p>the type of routing to use in the reward function.
+Must be one of “beam”, “centroid”, “both”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.reward_beam_width">
+<span class="sig-name descname"><span class="pre">reward_beam_width</span></span><a class="headerlink" href="#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.reward_beam_width" title="Permalink to this definition"></a></dt>
+<dd><p>The beam width to use in the beam routing.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.weight_wirelength">
+<span class="sig-name descname"><span class="pre">weight_wirelength</span></span><a class="headerlink" href="#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.weight_wirelength" title="Permalink to this definition"></a></dt>
+<dd><p>The weight to use for the wirelength penalty.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.weight_num_intersections">
+<span class="sig-name descname"><span class="pre">weight_num_intersections</span></span><a class="headerlink" href="#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.weight_num_intersections" title="Permalink to this definition"></a></dt>
+<dd><p>The weight to use for the number of
+intersections penalty.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.max_num_intersections">
+<span class="sig-name descname"><span class="pre">max_num_intersections</span></span><a class="headerlink" href="#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.max_num_intersections" title="Permalink to this definition"></a></dt>
+<dd><p>The maximum number of intersections possible to
+use for the number of intersections penalty in the worst case scenario.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.max_wirelength">
+<span class="sig-name descname"><span class="pre">max_wirelength</span></span><a class="headerlink" href="#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.max_wirelength" title="Permalink to this definition"></a></dt>
+<dd><p>The maximum wirelength possible to use for the wirelength
+penalty in the worst case scenario.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.observation_space">
+<span class="sig-name descname"><span class="pre">observation_space</span></span><a class="headerlink" href="#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.observation_space" title="Permalink to this definition"></a></dt>
+<dd><p>The space of all possible observations
+which is a dictionary with keys: “grid”, “pin_grid”, “component_grid”,
+“action_mask”, “all_components_feature”, “all_pins_num_feature”,</p>
+<blockquote>
+<div><p>“all_pins_cat_feature”, “placement_mask”.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>gym.spaces.Dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.components">
+<span class="sig-name descname"><span class="pre">components</span></span><a class="headerlink" href="#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.components" title="Permalink to this definition"></a></dt>
+<dd><p>A list of the components in the environment.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>List[<a class="reference internal" href="../environment.html#environment.dummy_env_rectangular_pin_spatial.Component" title="environment.dummy_env_rectangular_pin_spatial.Component">Component</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.grid">
+<span class="sig-name descname"><span class="pre">grid</span></span><a class="headerlink" href="#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.grid" title="Permalink to this definition"></a></dt>
+<dd><p>a NumPy array of shape (height, width) containing 1 for
+occupied cells and 0 for empty cells.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.action_mask">
+<span class="sig-name descname"><span class="pre">action_mask</span></span><a class="headerlink" href="#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.action_mask" title="Permalink to this definition"></a></dt>
+<dd><p>A NumPy array of shape (2, height, width) containing 1
+for valid actions and 0 for invalid actions, where the first dimension
+corresponds to the two possible orientations of the component.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.pin_grid">
+<span class="sig-name descname"><span class="pre">pin_grid</span></span><a class="headerlink" href="#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.pin_grid" title="Permalink to this definition"></a></dt>
+<dd><p>A NumPy array of shape (height, width, num_nets + 1). The
+array contains the current state of the pin grid. Each cell contains an integer
+0 or 1, where 0 means the cell is empty and 1 means the cell is occupied.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.component_grid">
+<span class="sig-name descname"><span class="pre">component_grid</span></span><a class="headerlink" href="#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.component_grid" title="Permalink to this definition"></a></dt>
+<dd><p>A NumPy array of shape (max_num_components, height, width, num_nets + 1).
+The array contains a 3d representation of the components and distribution of pins on
+the components across differnet nets.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.placement_mask">
+<span class="sig-name descname"><span class="pre">placement_mask</span></span><a class="headerlink" href="#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.placement_mask" title="Permalink to this definition"></a></dt>
+<dd><p>A NumPy array of shape (max_num_components, ) containing 0
+for components that don’t exist in the instance, 1 for components that are
+to be placed, 2 for a component that has been placed and 3 for the current
+component being placed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.all_components_feature">
+<span class="sig-name descname"><span class="pre">all_components_feature</span></span><a class="headerlink" href="#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.all_components_feature" title="Permalink to this definition"></a></dt>
+<dd><p>A NumPy array of shape (max_num_components, 5)
+containing the features of all components. The features for each component are:
+component_h, component_w, component_x, component_y, and component_area_ratio.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.all_pins_num_feature">
+<span class="sig-name descname"><span class="pre">all_pins_num_feature</span></span><a class="headerlink" href="#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.all_pins_num_feature" title="Permalink to this definition"></a></dt>
+<dd><p>A NumPy array of shape (max_num_components, max_num_pins_per_component, 4)
+containing the numerical features of all pins. The features for each pin are:
+relative_x, relative_y, absolute_x, absolute_y, net_id, component_id.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.all_pins_cat_feature">
+<span class="sig-name descname"><span class="pre">all_pins_cat_feature</span></span><a class="headerlink" href="#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.all_pins_cat_feature" title="Permalink to this definition"></a></dt>
+<dd><p>A NumPy array of shape (max_num_components, max_num_pins_per_component, 1)
+containing the categorical features of all pins. The feature for each pin is the pin_id.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">height</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">net_distribution</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pin_spread</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_component_w</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_component_w</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_component_h</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_component_h</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_num_components</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_num_components</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_num_nets</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_num_nets</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_num_pins_per_net</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_num_pins_per_net</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reward_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'both'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reward_beam_width</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight_wirelength</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight_num_intersections</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.__init__" title="Permalink to this definition"></a></dt>
+<dd><p>Instantiates a new DummyPlacementEnv.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>height</strong> (<em>int</em>) – The height of the grid.</p></li>
+<li><p><strong>width</strong> (<em>int</em>) – The width of the grid.</p></li>
+<li><p><strong>net_distribution</strong> (<em>int</em>) – The distribution of the number of nets.</p></li>
+<li><p><strong>pin_spread</strong> (<em>int</em>) – The spread of the number of pins per net.</p></li>
+<li><p><strong>min_component_w</strong> (<em>int</em>) – The minimum width of a component.</p></li>
+<li><p><strong>max_component_w</strong> (<em>int</em>) – The maximum width of a component.</p></li>
+<li><p><strong>min_component_h</strong> (<em>int</em>) – The minimum height of a component.</p></li>
+<li><p><strong>max_component_h</strong> (<em>int</em>) – The maximum height of a component.</p></li>
+<li><p><strong>max_num_components</strong> (<em>int</em>) – The maximum number of components.</p></li>
+<li><p><strong>min_num_components</strong> (<em>int</em>) – The minimum number of components.</p></li>
+<li><p><strong>min_num_nets</strong> (<em>int</em>) – The minimum number of nets.</p></li>
+<li><p><strong>max_num_nets</strong> (<em>int</em>) – The maximum number of nets.</p></li>
+<li><p><strong>max_num_pins_per_net</strong> (<em>int</em>) – The maximum number of pins per net.</p></li>
+<li><p><strong>min_num_pins_per_net</strong> (<em>int</em><em>, </em><em>optional</em>) – The minimum number of pins per net.
+Defaults to 2.</p></li>
+<li><p><strong>reward_type</strong> (<em>str</em><em>, </em><em>optional</em>) – The type of routing to use in the reward function.
+Must be one of “beam”, “centroid”, “both”. Defaults to “both”.</p></li>
+<li><p><strong>reward_beam_width</strong> (<em>int</em><em>, </em><em>optional</em>) – The beam width to use in the beam routing.
+Defaults to 2.</p></li>
+<li><p><strong>weight_wirelength</strong> (<em>float</em><em>, </em><em>optional</em>) – The weight to use for the wirelength penalty.
+Defaults to 0.5.</p></li>
+<li><p><strong>weight_num_intersections</strong> (<em>float</em><em>, </em><em>optional</em>) – The weight to use for the number of
+intersections penalty. Defaults to 0.5.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<p class="rubric">Methods</p>
+<table class="autosummary longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.__init__" title="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(height, width, net_distribution, ...)</p></td>
+<td><p>Instantiates a new DummyPlacementEnv.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../environment.html#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.allocate_pins_to_components" title="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.allocate_pins_to_components"><code class="xref py py-obj docutils literal notranslate"><span class="pre">allocate_pins_to_components</span></code></a>()</p></td>
+<td><p>Allocates pins to components.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../environment.html#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.allocate_pins_to_components_for_net" title="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.allocate_pins_to_components_for_net"><code class="xref py py-obj docutils literal notranslate"><span class="pre">allocate_pins_to_components_for_net</span></code></a>(net, ...)</p></td>
+<td><p>Allocates pins to components for a given net.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../environment.html#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.allocate_pins_to_nets" title="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.allocate_pins_to_nets"><code class="xref py py-obj docutils literal notranslate"><span class="pre">allocate_pins_to_nets</span></code></a>()</p></td>
+<td><p>Allocates pins to nets.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../environment.html#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.beam_search" title="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.beam_search"><code class="xref py py-obj docutils literal notranslate"><span class="pre">beam_search</span></code></a>(start_point, points[, beam_width])</p></td>
+<td><p>Find shortest path that visits all points using beam search.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../environment.html#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.calculate_upper_bound_intersections" title="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.calculate_upper_bound_intersections"><code class="xref py py-obj docutils literal notranslate"><span class="pre">calculate_upper_bound_intersections</span></code></a>()</p></td>
+<td><p>Finds the upper bound on the number of intersections.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../environment.html#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.calculate_upper_bound_wirelength" title="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.calculate_upper_bound_wirelength"><code class="xref py py-obj docutils literal notranslate"><span class="pre">calculate_upper_bound_wirelength</span></code></a>()</p></td>
+<td><p>Finds the upper bound on the total wirelength.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">close</span></code>()</p></td>
+<td><p>Override close in your subclass to perform any necessary cleanup.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../environment.html#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.compute_action_mask" title="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.compute_action_mask"><code class="xref py py-obj docutils literal notranslate"><span class="pre">compute_action_mask</span></code></a>(component)</p></td>
+<td><p>Compute the action mask for the given component.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../environment.html#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.compute_action_mask_orientation" title="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.compute_action_mask_orientation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">compute_action_mask_orientation</span></code></a>(component, ...)</p></td>
+<td><p>Compute the action mask for the given component and orientation.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../environment.html#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.compute_if_done" title="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.compute_if_done"><code class="xref py py-obj docutils literal notranslate"><span class="pre">compute_if_done</span></code></a>()</p></td>
+<td><p>Computes whether the episode is terminated.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../environment.html#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.draw_components" title="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.draw_components"><code class="xref py py-obj docutils literal notranslate"><span class="pre">draw_components</span></code></a>()</p></td>
+<td><p>Create component grid from the current grid and component placements.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../environment.html#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.draw_pins" title="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.draw_pins"><code class="xref py py-obj docutils literal notranslate"><span class="pre">draw_pins</span></code></a>()</p></td>
+<td><p>Create pin grid from the current grid and pin placements.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../environment.html#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.euclidean_distance" title="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.euclidean_distance"><code class="xref py py-obj docutils literal notranslate"><span class="pre">euclidean_distance</span></code></a>(point1, point2)</p></td>
+<td><p>Calculate the euclidean distance between two points.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../environment.html#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.find_num_intersection" title="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.find_num_intersection"><code class="xref py py-obj docutils literal notranslate"><span class="pre">find_num_intersection</span></code></a>(route)</p></td>
+<td><p>Finds the number of intersections for a given route.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../environment.html#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.find_reward" title="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.find_reward"><code class="xref py py-obj docutils literal notranslate"><span class="pre">find_reward</span></code></a>()</p></td>
+<td><p>Finds the reward for an episode.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../environment.html#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.find_wirelength" title="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.find_wirelength"><code class="xref py py-obj docutils literal notranslate"><span class="pre">find_wirelength</span></code></a>(route)</p></td>
+<td><p>Finds the total wirelength of a route.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../environment.html#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.generate_components" title="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.generate_components"><code class="xref py py-obj docutils literal notranslate"><span class="pre">generate_components</span></code></a>()</p></td>
+<td><p>Generates a list of components to be placed on the grid.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../environment.html#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.generate_instances" title="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.generate_instances"><code class="xref py py-obj docutils literal notranslate"><span class="pre">generate_instances</span></code></a>()</p></td>
+<td><p>Generates an instance of components to be placed on the grid.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../environment.html#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.generate_pins" title="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.generate_pins"><code class="xref py py-obj docutils literal notranslate"><span class="pre">generate_pins</span></code></a>()</p></td>
+<td><p>Generates a list of pins to be placed on the grid.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../environment.html#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.get_all_relative_coordinates_in_component" title="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.get_all_relative_coordinates_in_component"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_all_relative_coordinates_in_component</span></code></a>(...)</p></td>
+<td><p>Gets all relative coordinates (relative to the component's top-left corner) in a component.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../environment.html#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.get_centroid" title="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.get_centroid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_centroid</span></code></a>(points)</p></td>
+<td><p>Returns the centroid of a set of points.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../environment.html#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.get_net_pin_positions" title="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.get_net_pin_positions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_net_pin_positions</span></code></a>()</p></td>
+<td><p>Returns a dictionary of net ids and the positions of their pins.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../environment.html#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.is_intersect" title="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.is_intersect"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_intersect</span></code></a>(line1, line2)</p></td>
+<td><p>Checks if two line segments intersect.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../environment.html#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.lowest_num_intersections" title="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.lowest_num_intersections"><code class="xref py py-obj docutils literal notranslate"><span class="pre">lowest_num_intersections</span></code></a>(routes)</p></td>
+<td><p>Finds the lowest number of intersections from a list of routes.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../environment.html#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.pin_outlier" title="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.pin_outlier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pin_outlier</span></code></a>(pin_positions)</p></td>
+<td><p>Returns the pin that is furthest away from the centroid of a set of pins.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../environment.html#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.place_pins_on_component" title="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.place_pins_on_component"><code class="xref py py-obj docutils literal notranslate"><span class="pre">place_pins_on_component</span></code></a>(component)</p></td>
+<td><p>Place pins on a component.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">render</span></code>([mode])</p></td>
+<td><p>Renders the environment.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../environment.html#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.reset" title="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.reset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reset</span></code></a>([verbose])</p></td>
+<td><p>Resets the environment.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../environment.html#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.route_pins_beam_search" title="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.route_pins_beam_search"><code class="xref py py-obj docutils literal notranslate"><span class="pre">route_pins_beam_search</span></code></a>([beam_width])</p></td>
+<td><p>Routes pins using beam search.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../environment.html#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.route_pins_centroid" title="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.route_pins_centroid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">route_pins_centroid</span></code></a>()</p></td>
+<td><p>Routes pins to the centroid of the pins for each net.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../environment.html#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.rows_cols_to_mask" title="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.rows_cols_to_mask"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rows_cols_to_mask</span></code></a>(component, orientation)</p></td>
+<td><p>Gets the rows and cols to mask for a given orientation and component.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../environment.html#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.sample_num_components" title="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.sample_num_components"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sample_num_components</span></code></a>()</p></td>
+<td><p>Samples the number of components to be placed on the grid.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../environment.html#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.sample_num_nets" title="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.sample_num_nets"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sample_num_nets</span></code></a>()</p></td>
+<td><p>Samples the number of nets to be placed on the grid.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../environment.html#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.sample_total_num_pins" title="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.sample_total_num_pins"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sample_total_num_pins</span></code></a>()</p></td>
+<td><p>Samples the total number of pins to be placed on the grid.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">seed</span></code>([seed])</p></td>
+<td><p>Sets the seed for this env's random number generator(s).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../environment.html#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.step" title="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.step"><code class="xref py py-obj docutils literal notranslate"><span class="pre">step</span></code></a>(action[, verbose])</p></td>
+<td><p>Steps the environment.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../environment.html#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.update_all_components_feature" title="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.update_all_components_feature"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update_all_components_feature</span></code></a>(components)</p></td>
+<td><p>Updates the all_components_feature given a list of components.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../environment.html#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.update_all_pins_feature" title="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.update_all_pins_feature"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update_all_pins_feature</span></code></a>(components)</p></td>
+<td><p>Updates the all_pins_feature given a list of components with pins placed on them.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../environment.html#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.update_grid" title="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.update_grid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update_grid</span></code></a>(component, orientation, x, y)</p></td>
+<td><p>Updates the grid for the given component and action.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../environment.html#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.update_placement_mask" title="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.update_placement_mask"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update_placement_mask</span></code></a>(component)</p></td>
+<td><p>Updates the placement_mask array for a component that has been placed.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../environment.html#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.validate_action" title="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.validate_action"><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate_action</span></code></a>(orientation, x, y)</p></td>
+<td><p>Validates the given action.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Attributes</p>
+<table class="autosummary longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">metadata</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">np_random</span></code></p></td>
+<td><p>Initializes the np_random field if not done already.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">reward_range</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">spec</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">unwrapped</span></code></p></td>
+<td><p>Completely unwrap this env.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.allocate_pins_to_components">
+<span class="sig-name descname"><span class="pre">allocate_pins_to_components</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.allocate_pins_to_components" title="Permalink to this definition"></a></dt>
+<dd><p>Allocates pins to components.</p>
+<dl class="simple">
+<dt>The number of components that each net will cover is calculated by:</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>First finding the maximum between <span class="math notranslate nohighlight">\(1\)</span> and</dt><dd><p><span class="math notranslate nohighlight">\(\frac{(\text{pin_spread} + 1) * \text{num_components}}{10}\)</span>.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Then finding the minimum between the value calculated above and</dt><dd><p><span class="math notranslate nohighlight">\(\text{num_components}\)</span>.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<p>The pin spread controls how evenly the pins are distributed across the
+components. A higher pin spread means that the pins are more evenly
+distributed across the components. Note that the min and max operations
+are used to ensure that the number of components that each net will
+cover is at least 1 and at most the total number of components.</p>
+<p>This value is then used to allocate pins to components by looping through
+all nets and using the allocate_pins_to_components_for_net method.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.allocate_pins_to_components_for_net">
+<span class="sig-name descname"><span class="pre">allocate_pins_to_components_for_net</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">net</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">components_available_space</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_components_w_pins</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.allocate_pins_to_components_for_net" title="Permalink to this definition"></a></dt>
+<dd><p>Allocates pins to components for a given net.</p>
+<p>The algorithm to allocate pins to components for a given net is as
+follows:</p>
+<blockquote>
+<div><ul class="simple">
+<li><dl class="simple">
+<dt>Order the components_available_space dictionary by number of</dt><dd><p>available spaces for pins.</p>
+</dd>
+</dl>
+</li>
+<li><p>Update num_components_w_pins to ensure that all pins are assigned.</p></li>
+<li><dl class="simple">
+<dt>Loop through all components and assign pins to components until</dt><dd><p>all pins are assigned.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>net</strong> (<em>int</em>) – The net to allocate pins to.</p></li>
+<li><p><strong>components_available_space</strong> (<em>Dict</em><em>[</em><em>int</em><em>, </em><em>int</em><em>]</em>) – A dictionary of
+components and the number of available spaces for pins.</p></li>
+<li><p><strong>num_components_w_pins</strong> (<em>int</em>) – The number of components to
+allocate pins to.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>A dictionary of components and the number of</dt><dd><p>available spaces for pins.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Dict[int, int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.allocate_pins_to_nets">
+<span class="sig-name descname"><span class="pre">allocate_pins_to_nets</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.allocate_pins_to_nets" title="Permalink to this definition"></a></dt>
+<dd><p>Allocates pins to nets.</p>
+<p>Allocates pins to nets by first sampling unnormalized probabilities
+for the probabilitiy of a pin being allocated to a net. This sampling is
+done by sampling from a normal distribution with mean <span class="math notranslate nohighlight">\(\frac{1}{\text{num_nets}}\)</span>
+and standard deviation <span class="math notranslate nohighlight">\(\frac{1}{\text{net_distribution} + 1}\)</span>, where the
+addition of 1 to net_distribution is to ensure the sampled values are
+positive. The sampled values are then normalized using softmax to get
+the probabilities of allocating a pin to each net.</p>
+<p>Then the number of pins allocated to each net is sampled using a
+multinomial distribution with the probabilities calculated above and
+the total number of pins to be allocated to nets. This determines the
+allocation of pins to nets.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.beam_search">
+<span class="sig-name descname"><span class="pre">beam_search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start_point</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">points</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beam_width</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.beam_search" title="Permalink to this definition"></a></dt>
+<dd><p>Find shortest path that visits all points using beam search.</p>
+<p>The algorithm works as follows:</p>
+<blockquote>
+<div><ul class="simple">
+<li><dl class="simple">
+<dt>For the given start point, find the beam_width number of points</dt><dd><p>with the smallest distance to the start point.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>For each of these beam_width points, find the beam_width number of</dt><dd><p>points with the smallest distance to that point.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Repeat this process until all points have been visited and</dt><dd><p>return the shortest path from all the beam_width number of paths.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+<p>This algorithm is implemented using a priority queue which stores
+the total distance of the path, the path itself, and the set of points
+that have been visited. The priority queue is sorted by the total distance
+of the path.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>start_point</strong> (<em>Tuple</em><em>[</em><em>int</em><em>, </em><em>int</em><em>]</em>) – The starting point for the algorithm.</p></li>
+<li><p><strong>points</strong> (<em>List</em><em>[</em><em>Tuple</em><em>[</em><em>int</em><em>, </em><em>int</em><em>]</em><em>]</em>) – The points to visit (not including start_point).
+beam_width (int): The beam width. Defaults to 2.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The shortest path that visits all points.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>List[Tuple[int, int]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.calculate_upper_bound_intersections">
+<span class="sig-name descname"><span class="pre">calculate_upper_bound_intersections</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.calculate_upper_bound_intersections" title="Permalink to this definition"></a></dt>
+<dd><p>Finds the upper bound on the number of intersections.</p>
+<p>To find the upper bound, we assume that the worst case scenario is
+when we are using the centroid routing method and each
+net has the same centroid.</p>
+<p>Suppose we have max_num_pins_per_net is <span class="math notranslate nohighlight">\(n\)</span>, and max_num_nets is
+<span class="math notranslate nohighlight">\(m\)</span>. For the first net, each (pin, centroid) pair will intersect
+with each (pin, centroid) pair for every other net, giving <span class="math notranslate nohighlight">\(n^2\)</span>
+intersections for the first net. Overall, there will be:</p>
+<div class="math notranslate nohighlight">
+\[(m-1) * n^2\]</div>
+<p>intersections for the first net. For each subsequent net, we
+repeat the same method, except that we have one less net to
+intersect with. Therefore, the total number of intersections for
+the :math:<a href="#id1"><span class="problematic" id="id2">`</span></a>i`th net is:</p>
+<div class="math notranslate nohighlight">
+\[(m-i) * n^2\]</div>
+<p>This gives the following expression for the upper bound on the
+number of intersections:</p>
+<div class="math notranslate nohighlight">
+\[\sum_{i=1}^m n^2(m-i)\]</div>
+<p>which simplifies to:</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{2} n^2 m (m-1)\]</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>upper bound on number of intersections</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.calculate_upper_bound_wirelength">
+<span class="sig-name descname"><span class="pre">calculate_upper_bound_wirelength</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.calculate_upper_bound_wirelength" title="Permalink to this definition"></a></dt>
+<dd><p>Finds the upper bound on the total wirelength.</p>
+<p>To find the upper bound on the total wirelength for a given route,
+we assume that the worst case scenario is when the pins for each
+net are evenly placed in opposite corners of the grid, with pins
+being able to be superimposed on top of each other and with the routing
+being done using the “centroid” method.</p>
+<p>Assuming that we have a maximum of n nets and each net has a maximum
+of m pins, the upper bound on the total wirelength is given by:</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{2} \sqrt{h^2 + w^2} m*n\]</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Upper bound on wirelength.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.compute_action_mask">
+<span class="sig-name descname"><span class="pre">compute_action_mask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">component</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../environment.html#environment.dummy_env_rectangular_pin_spatial.Component" title="environment.dummy_env_rectangular_pin_spatial.Component"><span class="pre">environment.dummy_env_rectangular_pin_spatial.Component</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.compute_action_mask" title="Permalink to this definition"></a></dt>
+<dd><p>Compute the action mask for the given component.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>component</strong> (<a class="reference internal" href="../environment.html#environment.dummy_env_rectangular_pin_spatial.Component" title="environment.dummy_env_rectangular_pin_spatial.Component"><em>Component</em></a>) – The component to place on the grid.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The action mask for the given component.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>action_mask (np.ndarray)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.compute_action_mask_orientation">
+<span class="sig-name descname"><span class="pre">compute_action_mask_orientation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">component</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../environment.html#environment.dummy_env_rectangular_pin_spatial.Component" title="environment.dummy_env_rectangular_pin_spatial.Component"><span class="pre">environment.dummy_env_rectangular_pin_spatial.Component</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">orientation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">numpy.ndarray</span></span></span><a class="headerlink" href="#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.compute_action_mask_orientation" title="Permalink to this definition"></a></dt>
+<dd><p>Compute the action mask for the given component and orientation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>component</strong> (<a class="reference internal" href="../environment.html#environment.dummy_env_rectangular_pin_spatial.Component" title="environment.dummy_env_rectangular_pin_spatial.Component"><em>Component</em></a>) – The component to place on the grid.</p></li>
+<li><p><strong>orientation</strong> (<em>int</em>) – The orientation of the component (0, 1, 2, or 3),
+where 0 means the component is placed in its original (a x b)
+orientation and 1 means the component is rotated 90 degrees (b x a),
+2 means the component is rotated 180 degrees (a x b), and 3 means the
+component is rotated 270 degrees (b x a).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>The component’s action mask</dt><dd><p>for the given orientation.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>action_mask_orientation (np.ndarray)</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>Exception</strong> – If the orientation is not 0, 1, 2, or 3.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.compute_if_done">
+<span class="sig-name descname"><span class="pre">compute_if_done</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.compute_if_done" title="Permalink to this definition"></a></dt>
+<dd><p>Computes whether the episode is terminated.</p>
+<p>The episode is terminated when it is not possible to place the
+next component on the grid or all components have been placed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Whether the episode is terminated.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.draw_components">
+<span class="sig-name descname"><span class="pre">draw_components</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.draw_components" title="Permalink to this definition"></a></dt>
+<dd><p>Create component grid from the current grid and component placements.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.draw_pins">
+<span class="sig-name descname"><span class="pre">draw_pins</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.draw_pins" title="Permalink to this definition"></a></dt>
+<dd><p>Create pin grid from the current grid and pin placements.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.euclidean_distance">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">euclidean_distance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">point1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">point2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.euclidean_distance" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate the euclidean distance between two points.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>point1</strong> (<em>Tuple</em><em>[</em><em>int</em><em>, </em><em>int</em><em>]</em>) – The first point.</p></li>
+<li><p><strong>point2</strong> (<em>Tuple</em><em>[</em><em>int</em><em>, </em><em>int</em><em>]</em>) – The second point.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The euclidean distance between the two points.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.find_num_intersection">
+<span class="sig-name descname"><span class="pre">find_num_intersection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">route</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.find_num_intersection" title="Permalink to this definition"></a></dt>
+<dd><p>Finds the number of intersections for a given route.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>route</strong> (<em>List</em><em>[</em><em>List</em><em>[</em><em>Tuple</em><em>[</em><em>Tuple</em><em>[</em><em>int</em><em>, </em><em>int</em><em>]</em><em>, </em><em>Tuple</em><em>[</em><em>int</em><em>, </em><em>int</em><em>]</em><em>]</em><em>]</em><em>]</em>) – A list
+of list of tuples; each list represents the routing of a net and
+each tuple represents a line segment (connection) defined by two
+points (pins) on the net.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Number of intersections.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.find_reward">
+<span class="sig-name descname"><span class="pre">find_reward</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.find_reward" title="Permalink to this definition"></a></dt>
+<dd><p>Finds the reward for an episode.</p>
+<p>As the reward used is sparse, the reward is only calculated at the
+end of an episode. The reward is calculated by first routing the nets according
+to the method specified by the reward_type attribute. Then, the reward is
+calculated as the weighted negative sum of the normalized wirelength and the
+normalized number of intersections for the routing:</p>
+<div class="math notranslate nohighlight">
+\[-(\lambda * \text{wirelength} + \mu * \text{number of intersections})\]</div>
+<p>The wirelength is normalized by <span class="math notranslate nohighlight">\(\text{height} + \text{width}\)</span> and
+the weight is given by self.weight_wirelength. The number of intersections is normalized
+by considering the average number of pins for a randomly generated instance:</p>
+<blockquote>
+<div><ul class="simple">
+<li><dl class="simple">
+<dt>First, the average number of pins is calculated by multiplying</dt><dd><p>average component size with average number of components.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Second, the average number of pins is calculated by</dt><dd><p>multiplying the average number of pins with the average number of nets.</p>
+</dd>
+</dl>
+</li>
+<li><p>The minimum of these is used as the normalizing factor.</p></li>
+</ul>
+</div></blockquote>
+<p>To self.reward_type attribute can be one of:</p>
+<blockquote>
+<div><ul class="simple">
+<li><dl class="simple">
+<dt>“beam”: uses beam search to find the best route with self.reward_beam_width</dt><dd><p>as the beam width and the starting point as the point returned by the
+pin_outlier method</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>“centroid”: uses centroid routing to find the best route. The centroid</dt><dd><p>method finds the centroid for each net and connects all the pins in that
+net to the centroid.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>“both”: uses both beam search and centroid routing and chooses the routing</dt><dd><p>with the least number of (unnormalized) intersections.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+<p>For the scenario when not all the components in the generated instance have been
+placed in the episode, the reward is calculating by using an upper bound on
+the wirelength and the number of intersections. The idea behind this is to
+return a reward that is lower than any possible reward and therefore
+encourage the agent to place all the components on the grid.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Reward for the current episode.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – If beam search is used and the beam width is not a positive.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.find_wirelength">
+<span class="sig-name descname"><span class="pre">find_wirelength</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">route</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.find_wirelength" title="Permalink to this definition"></a></dt>
+<dd><p>Finds the total wirelength of a route.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>route</strong> (<em>List</em><em>[</em><em>Tuple</em><em>[</em><em>Tuple</em><em>[</em><em>int</em><em>, </em><em>int</em><em>]</em><em>, </em><em>Tuple</em><em>[</em><em>int</em><em>, </em><em>int</em><em>]</em><em>]</em><em>]</em>) – A list of list of
+tuples; each list represents the routing of a net and each tuple
+represents a line segment (connection) defined by two points (pins)
+on the net.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Total wirelength.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.generate_components">
+<span class="sig-name descname"><span class="pre">generate_components</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.generate_components" title="Permalink to this definition"></a></dt>
+<dd><p>Generates a list of components to be placed on the grid.</p>
+<p>Generates components by sampling from the minimum and maximum
+height and width of components.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.generate_instances">
+<span class="sig-name descname"><span class="pre">generate_instances</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.generate_instances" title="Permalink to this definition"></a></dt>
+<dd><p>Generates an instance of components to be placed on the grid.</p>
+<p>Generates an instance by (in order):</p>
+<blockquote>
+<div><ul class="simple">
+<li><dl class="simple">
+<dt>Generating a list of components to be placed on the grid using</dt><dd><p>the generate_components method.</p>
+</dd>
+</dl>
+</li>
+<li><p>Sampling the number of nets using sample_num_nets().</p></li>
+<li><dl class="simple">
+<dt>Sampling the total number of pins using the sample_total_num_pins</dt><dd><p>method.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Generating a list of pins to be placed on the grid using the</dt><dd><p>generate_pins method</p>
+</dd>
+</dl>
+</li>
+<li><p>Allocating pins to nets using the allocate_pins_to_nets method.</p></li>
+<li><dl class="simple">
+<dt>Allocating pins to components using the allocate_pins_to_components</dt><dd><p>method.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.generate_pins">
+<span class="sig-name descname"><span class="pre">generate_pins</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.generate_pins" title="Permalink to this definition"></a></dt>
+<dd><p>Generates a list of pins to be placed on the grid.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.get_all_relative_coordinates_in_component">
+<span class="sig-name descname"><span class="pre">get_all_relative_coordinates_in_component</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">component</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../environment.html#environment.dummy_env_rectangular_pin_spatial.Component" title="environment.dummy_env_rectangular_pin_spatial.Component"><span class="pre">environment.dummy_env_rectangular_pin_spatial.Component</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.get_all_relative_coordinates_in_component" title="Permalink to this definition"></a></dt>
+<dd><p>Gets all relative coordinates (relative to the component’s top-left corner)
+in a component.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>component</strong> (<a class="reference internal" href="../environment.html#environment.dummy_env_rectangular_pin_spatial.Component" title="environment.dummy_env_rectangular_pin_spatial.Component"><em>Component</em></a>) – A Component object.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>List of relative coordinates.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>List[Tuple[int, int]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.get_centroid">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_centroid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">points</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.get_centroid" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the centroid of a set of points.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>points</strong> (<em>List</em><em>[</em><em>Tuple</em><em>[</em><em>int</em><em>, </em><em>int</em><em>]</em><em>]</em>) – A list of points.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The centroid of the points.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Tuple[int, int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.get_net_pin_positions">
+<span class="sig-name descname"><span class="pre">get_net_pin_positions</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.get_net_pin_positions" title="Permalink to this definition"></a></dt>
+<dd><p>Returns a dictionary of net ids and the positions of their pins.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A dictionary of net ids and their corresponding pin positions.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Dict[int, List[Tuple[int, int]]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.is_intersect">
+<span class="sig-name descname"><span class="pre">is_intersect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">line1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.is_intersect" title="Permalink to this definition"></a></dt>
+<dd><p>Checks if two line segments intersect.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>line1</strong> (<em>Tuple</em><em>[</em><em>Tuple</em><em>[</em><em>int</em><em>, </em><em>int</em><em>]</em><em>, </em><em>Tuple</em><em>[</em><em>int</em><em>, </em><em>int</em><em>]</em><em>]</em>) – A line segment defined</p></li>
+<li><p><strong>points.</strong> (<em>by two</em>) – </p></li>
+<li><p><strong>line2</strong> (<em>Tuple</em><em>[</em><em>Tuple</em><em>[</em><em>int</em><em>, </em><em>int</em><em>]</em><em>, </em><em>Tuple</em><em>[</em><em>int</em><em>, </em><em>int</em><em>]</em><em>]</em>) – A line segment defined</p></li>
+<li><p><strong>points.</strong> – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if the line segments intersect, False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.lowest_num_intersections">
+<span class="sig-name descname"><span class="pre">lowest_num_intersections</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">routes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.lowest_num_intersections" title="Permalink to this definition"></a></dt>
+<dd><p>Finds the lowest number of intersections from a list of routes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>routes</strong> (<em>List</em><em>[</em><em>List</em><em>[</em><em>Tuple</em><em>[</em><em>Tuple</em><em>[</em><em>int</em><em>, </em><em>int</em><em>]</em><em>, </em><em>Tuple</em><em>[</em><em>int</em><em>, </em><em>int</em><em>]</em><em>]</em><em>]</em><em>]</em>) – A list of
+routes where each route is a list of list of tuples; each list
+represents the routing of a net and each tuple represents a line
+segment (connection) defined by two points (pins) on the net.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>A tuple of the lowest number of intersections and the</dt><dd><p>index of the route which achieves this.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Tuple[int, int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.pin_outlier">
+<span class="sig-name descname"><span class="pre">pin_outlier</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pin_positions</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.pin_outlier" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the pin that is furthest away from the centroid of a set of pins.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pin_positions</strong> (<em>List</em><em>[</em><em>Tuple</em><em>[</em><em>int</em><em>, </em><em>int</em><em>]</em><em>]</em>) – A list of pin positions.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The pin that is furthest away from the centroid.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Tuple[int, int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.place_pins_on_component">
+<span class="sig-name descname"><span class="pre">place_pins_on_component</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">component</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../environment.html#environment.dummy_env_rectangular_pin_spatial.Component" title="environment.dummy_env_rectangular_pin_spatial.Component"><span class="pre">environment.dummy_env_rectangular_pin_spatial.Component</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.place_pins_on_component" title="Permalink to this definition"></a></dt>
+<dd><p>Place pins on a component.</p>
+<p>Randomly choose a relative coordinate in the component and assign it to
+the pin.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>component</strong> (<a class="reference internal" href="../environment.html#environment.dummy_env_rectangular_pin_spatial.Component" title="environment.dummy_env_rectangular_pin_spatial.Component"><em>Component</em></a>) – A Component object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.reset">
+<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.reset" title="Permalink to this definition"></a></dt>
+<dd><p>Resets the environment.</p>
+<p>At each reset, a list of components with pins placed on them,
+and a list of nets with allocated pins are generated. The environment
+state is initialized and following reset components are stepped through
+in the order that they were generated.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>verbose</strong> (<em>bool</em>) – Whether to print the grid and action mask after the
+environment is reset.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The initial observation.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>observation (dict)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.route_pins_beam_search">
+<span class="sig-name descname"><span class="pre">route_pins_beam_search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">beam_width</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.route_pins_beam_search" title="Permalink to this definition"></a></dt>
+<dd><p>Routes pins using beam search.</p>
+<p>Route the pins for each net using the beam_search method,
+where points represent the positions of the pins. The starting
+point is the pin that is furthest away from the centroid of the
+pins in the net.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>beam_width</strong> (<em>int</em>) – The width of the beam. Defaults to 2.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>A list of the routes</dt><dd><p>for each net, where each route is a list of point pairs. The pairs
+are the start and end points of each line segment (connection)
+in the route.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>List[List[Tuple[Tuple[int, int], Tuple[int, int]]]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.route_pins_centroid">
+<span class="sig-name descname"><span class="pre">route_pins_centroid</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.route_pins_centroid" title="Permalink to this definition"></a></dt>
+<dd><p>Routes pins to the centroid of the pins for each net.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><dl class="simple">
+<dt>A list of the routes</dt><dd><p>for each net, where each route is a list of point pairs. The pairs
+are the start and end points of each line segment (connection)
+in the route.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>List[List[Tuple[Tuple[int, int], Tuple[int, int]]]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.rows_cols_to_mask">
+<span class="sig-name descname"><span class="pre">rows_cols_to_mask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">component</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../environment.html#environment.dummy_env_rectangular_pin_spatial.Component" title="environment.dummy_env_rectangular_pin_spatial.Component"><span class="pre">environment.dummy_env_rectangular_pin_spatial.Component</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">orientation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.rows_cols_to_mask" title="Permalink to this definition"></a></dt>
+<dd><p>Gets the rows and cols to mask for a given orientation and component.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>component</strong> (<a class="reference internal" href="../environment.html#environment.dummy_env_rectangular_pin_spatial.Component" title="environment.dummy_env_rectangular_pin_spatial.Component"><em>Component</em></a>) – The component to place on the grid</p></li>
+<li><p><strong>orientation</strong> (<em>int</em>) – The orientation of the component (0, 1, 2, or 3),
+where 0 means the component is placed in its original (a x b)
+orientation and 1 means the component is rotated 90 degrees (b x a),
+2 means the component is rotated 180 degrees (a x b), and 3 means the
+component is rotated 270 degrees (b x a).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The rows to mask.
+cols_to_mask (list[int]): The columns to mask.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>rows_to_mask (list[int])</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>Exception</strong> – if the orientation is not 0, 1, 2, or 3.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.sample_num_components">
+<span class="sig-name descname"><span class="pre">sample_num_components</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.sample_num_components" title="Permalink to this definition"></a></dt>
+<dd><p>Samples the number of components to be placed on the grid.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.sample_num_nets">
+<span class="sig-name descname"><span class="pre">sample_num_nets</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.sample_num_nets" title="Permalink to this definition"></a></dt>
+<dd><p>Samples the number of nets to be placed on the grid.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.sample_total_num_pins">
+<span class="sig-name descname"><span class="pre">sample_total_num_pins</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.sample_total_num_pins" title="Permalink to this definition"></a></dt>
+<dd><p>Samples the total number of pins to be placed on the grid.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the sampled total number of pins is greater than the total area
+covered by all components, the total number of pins is set to the
+total area covered by all components.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.step">
+<span class="sig-name descname"><span class="pre">step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">action</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">bool</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.step" title="Permalink to this definition"></a></dt>
+<dd><p>Steps the environment.</p>
+<p>Steps the environment with the given action using the
+current component.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>action</strong> (<em>Tuple</em><em>[</em><em>int</em><em>, </em><em>int</em><em>, </em><em>int</em><em>]</em>) – The action to be taken,
+which is a tuple of (orientation, x, y).
+top left corner of the component on the grid.</p></li>
+<li><p><strong>verbose</strong> (<em>bool</em>) – Whether to print the grid and action mask after the
+environment is reset.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The observation after the action is taken.
+reward (float): The reward for taking the action.
+done (bool): Whether the episode is done.
+info (dict): Additional information.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>observation (dict)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.update_all_components_feature">
+<span class="sig-name descname"><span class="pre">update_all_components_feature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">components</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../environment.html#environment.dummy_env_rectangular_pin_spatial.Component" title="environment.dummy_env_rectangular_pin_spatial.Component"><span class="pre">environment.dummy_env_rectangular_pin_spatial.Component</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.update_all_components_feature" title="Permalink to this definition"></a></dt>
+<dd><p>Updates the all_components_feature given a list of components.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>components</strong> (<em>List</em><em>[</em><a class="reference internal" href="../environment.html#environment.dummy_env_rectangular_pin_spatial.Component" title="environment.dummy_env_rectangular_pin_spatial.Component"><em>Component</em></a><em>]</em>) – List of components.</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This method is called when the environment is reset.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.update_all_pins_feature">
+<span class="sig-name descname"><span class="pre">update_all_pins_feature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">components</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../environment.html#environment.dummy_env_rectangular_pin_spatial.Component" title="environment.dummy_env_rectangular_pin_spatial.Component"><span class="pre">environment.dummy_env_rectangular_pin_spatial.Component</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.update_all_pins_feature" title="Permalink to this definition"></a></dt>
+<dd><p>Updates the all_pins_feature given a list of components with
+pins placed on them.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>components</strong> (<em>List</em><em>[</em><a class="reference internal" href="../environment.html#environment.dummy_env_rectangular_pin_spatial.Component" title="environment.dummy_env_rectangular_pin_spatial.Component"><em>Component</em></a><em>]</em>) – List of components.</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This method is called when the environment is reset.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.update_grid">
+<span class="sig-name descname"><span class="pre">update_grid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">component</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../environment.html#environment.dummy_env_rectangular_pin_spatial.Component" title="environment.dummy_env_rectangular_pin_spatial.Component"><span class="pre">environment.dummy_env_rectangular_pin_spatial.Component</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">orientation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.update_grid" title="Permalink to this definition"></a></dt>
+<dd><p>Updates the grid for the given component and action.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>component</strong> (<a class="reference internal" href="../environment.html#environment.dummy_env_rectangular_pin_spatial.Component" title="environment.dummy_env_rectangular_pin_spatial.Component"><em>Component</em></a>) – The component to place on the grid.</p></li>
+<li><p><strong>x</strong> (<em>int</em>) – The x coordinate of the top left corner of the component.</p></li>
+<li><p><strong>y</strong> (<em>int</em>) – The y coordinate of the top left corner of the component.</p></li>
+<li><p><strong>orientation</strong> (<em>int</em>) – The orientation of the component (0, 1, 2, or 3),
+where 0 means the component is placed in its original (a x b)
+orientation and 1 means the component is rotated 90 degrees (b x a),
+2 means the component is rotated 180 degrees (a x b), and 3 means the
+component is rotated 270 degrees (b x a).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>Exception</strong> – If the orientation is not 0, 1, 2, or 3.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.update_placement_mask">
+<span class="sig-name descname"><span class="pre">update_placement_mask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">component</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../environment.html#environment.dummy_env_rectangular_pin_spatial.Component" title="environment.dummy_env_rectangular_pin_spatial.Component"><span class="pre">environment.dummy_env_rectangular_pin_spatial.Component</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.update_placement_mask" title="Permalink to this definition"></a></dt>
+<dd><p>Updates the placement_mask array for a component that has been placed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>component</strong> (<a class="reference internal" href="../environment.html#environment.dummy_env_rectangular_pin_spatial.Component" title="environment.dummy_env_rectangular_pin_spatial.Component"><em>Component</em></a>) – A Component object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.validate_action">
+<span class="sig-name descname"><span class="pre">validate_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">orientation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#environment.dummy_env_rectangular_pin_spatial.DummyPlacementEnv.validate_action" title="Permalink to this definition"></a></dt>
+<dd><p>Validates the given action.</p>
+<p>The action is invalid if it would cause the component to go out of
+bounds or if any of cells that the component would occupy are already
+occupied. Note that the action mask both checks if the action is out
+of bounds and if any of the cells are already occupied.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>int</em>) – The x coordinate of the top left corner of the component.</p></li>
+<li><p><strong>y</strong> (<em>int</em>) – The y coordinate of the top left corner of the component.</p></li>
+<li><p><strong>orientation</strong> (<em>int</em>) – The orientation of the component (0, 1, 2, or 3),
+where 0 means the component is placed in its original orientation,
+1 means the component is rotated 90 degrees clockwise from its
+original orientation, 2 means the component is rotated 180 degrees
+clockwise from its original orientation, and 3 means the component
+is rotated 270 degrees clockwise from its original orientation.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Whether the action is valid.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="environment.dummy_env_rectangular_pin_spatial.Component.html" class="btn btn-neutral float-left" title="environment.dummy_env_rectangular_pin_spatial.Component" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="environment.dummy_env_rectangular_pin_spatial.Pin.html" class="btn btn-neutral float-right" title="environment.dummy_env_rectangular_pin_spatial.Pin" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

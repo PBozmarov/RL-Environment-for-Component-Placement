@@ -1,0 +1,2303 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>agent.models package &mdash; RL-PCB 1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html">
+            
+              <img src="_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributors.html">Contributors</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">RL-PCB</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">agent.models package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/agent.models.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="agent-models-package">
+<h1>agent.models package<a class="headerlink" href="#agent-models-package" title="Permalink to this headline"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline"></a></h2>
+</section>
+<section id="module-agent.models.model_building_blocks">
+<span id="agent-models-model-building-blocks-module"></span><h2>agent.models.model_building_blocks module<a class="headerlink" href="#module-agent.models.model_building_blocks" title="Permalink to this headline"></a></h2>
+<p>Building blocks for different policy network architectures.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="agent.models.model_building_blocks.Attention">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">agent.models.model_building_blocks.</span></span><span class="sig-name descname"><span class="pre">Attention</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">attn_hidden_size</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.model_building_blocks.Attention" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class for self-attention mechanism.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.models.model_building_blocks.Attention.attn_hidden_size">
+<span class="sig-name descname"><span class="pre">attn_hidden_size</span></span><a class="headerlink" href="#agent.models.model_building_blocks.Attention.attn_hidden_size" title="Permalink to this definition"></a></dt>
+<dd><p>The size of the hidden layer used to calculate the attention scores.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="agent.models.model_building_blocks.ConvBlock">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">agent.models.model_building_blocks.</span></span><span class="sig-name descname"><span class="pre">ConvBlock</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_conv_filters</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">conv_kernel_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">conv_padding='valid'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">activation=&lt;function</span> <span class="pre">relu&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_pool=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_pool_kernel_size=4</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.model_building_blocks.ConvBlock" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Convolutional block that consists of convolutional layer, batch normalization layer, and activation function.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.models.model_building_blocks.ConvBlock.num_conv_filters">
+<span class="sig-name descname"><span class="pre">num_conv_filters</span></span><a class="headerlink" href="#agent.models.model_building_blocks.ConvBlock.num_conv_filters" title="Permalink to this definition"></a></dt>
+<dd><p>Number of filters in the convolutional layer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.models.model_building_blocks.ConvBlock.conv_kernel_size">
+<span class="sig-name descname"><span class="pre">conv_kernel_size</span></span><a class="headerlink" href="#agent.models.model_building_blocks.ConvBlock.conv_kernel_size" title="Permalink to this definition"></a></dt>
+<dd><p>Height and width of the 2D convolution window.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.models.model_building_blocks.ConvBlock.conv_padding">
+<span class="sig-name descname"><span class="pre">conv_padding</span></span><a class="headerlink" href="#agent.models.model_building_blocks.ConvBlock.conv_padding" title="Permalink to this definition"></a></dt>
+<dd><p>Padding method. “valid” by default.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.models.model_building_blocks.ConvBlock.activation">
+<span class="sig-name descname"><span class="pre">activation</span></span><a class="headerlink" href="#agent.models.model_building_blocks.ConvBlock.activation" title="Permalink to this definition"></a></dt>
+<dd><p>Activation function. tf.nn.relu by default.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>function</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.models.model_building_blocks.ConvBlock.max_pool">
+<span class="sig-name descname"><span class="pre">max_pool</span></span><a class="headerlink" href="#agent.models.model_building_blocks.ConvBlock.max_pool" title="Permalink to this definition"></a></dt>
+<dd><p>Whether to use max pooling layer. False by default.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.models.model_building_blocks.ConvBlock.max_pool_kernel_size">
+<span class="sig-name descname"><span class="pre">max_pool_kernel_size</span></span><a class="headerlink" href="#agent.models.model_building_blocks.ConvBlock.max_pool_kernel_size" title="Permalink to this definition"></a></dt>
+<dd><p>Size of the max pooling window. 4 by default.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="agent.models.model_building_blocks.ConvBlocks">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">agent.models.model_building_blocks.</span></span><span class="sig-name descname"><span class="pre">ConvBlocks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_conv_blocks</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_conv_filters</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">conv_kernel_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">activation=&lt;function</span> <span class="pre">relu&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_pool=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_pool_kernel_size=4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">conv_padding='valid'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.model_building_blocks.ConvBlocks" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class for creating multiple convolution blocks.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.models.model_building_blocks.ConvBlocks.num_conv_blocks">
+<span class="sig-name descname"><span class="pre">num_conv_blocks</span></span><a class="headerlink" href="#agent.models.model_building_blocks.ConvBlocks.num_conv_blocks" title="Permalink to this definition"></a></dt>
+<dd><p>The number of convolution blocks to create.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.models.model_building_blocks.ConvBlocks.num_conv_filters">
+<span class="sig-name descname"><span class="pre">num_conv_filters</span></span><a class="headerlink" href="#agent.models.model_building_blocks.ConvBlocks.num_conv_filters" title="Permalink to this definition"></a></dt>
+<dd><p>The number of filters in each convolution block.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.models.model_building_blocks.ConvBlocks.conv_kernel_size">
+<span class="sig-name descname"><span class="pre">conv_kernel_size</span></span><a class="headerlink" href="#agent.models.model_building_blocks.ConvBlocks.conv_kernel_size" title="Permalink to this definition"></a></dt>
+<dd><p>The size of the convolution kernel.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int or tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.models.model_building_blocks.ConvBlocks.activation">
+<span class="sig-name descname"><span class="pre">activation</span></span><a class="headerlink" href="#agent.models.model_building_blocks.ConvBlocks.activation" title="Permalink to this definition"></a></dt>
+<dd><p>The activation function to use after each convolutional layer. Default is tf.nn.relu.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>function</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.models.model_building_blocks.ConvBlocks.max_pool">
+<span class="sig-name descname"><span class="pre">max_pool</span></span><a class="headerlink" href="#agent.models.model_building_blocks.ConvBlocks.max_pool" title="Permalink to this definition"></a></dt>
+<dd><p>Whether or not to use max pooling after each convolutional layer. Default is False.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.models.model_building_blocks.ConvBlocks.max_pool_kernel_size">
+<span class="sig-name descname"><span class="pre">max_pool_kernel_size</span></span><a class="headerlink" href="#agent.models.model_building_blocks.ConvBlocks.max_pool_kernel_size" title="Permalink to this definition"></a></dt>
+<dd><p>The size of the max pooling kernel. Default is 4.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int or tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.models.model_building_blocks.ConvBlocks.conv_padding">
+<span class="sig-name descname"><span class="pre">conv_padding</span></span><a class="headerlink" href="#agent.models.model_building_blocks.ConvBlocks.conv_padding" title="Permalink to this definition"></a></dt>
+<dd><p>The padding to use for convolutional layers. Default is “valid”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-agent.models.rectangle_model">
+<span id="agent-models-rectangle-model-module"></span><h2>agent.models.rectangle_model module<a class="headerlink" href="#module-agent.models.rectangle_model" title="Permalink to this headline"></a></h2>
+<p>Policy model for rectangle component placement task.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="agent.models.rectangle_model.RectangleModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">agent.models.rectangle_model.</span></span><span class="sig-name descname"><span class="pre">RectangleModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_space</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action_space</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_outputs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.rectangle_model.RectangleModel" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#agent.models.square_model.SquareModel" title="agent.models.square_model.SquareModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">agent.models.square_model.SquareModel</span></code></a></p>
+<p>A model to predict the action logits and value for a rectangle component
+placement task.</p>
+<p>This model takes as inputs both a 2D grid and a component features array
+corresponding to the features of components to be placed</p>
+<p>on the grid. The
+model learns an encoding of the grid like in SquareModel and component
+features using a convolutional neural network with:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Convolutional layers</p></li>
+<li><p>Batch normalization</p></li>
+<li><p>ReLU activations</p></li>
+<li><p>Optional max pooling</p></li>
+</ul>
+</div></blockquote>
+<p>The encoding for both the grid and component features are flattened and
+concatenated. The concatenated encoding is passed through two separate dense
+layers to generate action logits and a value prediction. The dimensions of
+the encoding depends on the specified convolutional layers.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.models.rectangle_model.RectangleModel.component_feature_input">
+<span class="sig-name descname"><span class="pre">component_feature_input</span></span><a class="headerlink" href="#agent.models.rectangle_model.RectangleModel.component_feature_input" title="Permalink to this definition"></a></dt>
+<dd><p>Input tensor for component features.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>tf.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.models.rectangle_model.RectangleModel.encoding">
+<span class="sig-name descname"><span class="pre">encoding</span></span><a class="headerlink" href="#agent.models.rectangle_model.RectangleModel.encoding" title="Permalink to this definition"></a></dt>
+<dd><p>Concatenated encoding of the grid and component features.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>tf.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.models.rectangle_model.RectangleModel.encoding_feature">
+<span class="sig-name descname"><span class="pre">encoding_feature</span></span><a class="headerlink" href="#agent.models.rectangle_model.RectangleModel.encoding_feature" title="Permalink to this definition"></a></dt>
+<dd><p>Encoded flattened component features.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>tf.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.models.rectangle_model.RectangleModel.logits_model">
+<span class="sig-name descname"><span class="pre">logits_model</span></span><a class="headerlink" href="#agent.models.rectangle_model.RectangleModel.logits_model" title="Permalink to this definition"></a></dt>
+<dd><p>Model for predicting action logits.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>tf.keras.Model</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.models.rectangle_model.RectangleModel.value_model">
+<span class="sig-name descname"><span class="pre">value_model</span></span><a class="headerlink" href="#agent.models.rectangle_model.RectangleModel.value_model" title="Permalink to this definition"></a></dt>
+<dd><p>Model for predicting value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>tf.keras.Model</p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The encoding of the grid is done in the parent class SquareModel.</p>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.models.rectangle_model.RectangleModel.build_encoding_rectangle">
+<span class="sig-name descname"><span class="pre">build_encoding_rectangle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.rectangle_model.RectangleModel.build_encoding_rectangle" title="Permalink to this definition"></a></dt>
+<dd><p>Build the encoding layer.</p>
+<p>This layer concatenates the encoded grid and encoded component features.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>model_config</strong> (<em>Dict</em>) – Model configuration dictionary.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.models.rectangle_model.RectangleModel.build_logits_model_rectangle">
+<span class="sig-name descname"><span class="pre">build_logits_model_rectangle</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.rectangle_model.RectangleModel.build_logits_model_rectangle" title="Permalink to this definition"></a></dt>
+<dd><p>Build the logits model.</p>
+<p>This model calculates the logits using a dense layer from the encoding layer.
+The dense layer has the same number of output neurons as the size of the action space.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.models.rectangle_model.RectangleModel.build_value_model_rectangle">
+<span class="sig-name descname"><span class="pre">build_value_model_rectangle</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.rectangle_model.RectangleModel.build_value_model_rectangle" title="Permalink to this definition"></a></dt>
+<dd><p>Build the value model.</p>
+<p>This model calculates the value using a dense layer where the input is
+the model encoding and the dense layer has 1 output neuron corresponding
+to the value of the state.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.models.rectangle_model.RectangleModel.encode_flattened_component_feature">
+<span class="sig-name descname"><span class="pre">encode_flattened_component_feature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.rectangle_model.RectangleModel.encode_flattened_component_feature" title="Permalink to this definition"></a></dt>
+<dd><p>Encode the component feature using a dense layer.</p>
+<p>The component feature is flattened and encoded using a dense layer which
+has the same number of output neurons as the component_feature_encoding_dimension.
+The output of the dense layer is then batch normalized and passed through a ReLU activation
+before being flattened again.</p>
+<p>The dimensions of the component features are (max_num_components, component_feature_vector_width)
+which are specified in the model configuration dictionary. The component feature vector width is 5.
+The size of the encoding feature is specified by the component_feature_encoding_dimension.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>model_config</strong> (<em>Dict</em>) – Model configuration dictionary.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.models.rectangle_model.RectangleModel.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seq_lens</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.rectangle_model.RectangleModel.forward" title="Permalink to this definition"></a></dt>
+<dd><p>Forward pass of the model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>input_dict</strong> (<em>Dict</em>) – Input dictionary.</p></li>
+<li><p><strong>state</strong> (<em>List</em>) – List of state tensors.</p></li>
+<li><p><strong>seq_lens</strong> (<em>Tensor</em>) – Lengths of the input sequences.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Tuple of action logits and state.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Tuple[Tensor, List]</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<dl class="simple">
+<dt>An action mask is applied to the logits to prevent the agent from</dt><dd><p>selecting invalid actions.</p>
+</dd>
+</dl>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.models.rectangle_model.RectangleModel.preprocess">
+<span class="sig-name descname"><span class="pre">preprocess</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.rectangle_model.RectangleModel.preprocess" title="Permalink to this definition"></a></dt>
+<dd><p>Preprocess the obs_dict.</p>
+<p>This method gets the placement mask and all components feature from obs_dict, and
+applies the placement mask to the all components feature, i.e., set the
+features of all components that have been placed to 0.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>obs_dict</strong> (<em>Dict</em>) – Observation space dictionary.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>All components feature where all features of all components</dt><dd><p>that have been placed are set to 0.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-agent.models.rectangle_model_factorized">
+<span id="agent-models-rectangle-model-factorized-module"></span><h2>agent.models.rectangle_model_factorized module<a class="headerlink" href="#module-agent.models.rectangle_model_factorized" title="Permalink to this headline"></a></h2>
+<p>Policy model for a rectangle component placement task using a factorized action space.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="agent.models.rectangle_model_factorized.RectangleFactorizedModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">agent.models.rectangle_model_factorized.</span></span><span class="sig-name descname"><span class="pre">RectangleFactorizedModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_space</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action_space</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_outputs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.rectangle_model_factorized.RectangleFactorizedModel" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#agent.models.rectangle_model.RectangleModel" title="agent.models.rectangle_model.RectangleModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">agent.models.rectangle_model.RectangleModel</span></code></a></p>
+<p>A model to predict the action logits and value for a rectangle component
+placement task using a factorized action space.</p>
+<p>This model takes as inputs both a 2D grid and a component features array
+corresponding to the features of components to be placed on the grid. The
+model learns an encoding of the grid like in RectangleModel and component
+features using a convolutional neural network with:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Convolutional layers</p></li>
+<li><p>Batch normalization</p></li>
+<li><p>ReLU activations</p></li>
+<li><p>Optional max pooling</p></li>
+</ul>
+</div></blockquote>
+<p>The encoding for both the grid and component features are flattened and
+concatenated. The dimensions of the encoding depends on the specified
+convolutional layers.</p>
+<p>The encoding is passed through a dense layer for value prediction. The encoding is also
+concatenated with the flattened action mask and outputted in the forward pass. The agent uses
+this output to sample actions from the factorized action space by first splitting the encoding
+from the action mask and using the encoding as inputs for the action models and using the action
+mask to mask invalid actions during sampling.</p>
+<p>Th action space is factorized into three separate components: x, y, and
+orientation, where each component is a categorical distribution</p>
+<blockquote>
+<div><ul class="simple">
+<li><dl class="simple">
+<dt>Orientation: The action space is factorized using</dt><dd><p><span class="math notranslate nohighlight">\(p(\text{orientation}, x, y) = p(\text{orientation})p(x \mid \text{orientation}) p (y \mid \text{orientation}, x)\)</span></p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Coordinates: The action space is factorized using</dt><dd><p><span class="math notranslate nohighlight">\(p(x, y, \text{orientation}) = p(x)p(y)p(\text{orientation} \mid x, y)\)</span></p>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+<p>To sample actions from the factorized action space, the model samples from
+action models for each component, conditioned on previous components. This sampling
+is done using the FactorizedActionDistribution classes.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.models.rectangle_model_factorized.RectangleFactorizedModel.component_feature_input">
+<span class="sig-name descname"><span class="pre">component_feature_input</span></span><a class="headerlink" href="#agent.models.rectangle_model_factorized.RectangleFactorizedModel.component_feature_input" title="Permalink to this definition"></a></dt>
+<dd><p>Input tensor for component features.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>tf.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.models.rectangle_model_factorized.RectangleFactorizedModel.encoding">
+<span class="sig-name descname"><span class="pre">encoding</span></span><a class="headerlink" href="#agent.models.rectangle_model_factorized.RectangleFactorizedModel.encoding" title="Permalink to this definition"></a></dt>
+<dd><p>Concatenated encoding of the grid and component features.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>tf.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.models.rectangle_model_factorized.RectangleFactorizedModel.encoding_feature">
+<span class="sig-name descname"><span class="pre">encoding_feature</span></span><a class="headerlink" href="#agent.models.rectangle_model_factorized.RectangleFactorizedModel.encoding_feature" title="Permalink to this definition"></a></dt>
+<dd><p>Encoded flattened component features.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>tf.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.models.rectangle_model_factorized.RectangleFactorizedModel.logits_model">
+<span class="sig-name descname"><span class="pre">logits_model</span></span><a class="headerlink" href="#agent.models.rectangle_model_factorized.RectangleFactorizedModel.logits_model" title="Permalink to this definition"></a></dt>
+<dd><p>Model for predicting action logits.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>tf.keras.Model</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.models.rectangle_model_factorized.RectangleFactorizedModel.value_model">
+<span class="sig-name descname"><span class="pre">value_model</span></span><a class="headerlink" href="#agent.models.rectangle_model_factorized.RectangleFactorizedModel.value_model" title="Permalink to this definition"></a></dt>
+<dd><p>Model for predicting value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>tf.keras.Model</p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The encoding of the grid is done in the parent class RectangleModel.</p>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.models.rectangle_model_factorized.RectangleFactorizedModel.build_action_models_coordinates">
+<span class="sig-name descname"><span class="pre">build_action_models_coordinates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">encoding_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action_space</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.rectangle_model_factorized.RectangleFactorizedModel.build_action_models_coordinates" title="Permalink to this definition"></a></dt>
+<dd><p>Build the action models for the orientatoin, x and y actions.</p>
+<p>The distribution of orientation, x and y actions are modelled using the following
+factorization:</p>
+<blockquote>
+<div><p><span class="math notranslate nohighlight">\(p(\text{orientation}, x, y) = p(\text{x})p(y \mid x) p (\text{orientation} \mid x, y)\)</span></p>
+</div></blockquote>
+<p>The x action model is created by taking the encoding as an input and using a
+dense layer to output logits of size equal to the number of x values.</p>
+<p>The y action model is created by taking the encoding and x input as an input and
+using a dense layer to output logits of size equal to the number of y values.</p>
+<p>The orientation model is created by taking the encoding, the x input and the y input
+as an input and using a dense layer to output logits of size equal to the number
+of orientations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>encoding_size</strong> (<em>int</em>) – Size of the encoding.</p></li>
+<li><p><strong>action_space</strong> (<em>gym.spaces.Tuple</em>) – Action space.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>The x inputs and y inputs to the y action model and orientation model</dt><dd><p>are processed to be in the range of[0, 1] by dividing by the maximum x
+and y values respectively during sampling.</p>
+</dd>
+</dl>
+</li>
+<li><p>The sampling is done using the FactorizedActionDistribution classes.</p></li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.models.rectangle_model_factorized.RectangleFactorizedModel.build_action_models_orientation">
+<span class="sig-name descname"><span class="pre">build_action_models_orientation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">encoding_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action_space</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.rectangle_model_factorized.RectangleFactorizedModel.build_action_models_orientation" title="Permalink to this definition"></a></dt>
+<dd><p>Build the action models for the orientatoin, x and y actions.</p>
+<p>The distribution of orientation, x and y actions are modelled using the following
+factorization:</p>
+<blockquote>
+<div><p><span class="math notranslate nohighlight">\(p(\text{orientation}, x, y) = p(\text{orientation})p(x \mid \text{orientation}) p (y \mid \text{orientation}, x)\)</span></p>
+</div></blockquote>
+<p>The orientation model is created by taking the encoding as an input and using a
+dense layer to output logits of size equal to the number of orientations.</p>
+<p>The x action model is created by taking the encoding and the one hot encoded orientation
+as an input and using a dense layer to output logits of size equal to the number
+of x values.</p>
+<p>The y action model is created by taking the encoding, the one hot encoded orientation
+and the x input as an input and using a dense layer to output logits of size equal
+to the number of y values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>encoding_size</strong> (<em>int</em>) – Size of the encoding.</p></li>
+<li><p><strong>action_space</strong> (<em>gym.spaces.Tuple</em>) – Action space.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>The x inputs to the y action model are processed to be in the range of</dt><dd><p>[0, 1] by dividing by the maximum x value during sampling.</p>
+</dd>
+</dl>
+</li>
+<li><p>The sampling is done using the FactorizedActionDistribution classes.</p></li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.models.rectangle_model_factorized.RectangleFactorizedModel.build_encoding_model_factorized">
+<span class="sig-name descname"><span class="pre">build_encoding_model_factorized</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.rectangle_model_factorized.RectangleFactorizedModel.build_encoding_model_factorized" title="Permalink to this definition"></a></dt>
+<dd><p>Build the encoding layer.</p>
+<p>This layer creates an encoding model to create encodings like for
+the RectangleModel. The encoding concatenates the encoded grid
+and encoded component features which are encoded like in the
+RectangleModel.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>model_config</strong> (<em>Dict</em>) – Model configuration dictionary.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.models.rectangle_model_factorized.RectangleFactorizedModel.build_value_model_factorized">
+<span class="sig-name descname"><span class="pre">build_value_model_factorized</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">encoding_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.rectangle_model_factorized.RectangleFactorizedModel.build_value_model_factorized" title="Permalink to this definition"></a></dt>
+<dd><p>Build the value model.</p>
+<p>This model calculates the value using a dense layer from the encoding layer,
+where the dense layer has 1 output neuron corresponding to the value of the state.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>encoding_size</strong> (<em>int</em>) – Size of the encoding.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.models.rectangle_model_factorized.RectangleFactorizedModel.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seq_lens</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.rectangle_model_factorized.RectangleFactorizedModel.forward" title="Permalink to this definition"></a></dt>
+<dd><p>Forward pass of the model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>input_dict</strong> (<em>Dict</em>) – Input dictionary.</p></li>
+<li><p><strong>state</strong> (<em>List</em>) – List of state tensors.</p></li>
+<li><p><strong>seq_lens</strong> (<em>Tensor</em>) – Lengths of the input sequences.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>Model output tensor and list of state tensors.</dt><dd><p>The model output is the concatenation of the encoding and the
+flattened action mask.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Tuple[Tensor, List]</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>The output and the actions models are used to sample actions in the</dt><dd><p>FactorizedActionDistribution classes.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Concatenating the action mask to the encoding allows the</dt><dd><p>FactorizedActionDistribution classes to sample actions that are
+valid.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-agent.models.rectangle_pin_all_attn_factorized">
+<span id="agent-models-rectangle-pin-all-attn-factorized-module"></span><h2>agent.models.rectangle_pin_all_attn_factorized module<a class="headerlink" href="#module-agent.models.rectangle_pin_all_attn_factorized" title="Permalink to this headline"></a></h2>
+<p>Policy model for the rectangle component placement task where the components have pins and where
+the action space is factorized and attention is used to encode both the component features and
+the component pin features.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_all_attn_factorized.RectanglePinAllAttnFactorized">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">agent.models.rectangle_pin_all_attn_factorized.</span></span><span class="sig-name descname"><span class="pre">RectanglePinAllAttnFactorized</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_space</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action_space</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_outputs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.rectangle_pin_all_attn_factorized.RectanglePinAllAttnFactorized" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#agent.models.rectangle_pin_attn_component_pin_model.RectanglePinAttnCompPinModel" title="agent.models.rectangle_pin_attn_component_pin_model.RectanglePinAttnCompPinModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">agent.models.rectangle_pin_attn_component_pin_model.RectanglePinAttnCompPinModel</span></code></a></p>
+<p>A model to predict the action logits and value for placing components
+with pins on a 2D grid.</p>
+<p>This model takes as inputs a 2D grid, a component features array,
+a component pin features array corresponding to the features of pins
+on components, and a placement mask array. The model learns an encoding of
+these features by using the encodings for:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>The grid (same as RectangleModel)</p></li>
+<li><p>The component features</p></li>
+<li><p>The component pin features</p></li>
+<li><p>The placement mask</p></li>
+</ul>
+</div></blockquote>
+<p>The grid encoding is created like in RectangleModel. The component features,
+component pin features, and placement mask are encoded like in RectanglePinModel,
+except that the component pin features are passed through a self-attention
+layer to obtain the encodings of all the pins for each component. These encodings
+are then concatenated along the feature axis to get an encoding of dimensions
+(max_num_components, component_encoding_dim + pin_encoding_dim + 4).</p>
+<p>Before flattening this encoding and concatenating it with the flattened grid
+encoding, it is passed through a self-attention layer. The output of the
+is of dimensions (max_num_components, attn_hidden_size), where attn_hidden_size
+is the size of the hidden layer in the self-attention layer. This output is
+then flattened and concatenated with the flattened grid encoding to get a
+single encoding.</p>
+<p>The encoding is passed through a dense layer for value prediction. The encoding is also
+concatenated with the flattened action mask and outputted in the forward pass. The agent uses
+this output to sample actions from the factorized action space by first splitting the encoding
+from the action mask and using the encoding as inputs for the action models and using the action
+mask to mask invalid actions during sampling.</p>
+<p>Th action space is factorized into three separate components: x, y, and
+orientation, where each component is a categorical distribution</p>
+<blockquote>
+<div><ul class="simple">
+<li><dl class="simple">
+<dt>Orientation: The action space is factorized using</dt><dd><p><span class="math notranslate nohighlight">\(p(\text{orientation}, x, y) = p(\text{orientation})p(x \mid \text{orientation}) p (y \mid \text{orientation}, x)\)</span></p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Coordinates: The action space is factorized using</dt><dd><p><span class="math notranslate nohighlight">\(p(x, y, \text{orientation}) = p(x)p(y)p(\text{orientation} \mid x, y)\)</span></p>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+<p>To sample actions from the factorized action space, the model samples from
+action models for each component, conditioned on previous components. This sampling
+is done using the FactorizedActionDistribution classes.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_all_attn_factorized.RectanglePinAllAttnFactorized.encoding">
+<span class="sig-name descname"><span class="pre">encoding</span></span><a class="headerlink" href="#agent.models.rectangle_pin_all_attn_factorized.RectanglePinAllAttnFactorized.encoding" title="Permalink to this definition"></a></dt>
+<dd><p>Encoding of the input features.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>tf.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_all_attn_factorized.RectanglePinAllAttnFactorized.processed_component_pin_encodings">
+<span class="sig-name descname"><span class="pre">processed_component_pin_encodings</span></span><a class="headerlink" href="#agent.models.rectangle_pin_all_attn_factorized.RectanglePinAllAttnFactorized.processed_component_pin_encodings" title="Permalink to this definition"></a></dt>
+<dd><p>Processed component pin
+encodings.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>tf.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Attention is performed on the encodings the component and pin features together,
+as well as for getting the pin encodings.</p>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_all_attn_factorized.RectanglePinAllAttnFactorized.build_action_models_coordinates">
+<span class="sig-name descname"><span class="pre">build_action_models_coordinates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">encoding_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action_space</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.rectangle_pin_all_attn_factorized.RectanglePinAllAttnFactorized.build_action_models_coordinates" title="Permalink to this definition"></a></dt>
+<dd><p>Build the action models for the orientatoin, x and y actions.</p>
+<p>The distribution of orientation, x and y actions are modelled using the following
+factorization:</p>
+<blockquote>
+<div><p><span class="math notranslate nohighlight">\(p(\text{orientation}, x, y) = p(\text{x})p(y \mid x) p (\text{orientation} \mid x, y)\)</span></p>
+</div></blockquote>
+<p>The x action model is created by taking the encoding as an input and using a
+dense layer to output logits of size equal to the number of x values.</p>
+<p>The y action model is created by taking the encoding and x input as an input and
+using a dense layer to output logits of size equal to the number of y values.</p>
+<p>The orientation model is created by taking the encoding, the x input and the y input
+as an input and using a dense layer to output logits of size equal to the number
+of orientations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>encoding_size</strong> (<em>int</em>) – Size of the encoding.</p></li>
+<li><p><strong>action_space</strong> (<em>gym.spaces.Tuple</em>) – Action space.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>The x inputs and y inputs to the y action model and orientation model</dt><dd><p>are processed to be in the range of[0, 1] by dividing by the maximum x
+and y values respectively during sampling.</p>
+</dd>
+</dl>
+</li>
+<li><p>The sampling is done using the FactorizedActionDistribution classes.</p></li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_all_attn_factorized.RectanglePinAllAttnFactorized.build_action_models_orientation">
+<span class="sig-name descname"><span class="pre">build_action_models_orientation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">encoding_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action_space</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.rectangle_pin_all_attn_factorized.RectanglePinAllAttnFactorized.build_action_models_orientation" title="Permalink to this definition"></a></dt>
+<dd><p>Build the action models for the orientation, x and y actions.</p>
+<p>The distribution of orientation, x and y actions are modelled using the following
+factorization:</p>
+<blockquote>
+<div><p><span class="math notranslate nohighlight">\(p(\text{orientation}, x, y) = p(\text{orientation})p(x \mid \text{orientation}) p (y \mid \text{orientation}, x)\)</span></p>
+</div></blockquote>
+<p>The orientation model is created by taking the encoding as an input and using a
+dense layer to output logits of size equal to the number of orientations.</p>
+<p>The x action model is created by taking the encoding and the one hot encoded orientation
+as an input and using a dense layer to output logits of size equal to the number
+of x values.</p>
+<p>The y action model is created by taking the encoding, the one hot encoded orientation
+and the x input as an input and using a dense layer to output logits of size equal
+to the number of y values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>encoding_size</strong> (<em>int</em>) – Size of the encoding.</p></li>
+<li><p><strong>action_space</strong> (<em>gym.spaces.Tuple</em>) – Action space.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>The x inputs to the y action model are processed to be in the range of</dt><dd><p>[0, 1] by dividing by the maximum x value during sampling.</p>
+</dd>
+</dl>
+</li>
+<li><p>The sampling is done using the FactorizedActionDistribution classes.</p></li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_all_attn_factorized.RectanglePinAllAttnFactorized.build_encoding_rectangle_comp_pin">
+<span class="sig-name descname"><span class="pre">build_encoding_rectangle_comp_pin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.rectangle_pin_all_attn_factorized.RectanglePinAllAttnFactorized.build_encoding_rectangle_comp_pin" title="Permalink to this definition"></a></dt>
+<dd><p>Build the encoding for the RectanglePinAttnCompModel.</p>
+<p>This method builds an encoding using component encodings, pin encodings,
+and the one-hot encoded placement mask. The encodings for the placement mask
+and component encodings are built like in RectanglePinAttnCompModel. To get
+the pin encodings we now use a self-attention layer.</p>
+<p>These encodings are then concatenated along the feature axis to get an
+encoding of dimensions (max_num_components, component_encoding_dim +
+attn_hidden_size_pin + 4). Self-attention is again performed on
+this encoding to get an encoding of dimensions (max_num_components,
+attn_hidden_size). This output is then flattened and concatenated with
+the flattened grid encoding to get a single encoding of dimensions
+(max_num_components * attn_hidden_size + grid_encoding_dim).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>model_config</strong> (<em>Dict</em>) – Model config dictionary.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_all_attn_factorized.RectanglePinAllAttnFactorized.build_value_model_factorized">
+<span class="sig-name descname"><span class="pre">build_value_model_factorized</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">encoding_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.rectangle_pin_all_attn_factorized.RectanglePinAllAttnFactorized.build_value_model_factorized" title="Permalink to this definition"></a></dt>
+<dd><p>Build the value model.</p>
+<p>This model calculates the value using a dense layer from the encoding layer,
+where the dense layer has 1 output neuron corresponding to the value of the state.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>encoding_size</strong> (<em>int</em>) – Size of the encoding.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_all_attn_factorized.RectanglePinAllAttnFactorized.encode_pin_feature_attn">
+<span class="sig-name descname"><span class="pre">encode_pin_feature_attn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.rectangle_pin_all_attn_factorized.RectanglePinAllAttnFactorized.encode_pin_feature_attn" title="Permalink to this definition"></a></dt>
+<dd><p>Encode the component pin feature array.</p>
+<p>Encode the component pin feature array by going through each component,
+and for each pin in the component, passing the pin features through
+a dense layer with output dimension pin_encoding_dim. Then to find the
+encoding of the pins for the component, self-attention is performed on
+these pin encodings. The output of the self-attention layer is then
+flattened to get a single encoding for the pins of the component.</p>
+<p>The component pin feature array is of size (max_num_components,
+max_num_pins_per_component, pin_feature_vector_width) and the
+encoding before flattening is of size (max_num_components,
+attn_hidden_size_pin), where  attn_hidden_size_pin is the size of the
+hidden layer in the self-attention layer. The encoding after flattening is of size
+max_num_components * attn_hidden_size_pin.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>model_config</strong> (<em>dict</em>) – Model config dict.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_all_attn_factorized.RectanglePinAllAttnFactorized.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seq_lens</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.rectangle_pin_all_attn_factorized.RectanglePinAllAttnFactorized.forward" title="Permalink to this definition"></a></dt>
+<dd><p>Forward pass of the model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>input_dict</strong> (<em>Dict</em>) – Input dictionary.</p></li>
+<li><p><strong>state</strong> (<em>List</em>) – List of state tensors.</p></li>
+<li><p><strong>seq_lens</strong> (<em>Tensor</em>) – Lengths of the input sequences.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Tuple of action logits and state.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Tuple[Tensor, List]</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<dl class="simple">
+<dt>An action mask is applied to the logits to prevent the agent from</dt><dd><p>selecting invalid actions.</p>
+</dd>
+</dl>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-agent.models.rectangle_pin_attn_all_model_no_grid">
+<span id="agent-models-rectangle-pin-attn-all-model-no-grid-module"></span><h2>agent.models.rectangle_pin_attn_all_model_no_grid module<a class="headerlink" href="#module-agent.models.rectangle_pin_attn_all_model_no_grid" title="Permalink to this headline"></a></h2>
+<p>Policy model for the rectangle component placement task where the components have pins and where
+attention is used to encode both the component features and the component pin features. The grid
+is not used in the encoding.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_attn_all_model_no_grid.RectanglePinAttnAllNoGridModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">agent.models.rectangle_pin_attn_all_model_no_grid.</span></span><span class="sig-name descname"><span class="pre">RectanglePinAttnAllNoGridModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_space</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action_space</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_outputs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.rectangle_pin_attn_all_model_no_grid.RectanglePinAttnAllNoGridModel" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#agent.models.rectangle_pin_attn_component_pin_model.RectanglePinAttnCompPinModel" title="agent.models.rectangle_pin_attn_component_pin_model.RectanglePinAttnCompPinModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">agent.models.rectangle_pin_attn_component_pin_model.RectanglePinAttnCompPinModel</span></code></a></p>
+<p>A model to predict the action logits and value for placing components
+with pins on a 2D grid.</p>
+<p>This model takes as inputs a component features array, a component pin
+features array corresponding to the features of pins on components,
+and a placement mask array. The model learns an encoding of these
+features by using the encodings for:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>The component features</p></li>
+<li><p>The component pin features</p></li>
+<li><p>The placement mask</p></li>
+</ul>
+</div></blockquote>
+<p>The component features, component pin features, and placement mask are
+encoded like in RectanglePinAttnCompPinModel. These encodings are
+concatenated along the feature axis to get an encoding of dimensions
+(max_num_components, component_encoding_dim + pin_encoding_dim + 4).</p>
+<p>Before flattening this encoding it is passed through a self-attention layer.
+The output of the is of dimensions (max_num_components, attn_hidden_size),
+where attn_hidden_size is the size of the hidden layer in the self-attention layer.
+This output is then flattened and used as the encoding for the model.</p>
+<p>The encoding is passed through two separate dense layers to generate action
+logits and a value prediction.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_attn_all_model_no_grid.RectanglePinAttnAllNoGridModel.encoding">
+<span class="sig-name descname"><span class="pre">encoding</span></span><a class="headerlink" href="#agent.models.rectangle_pin_attn_all_model_no_grid.RectanglePinAttnAllNoGridModel.encoding" title="Permalink to this definition"></a></dt>
+<dd><p>Encoding of the input features.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>tf.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_attn_all_model_no_grid.RectanglePinAttnAllNoGridModel.processed_component_pin_encodings">
+<span class="sig-name descname"><span class="pre">processed_component_pin_encodings</span></span><a class="headerlink" href="#agent.models.rectangle_pin_attn_all_model_no_grid.RectanglePinAttnAllNoGridModel.processed_component_pin_encodings" title="Permalink to this definition"></a></dt>
+<dd><p>Processed component pin
+encodings.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>tf.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Attention is performed on the encodings the component and pin features together,
+as well as for getting the pin encodings.</p>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_attn_all_model_no_grid.RectanglePinAttnAllNoGridModel.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seq_lens</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.rectangle_pin_attn_all_model_no_grid.RectanglePinAttnAllNoGridModel.forward" title="Permalink to this definition"></a></dt>
+<dd><p>Forward pass of the model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>input_dict</strong> (<em>Dict</em>) – Input dictionary.</p></li>
+<li><p><strong>state</strong> (<em>List</em>) – List of state tensors.</p></li>
+<li><p><strong>seq_lens</strong> (<em>Tensor</em>) – Lengths of the input sequences.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Tuple of action logits and state.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Tuple[Tensor, List]</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<dl class="simple">
+<dt>An action mask is applied to the logits to prevent the agent from</dt><dd><p>selecting invalid actions.</p>
+</dd>
+</dl>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-agent.models.rectangle_pin_attn_component_model">
+<span id="agent-models-rectangle-pin-attn-component-model-module"></span><h2>agent.models.rectangle_pin_attn_component_model module<a class="headerlink" href="#module-agent.models.rectangle_pin_attn_component_model" title="Permalink to this headline"></a></h2>
+<p>Policy model for the rectangle component placement task where the components have pins and where
+attention is used to create the component encodings.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_attn_component_model.RectanglePinAttnCompModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">agent.models.rectangle_pin_attn_component_model.</span></span><span class="sig-name descname"><span class="pre">RectanglePinAttnCompModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_space</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action_space</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_outputs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.rectangle_pin_attn_component_model.RectanglePinAttnCompModel" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#agent.models.rectangle_pin_model.RectanglePinModel" title="agent.models.rectangle_pin_model.RectanglePinModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">agent.models.rectangle_pin_model.RectanglePinModel</span></code></a></p>
+<p>A model to predict the action logits and value for placing components
+with pins on a 2D grid.</p>
+<p>This model takes as inputs a 2D grid, a component features array,
+a component pin features array corresponding to the features of pins
+on components, and a placement mask array. The model learns an encoding of
+these features by using the encodings for:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>The grid (same as RectangleModel)</p></li>
+<li><p>The component features</p></li>
+<li><p>The component pin features</p></li>
+<li><p>The placement mask</p></li>
+</ul>
+</div></blockquote>
+<p>The grid encoding is created like in RectangleModel. The component features,
+component pin features, and placement mask are encoded like in RectanglePinModel
+and then concatenated along the feature axis to get an encoding of dimensions
+(max_num_components, component_encoding_dim + pin_encoding_dim + 4).</p>
+<p>Before flattening this encoding and concatenating it with the flattened grid
+encoding, it is passed through a self-attention layer. The output of the
+is of dimensions (max_num_components, attn_hidden_size), where attn_hidden_size
+is the size of the hidden layer in the self-attention layer. This output is
+then flattened and concatenated with the flattened grid encoding to get a
+single encoding.</p>
+<p>The concatenated encoding is passed through two separate dense layers to
+generate action logits and a value prediction.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_attn_component_model.RectanglePinAttnCompModel.encoding">
+<span class="sig-name descname"><span class="pre">encoding</span></span><a class="headerlink" href="#agent.models.rectangle_pin_attn_component_model.RectanglePinAttnCompModel.encoding" title="Permalink to this definition"></a></dt>
+<dd><p>Encoding of the input features.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>tf.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_attn_component_model.RectanglePinAttnCompModel.processed_component_pin_encodings">
+<span class="sig-name descname"><span class="pre">processed_component_pin_encodings</span></span><a class="headerlink" href="#agent.models.rectangle_pin_attn_component_model.RectanglePinAttnCompModel.processed_component_pin_encodings" title="Permalink to this definition"></a></dt>
+<dd><p>Processed component pin
+encodings.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>tf.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Attention is performed on the encodings for the component and pin features together.</p>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_attn_component_model.RectanglePinAttnCompModel.build_encoding_rectangle_pin_attn">
+<span class="sig-name descname"><span class="pre">build_encoding_rectangle_pin_attn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.rectangle_pin_attn_component_model.RectanglePinAttnCompModel.build_encoding_rectangle_pin_attn" title="Permalink to this definition"></a></dt>
+<dd><p>Build the encoding for the RectanglePinAttnCompModel.</p>
+<p>This method builds an encoding using component encodings, pin encodings,
+and the one-hot encoded placement mask. The encoding is built by performing
+self-attention on the processed_component_pin_encodings attribute from
+RectanglePinModel.</p>
+<p>The output of the self-attention layer is of dimensions (max_num_components,
+attn_hidden_size), where attn_hidden_size is the size of the hidden layer
+in the self-attention layer. This output is then flattened and concatenated
+with the flattened grid encoding to get a single encoding of dimensions
+(max_num_components * attn_hidden_size + grid_encoding_dim).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>model_config</strong> (<em>Dict</em>) – Model config dictionary.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_attn_component_model.RectanglePinAttnCompModel.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seq_lens</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.rectangle_pin_attn_component_model.RectanglePinAttnCompModel.forward" title="Permalink to this definition"></a></dt>
+<dd><p>Forward pass of the model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>input_dict</strong> (<em>Dict</em>) – Input dictionary.</p></li>
+<li><p><strong>state</strong> (<em>List</em>) – List of state tensors.</p></li>
+<li><p><strong>seq_lens</strong> (<em>Tensor</em>) – Lengths of the input sequences.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Tuple of action logits and state.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Tuple[Tensor, List]</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<dl class="simple">
+<dt>An action mask is applied to the logits to prevent the agent from</dt><dd><p>selecting invalid actions.</p>
+</dd>
+</dl>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_attn_component_model.RectanglePinAttnCompModel.preprocess">
+<span class="sig-name descname"><span class="pre">preprocess</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.rectangle_pin_attn_component_model.RectanglePinAttnCompModel.preprocess" title="Permalink to this definition"></a></dt>
+<dd><p>Preprocess the obs_dict.</p>
+<p>This method preprocesses the obs_dict by:</p>
+<blockquote>
+<div><ul class="simple">
+<li><dl class="simple">
+<dt>Getting the the numerical feature and categorical feature arrays</dt><dd><p>for all pins from the observation space dictionary. The numerical
+feature array is of size (max_num_components, max_num_pins_per_component,
+4) and the categorical feature array is of size (max_num_components,
+max_num_pins_per_component, 1).</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>One-hot encoding the categorical feature array for the pins</dt><dd><p>which contains the net_id of a pin. The one-hot encoded array is of
+size (max_num_components, max_num_pins_per_component, 4).</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Concatenating the one-hot encoded categorical feature array with the</dt><dd><p>numerical feature array to form the all pins feature tensor. The
+all pins feature tensor is of size (max_num_components,
+max_num_pins_per_component, num_nets + 4 + 1).</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>obs_dict</strong> (<em>Dict</em>) – Observation space dictionary.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>Tuple of placement mask,</dt><dd><p>placement mask, all pins numerical feature tensor, and all pins
+feature tensor.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Tuple[tf.Tensor, tf.Tensor, tf.Tensor]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-agent.models.rectangle_pin_attn_component_pin_model">
+<span id="agent-models-rectangle-pin-attn-component-pin-model-module"></span><h2>agent.models.rectangle_pin_attn_component_pin_model module<a class="headerlink" href="#module-agent.models.rectangle_pin_attn_component_pin_model" title="Permalink to this headline"></a></h2>
+<p>Policy model for the rectangle component placement task where the components have pins and where
+attention is used to encode both the component features and the component pin features.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_attn_component_pin_model.RectanglePinAttnCompPinModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">agent.models.rectangle_pin_attn_component_pin_model.</span></span><span class="sig-name descname"><span class="pre">RectanglePinAttnCompPinModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_space</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action_space</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_outputs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.rectangle_pin_attn_component_pin_model.RectanglePinAttnCompPinModel" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#agent.models.rectangle_pin_attn_component_model.RectanglePinAttnCompModel" title="agent.models.rectangle_pin_attn_component_model.RectanglePinAttnCompModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">agent.models.rectangle_pin_attn_component_model.RectanglePinAttnCompModel</span></code></a></p>
+<p>A model to predict the action logits and value for placing components
+with pins on a 2D grid.</p>
+<p>This model takes as inputs a 2D grid, a component features array,
+a component pin features array corresponding to the features of pins
+on components, and a placement mask array. The model learns an encoding of
+these features by using the encodings for:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>The grid (same as RectangleModel)</p></li>
+<li><p>The component features</p></li>
+<li><p>The component pin features</p></li>
+<li><p>The placement mask</p></li>
+</ul>
+</div></blockquote>
+<p>The grid encoding is created like in RectangleModel. The component features,
+component pin features, and placement mask are encoded like in RectanglePinModel,
+except that the component pin features are passed through a self-attention
+layer to obtain the encodings of all the pins for each component. These encodings
+are then concatenated along the feature axis to get an encoding of dimensions
+(max_num_components, component_encoding_dim + pin_encoding_dim + 4).</p>
+<p>Before flattening this encoding and concatenating it with the flattened grid
+encoding, it is passed through a self-attention layer. The output of the
+is of dimensions (max_num_components, attn_hidden_size), where attn_hidden_size
+is the size of the hidden layer in the self-attention layer. This output is
+then flattened and concatenated with the flattened grid encoding to get a
+single encoding.</p>
+<p>The concatenated encoding is passed through two separate dense layers to
+generate action logits and a value prediction.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_attn_component_pin_model.RectanglePinAttnCompPinModel.encoding">
+<span class="sig-name descname"><span class="pre">encoding</span></span><a class="headerlink" href="#agent.models.rectangle_pin_attn_component_pin_model.RectanglePinAttnCompPinModel.encoding" title="Permalink to this definition"></a></dt>
+<dd><p>Encoding of the input features.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>tf.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_attn_component_pin_model.RectanglePinAttnCompPinModel.processed_component_pin_encodings">
+<span class="sig-name descname"><span class="pre">processed_component_pin_encodings</span></span><a class="headerlink" href="#agent.models.rectangle_pin_attn_component_pin_model.RectanglePinAttnCompPinModel.processed_component_pin_encodings" title="Permalink to this definition"></a></dt>
+<dd><p>Processed component pin
+encodings.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>tf.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Attention is performed on the encodings the component and pin features together,
+as well as for getting the pin encodings.</p>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_attn_component_pin_model.RectanglePinAttnCompPinModel.build_encoding_rectangle_comp_pin">
+<span class="sig-name descname"><span class="pre">build_encoding_rectangle_comp_pin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.rectangle_pin_attn_component_pin_model.RectanglePinAttnCompPinModel.build_encoding_rectangle_comp_pin" title="Permalink to this definition"></a></dt>
+<dd><p>Build the encoding for the RectanglePinAttnCompModel.</p>
+<p>This method builds an encoding using component encodings, pin encodings,
+and the one-hot encoded placement mask. The encodings for the placement mask
+and component encodings are built like in RectanglePinAttnCompModel. To get
+the pin encodings we now use a self-attention layer.</p>
+<p>These encodings are then concatenated along the feature axis to get an
+encoding of dimensions (max_num_components, component_encoding_dim +
+attn_hidden_size_pin + 4). Self-attention is again performed on
+this encoding to get an encoding of dimensions (max_num_components,
+attn_hidden_size). This output is then flattened and concatenated with
+the flattened grid encoding to get a single encoding of dimensions
+(max_num_components * attn_hidden_size + grid_encoding_dim).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>model_config</strong> (<em>Dict</em>) – Model config dictionary.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_attn_component_pin_model.RectanglePinAttnCompPinModel.encode_pin_feature_attn">
+<span class="sig-name descname"><span class="pre">encode_pin_feature_attn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.rectangle_pin_attn_component_pin_model.RectanglePinAttnCompPinModel.encode_pin_feature_attn" title="Permalink to this definition"></a></dt>
+<dd><p>Encode the component pin feature array.</p>
+<p>Encode the component pin feature array by going through each component,
+and for each pin in the component, passing the pin features through
+a dense layer with output dimension pin_encoding_dim. Then to find the
+encoding of the pins for the component, self-attention is performed on
+these pin encodings. The output of the self-attention layer is then
+flattened to get a single encoding for the pins of the component.</p>
+<p>The component pin feature array is of size (max_num_components,
+max_num_pins_per_component, pin_feature_vector_width) and the
+encoding before flattening is of size (max_num_components,
+attn_hidden_size_pin), where  attn_hidden_size_pin is the size of the
+hidden layer in the self-attention layer. The encoding after flattening is of size
+max_num_components * attn_hidden_size_pin.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>model_config</strong> (<em>dict</em>) – Model config dict.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_attn_component_pin_model.RectanglePinAttnCompPinModel.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seq_lens</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.rectangle_pin_attn_component_pin_model.RectanglePinAttnCompPinModel.forward" title="Permalink to this definition"></a></dt>
+<dd><p>Forward pass of the model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>input_dict</strong> (<em>Dict</em>) – Input dictionary.</p></li>
+<li><p><strong>state</strong> (<em>List</em>) – List of state tensors.</p></li>
+<li><p><strong>seq_lens</strong> (<em>Tensor</em>) – Lengths of the input sequences.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Tuple of action logits and state.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Tuple[Tensor, List]</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<dl class="simple">
+<dt>An action mask is applied to the logits to prevent the agent from</dt><dd><p>selecting invalid actions.</p>
+</dd>
+</dl>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-agent.models.rectangle_pin_factorized_model">
+<span id="agent-models-rectangle-pin-factorized-model-module"></span><h2>agent.models.rectangle_pin_factorized_model module<a class="headerlink" href="#module-agent.models.rectangle_pin_factorized_model" title="Permalink to this headline"></a></h2>
+<p>Policy model for the rectangle component placement task where the components have pins and where
+the action space is factorized.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_factorized_model.RectanglePinFactorizedModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">agent.models.rectangle_pin_factorized_model.</span></span><span class="sig-name descname"><span class="pre">RectanglePinFactorizedModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_space</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action_space</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_outputs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.rectangle_pin_factorized_model.RectanglePinFactorizedModel" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#agent.models.rectangle_pin_model.RectanglePinModel" title="agent.models.rectangle_pin_model.RectanglePinModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">agent.models.rectangle_pin_model.RectanglePinModel</span></code></a></p>
+<p>A model to predict the action logits and value for placing components
+with pins on a 2D grid.</p>
+<p>This model takes as inputs a 2D grid, a component features array,
+a component pin features array corresponding to the features of pins
+on components, and a placement mask array. The model learns an encoding of
+these features by using the encodings for:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>The grid (same as RectanglePinModel)</p></li>
+<li><p>The component features</p></li>
+<li><p>The component pin features</p></li>
+<li><p>The placement mask</p></li>
+</ul>
+</div></blockquote>
+<p>The grid encoding is created like in RectanglePinModel. The component features
+array is encoded by passing the features for each component through a
+dense layer. The component pin features array is encoded by:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>For each component, passing the features for each pin through a dense layer</p></li>
+<li><dl class="simple">
+<dt>Summing the encoded pin features for each component to get a single</dt><dd><p>encoded feature vector for each component.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+<p>The placement mask is encoded by simply one-hot encoding it. The encodings
+component features, component pin features, and placement mask are
+concatenated along the feature axis to get an encoding of dimensions
+(max_num_components, component_encoding_dim + pin_encoding_dim + 4).
+This encoding is then flattened and concatenated with the flattened grid encoding to
+get a single encoding.</p>
+<p>This new encoding is passed through a dense layer for value prediction. The encoding is also
+concatenated with the flattened action mask and outputted in the forward pass. The agent uses
+this output to sample actions from the factorized action space by first splitting the encoding
+from the action mask and using the encoding as inputs for the action models and using the action
+mask to mask invalid actions during sampling.</p>
+<p>To sample actions from the factorized action space, the model samples from
+action models for each component, conditioned on previous components. This sampling
+is done using the FactorizedActionDistribution classes.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_factorized_model.RectanglePinFactorizedModel.encoding">
+<span class="sig-name descname"><span class="pre">encoding</span></span><a class="headerlink" href="#agent.models.rectangle_pin_factorized_model.RectanglePinFactorizedModel.encoding" title="Permalink to this definition"></a></dt>
+<dd><p>Encoding of the input features.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>tf.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_factorized_model.RectanglePinFactorizedModel.encoding_model">
+<span class="sig-name descname"><span class="pre">encoding_model</span></span><a class="headerlink" href="#agent.models.rectangle_pin_factorized_model.RectanglePinFactorizedModel.encoding_model" title="Permalink to this definition"></a></dt>
+<dd><p>Model to create the encoding.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>tf.keras.Model</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_factorized_model.RectanglePinFactorizedModel.value_model">
+<span class="sig-name descname"><span class="pre">value_model</span></span><a class="headerlink" href="#agent.models.rectangle_pin_factorized_model.RectanglePinFactorizedModel.value_model" title="Permalink to this definition"></a></dt>
+<dd><p>Model to predict the value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>tf.keras.Model</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_factorized_model.RectanglePinFactorizedModel.action_model">
+<span class="sig-name descname"><span class="pre">action_model</span></span><a class="headerlink" href="#agent.models.rectangle_pin_factorized_model.RectanglePinFactorizedModel.action_model" title="Permalink to this definition"></a></dt>
+<dd><p>Model to predict the action logits.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>tf.keras.Model</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_factorized_model.RectanglePinFactorizedModel.action_space_size">
+<span class="sig-name descname"><span class="pre">action_space_size</span></span><a class="headerlink" href="#agent.models.rectangle_pin_factorized_model.RectanglePinFactorizedModel.action_space_size" title="Permalink to this definition"></a></dt>
+<dd><p>Size of the action space.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_factorized_model.RectanglePinFactorizedModel.action_space_shape">
+<span class="sig-name descname"><span class="pre">action_space_shape</span></span><a class="headerlink" href="#agent.models.rectangle_pin_factorized_model.RectanglePinFactorizedModel.action_space_shape" title="Permalink to this definition"></a></dt>
+<dd><p>Shape of the action space.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>Tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_factorized_model.RectanglePinFactorizedModel.build_action_models_coordinates">
+<span class="sig-name descname"><span class="pre">build_action_models_coordinates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">encoding_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action_space</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.rectangle_pin_factorized_model.RectanglePinFactorizedModel.build_action_models_coordinates" title="Permalink to this definition"></a></dt>
+<dd><p>Build the action models for the orientation, x and y actions.</p>
+<p>The distribution of orientation, x and y actions are modelled using the following
+factorization:</p>
+<blockquote>
+<div><p><span class="math notranslate nohighlight">\(p(\text{orientation}, x, y) = p(\text{x})p(y \mid x) p (\text{orientation} \mid x, y)\)</span></p>
+</div></blockquote>
+<p>The x action model is created by taking the encoding as an input and using a
+dense layer to output logits of size equal to the number of x values.</p>
+<p>The y action model is created by taking the encoding and x input as an input and
+using a dense layer to output logits of size equal to the number of y values.</p>
+<p>The orientation model is created by taking the encoding, the x input and the y input
+as an input and using a dense layer to output logits of size equal to the number
+of orientations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>encoding_size</strong> (<em>int</em>) – Size of the encoding.</p></li>
+<li><p><strong>action_space</strong> (<em>gym.spaces.Tuple</em>) – Action space.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>The x inputs and y inputs to the y action model and orientation model</dt><dd><p>are processed to be in the range of[0, 1] by dividing by the maximum x
+and y values respectively during sampling.</p>
+</dd>
+</dl>
+</li>
+<li><p>The sampling is done using the FactorizedActionDistribution classes.</p></li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_factorized_model.RectanglePinFactorizedModel.build_action_models_orientation">
+<span class="sig-name descname"><span class="pre">build_action_models_orientation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">encoding_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action_space</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.rectangle_pin_factorized_model.RectanglePinFactorizedModel.build_action_models_orientation" title="Permalink to this definition"></a></dt>
+<dd><p>Build the action models for the orientation, x and y actions.</p>
+<p>The distribution of orientation, x and y actions are modelled using the following
+factorization:</p>
+<blockquote>
+<div><p><span class="math notranslate nohighlight">\(p(\text{orientation}, x, y) = p(\text{orientation})p(x \mid \text{orientation}) p (y \mid \text{orientation}, x)\)</span></p>
+</div></blockquote>
+<p>The orientation model is created by taking the encoding as an input and using a
+dense layer to output logits of size equal to the number of orientations.</p>
+<p>The x action model is created by taking the encoding and the one hot encoded orientation
+as an input and using a dense layer to output logits of size equal to the number
+of x values.</p>
+<p>The y action model is created by taking the encoding, the one hot encoded orientation
+and the x input as an input and using a dense layer to output logits of size equal
+to the number of y values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>encoding_size</strong> (<em>int</em>) – Size of the encoding.</p></li>
+<li><p><strong>action_space</strong> (<em>gym.spaces.Tuple</em>) – Action space.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>The x inputs to the y action model are processed to be in the range of</dt><dd><p>[0, 1] by dividing by the maximum x value during sampling.</p>
+</dd>
+</dl>
+</li>
+<li><p>The sampling is done using the FactorizedActionDistribution classes.</p></li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_factorized_model.RectanglePinFactorizedModel.build_encoding_model_factorized">
+<span class="sig-name descname"><span class="pre">build_encoding_model_factorized</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.rectangle_pin_factorized_model.RectanglePinFactorizedModel.build_encoding_model_factorized" title="Permalink to this definition"></a></dt>
+<dd><p>Build the encoding layer.</p>
+<p>This layer creates an encoding model to create encodings like for
+the RectanglePinModel. The encoding concatenates the encoded grid
+and encoded component features which are encoded like in the
+RectanglePinModel.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>model_config</strong> (<em>Dict</em>) – Model configuration dictionary.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_factorized_model.RectanglePinFactorizedModel.build_value_model_factorized">
+<span class="sig-name descname"><span class="pre">build_value_model_factorized</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">encoding_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.rectangle_pin_factorized_model.RectanglePinFactorizedModel.build_value_model_factorized" title="Permalink to this definition"></a></dt>
+<dd><p>Build the value model.</p>
+<p>This model calculates the value using a dense layer from the encoding layer,
+where the dense layer has 1 output neuron corresponding to the value of the state.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>encoding_size</strong> (<em>int</em>) – Size of the encoding.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_factorized_model.RectanglePinFactorizedModel.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seq_lens</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.rectangle_pin_factorized_model.RectanglePinFactorizedModel.forward" title="Permalink to this definition"></a></dt>
+<dd><p>Forward pass of the model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>input_dict</strong> (<em>dict</em>) – Input dictionary containing the observation.</p></li>
+<li><p><strong>state</strong> (<em>List</em>) – List of state tensors.</p></li>
+<li><p><strong>seq_lens</strong> (<em>Tensor</em>) – Tensor containing the sequence length.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Tuple of action logits and state.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Tuple[Tensor, List]</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<dl class="simple">
+<dt>The output and the actions models are used to sample actions in the</dt><dd><p>FactorizedActionDistribution classes.</p>
+</dd>
+</dl>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-agent.models.rectangle_pin_model">
+<span id="agent-models-rectangle-pin-model-module"></span><h2>agent.models.rectangle_pin_model module<a class="headerlink" href="#module-agent.models.rectangle_pin_model" title="Permalink to this headline"></a></h2>
+<p>Policy model for the rectangle component placement task.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_model.RectanglePinModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">agent.models.rectangle_pin_model.</span></span><span class="sig-name descname"><span class="pre">RectanglePinModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_space</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action_space</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_outputs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.rectangle_pin_model.RectanglePinModel" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#agent.models.rectangle_model.RectangleModel" title="agent.models.rectangle_model.RectangleModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">agent.models.rectangle_model.RectangleModel</span></code></a></p>
+<p>A model to predict the action logits and value for placing components
+with pins on a 2D grid.</p>
+<p>This model takes as inputs a 2D grid, a component features array,
+a component pin features array corresponding to the features of pins
+on components, and a placement mask array. The model learns an encoding of
+these features by using the encodings for:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>The grid (same as RectangleModel)</p></li>
+<li><p>The component features</p></li>
+<li><p>The component pin features</p></li>
+<li><p>The placement mask</p></li>
+</ul>
+</div></blockquote>
+<p>The grid encoding is created like in RectangleModel. The component features
+array is encoded by passing the features for each component through a
+dense layer. The component pin features array is encoded by:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>For each component, passing the features for each pin through a dense layer</p></li>
+<li><dl class="simple">
+<dt>Summing the encoded pin features for each component to get a single</dt><dd><p>encoded feature vector for each component.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+<p>The placement mask is encoded by simply one-hot encoding it. The encodings
+component features, component pin features, and placement mask are
+concatenated along the feature axis to get an encoding of dimensions
+(max_num_components, component_encoding_dim + pin_encoding_dim + 4).
+This encoding is then flattened and concatenated with the flattened grid encoding to
+get a single encoding.</p>
+<p>The concatenated encoding is passed through two separate dense layers to
+generate action logits and a value prediction.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_model.RectanglePinModel.component_feature_input">
+<span class="sig-name descname"><span class="pre">component_feature_input</span></span><a class="headerlink" href="#agent.models.rectangle_pin_model.RectanglePinModel.component_feature_input" title="Permalink to this definition"></a></dt>
+<dd><p>Input tensor for component features.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>tf.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_model.RectanglePinModel.component_pin_feature_input">
+<span class="sig-name descname"><span class="pre">component_pin_feature_input</span></span><a class="headerlink" href="#agent.models.rectangle_pin_model.RectanglePinModel.component_pin_feature_input" title="Permalink to this definition"></a></dt>
+<dd><p>Input tensor for component pin features.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>tf.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_model.RectanglePinModel.placement_mask_input">
+<span class="sig-name descname"><span class="pre">placement_mask_input</span></span><a class="headerlink" href="#agent.models.rectangle_pin_model.RectanglePinModel.placement_mask_input" title="Permalink to this definition"></a></dt>
+<dd><p>Input tensor for placement mask.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>tf.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_model.RectanglePinModel.encoding">
+<span class="sig-name descname"><span class="pre">encoding</span></span><a class="headerlink" href="#agent.models.rectangle_pin_model.RectanglePinModel.encoding" title="Permalink to this definition"></a></dt>
+<dd><p>Concatenated encoding of the grid, component features,
+component pin features, and placement mask.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>tf.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_model.RectanglePinModel.encoding_feature">
+<span class="sig-name descname"><span class="pre">encoding_feature</span></span><a class="headerlink" href="#agent.models.rectangle_pin_model.RectanglePinModel.encoding_feature" title="Permalink to this definition"></a></dt>
+<dd><p>Encoded flattened component features.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>tf.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_model.RectanglePinModel.encoding_pin">
+<span class="sig-name descname"><span class="pre">encoding_pin</span></span><a class="headerlink" href="#agent.models.rectangle_pin_model.RectanglePinModel.encoding_pin" title="Permalink to this definition"></a></dt>
+<dd><p>Encoded flattened component pin features.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>tf.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_model.RectanglePinModel.encoding_mask">
+<span class="sig-name descname"><span class="pre">encoding_mask</span></span><a class="headerlink" href="#agent.models.rectangle_pin_model.RectanglePinModel.encoding_mask" title="Permalink to this definition"></a></dt>
+<dd><p>Encoded flattened placement mask.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>tf.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_model.RectanglePinModel.logits_model">
+<span class="sig-name descname"><span class="pre">logits_model</span></span><a class="headerlink" href="#agent.models.rectangle_pin_model.RectanglePinModel.logits_model" title="Permalink to this definition"></a></dt>
+<dd><p>Model for predicting action logits.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>tf.keras.Model</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_model.RectanglePinModel.value_model">
+<span class="sig-name descname"><span class="pre">value_model</span></span><a class="headerlink" href="#agent.models.rectangle_pin_model.RectanglePinModel.value_model" title="Permalink to this definition"></a></dt>
+<dd><p>Model for predicting value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>tf.keras.Model</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_model.RectanglePinModel.build_encoding_rectangle_pin">
+<span class="sig-name descname"><span class="pre">build_encoding_rectangle_pin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.rectangle_pin_model.RectanglePinModel.build_encoding_rectangle_pin" title="Permalink to this definition"></a></dt>
+<dd><p>Build the encoding for the RectanglePinModel.</p>
+<p>Build the encoding for the RectanglePinModel by encoding the component
+features, component pin features, and placement mask, concatenating
+them with the grid encoding, and flattening the result.</p>
+<p>The dimensions of the encoding before concatenating to the grid
+are (max_num_components * component_encoding_dim + pin_encoding_dim + 4).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>model_config</strong> (<em>dict</em>) – Model config dict.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_model.RectanglePinModel.build_logits_model_rectangle_pin">
+<span class="sig-name descname"><span class="pre">build_logits_model_rectangle_pin</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.rectangle_pin_model.RectanglePinModel.build_logits_model_rectangle_pin" title="Permalink to this definition"></a></dt>
+<dd><p>Build the logits model.</p>
+<p>This model calculates the action logits using a dense layer where the
+input is the model encoding and the dense layer has n output neurons
+corresponding to the number of actions.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_model.RectanglePinModel.build_value_model_rectangle_pin">
+<span class="sig-name descname"><span class="pre">build_value_model_rectangle_pin</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.rectangle_pin_model.RectanglePinModel.build_value_model_rectangle_pin" title="Permalink to this definition"></a></dt>
+<dd><p>Build the value model.</p>
+<p>This model calculates the value using a dense layer where the input is
+the model encoding and the dense layer has 1 output neuron corresponding
+to the value of the state.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_model.RectanglePinModel.encode_component_feature">
+<span class="sig-name descname"><span class="pre">encode_component_feature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.rectangle_pin_model.RectanglePinModel.encode_component_feature" title="Permalink to this definition"></a></dt>
+<dd><p>Encode the component feature array.</p>
+<p>Encode the component feature array by passing the
+features for each component through a dense layer with
+output dimension component_encoding_dim.</p>
+<p>The encoding is of size (max_num_components, component_encoding_dim).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>model_config</strong> (<em>dict</em>) – Model config dict.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_model.RectanglePinModel.encode_pin_feature">
+<span class="sig-name descname"><span class="pre">encode_pin_feature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.rectangle_pin_model.RectanglePinModel.encode_pin_feature" title="Permalink to this definition"></a></dt>
+<dd><p>Encode the component pin feature array.</p>
+<p>Encode the component pin feature array by going through each component,
+and for each pin in the component, passing the pin features through
+a dense layer with output dimension pin_encoding_dim. Then to find the
+encoding of the pins for the component, sum up the encodings of
+the pins for the component.</p>
+<p>The component pin feature array is of size (max_num_components,
+max_num_pins_per_component, pin_feature_vector_width) and the
+encoding is of size (max_num_components, pin_encoding_dim).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>model_config</strong> (<em>dict</em>) – Model config dict.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_model.RectanglePinModel.encode_placement_mask">
+<span class="sig-name descname"><span class="pre">encode_placement_mask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.rectangle_pin_model.RectanglePinModel.encode_placement_mask" title="Permalink to this definition"></a></dt>
+<dd><p>Encode the placement mask by one hot encoding it.</p>
+<p>The placement mask is of size (max_num_components, 1) where
+each element is an integer between 0 and 3 inclusive. The
+encoding is of size (max_num_components, 4).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>model_config</strong> (<em>dict</em>) – Model config dict.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_model.RectanglePinModel.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seq_lens</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.rectangle_pin_model.RectanglePinModel.forward" title="Permalink to this definition"></a></dt>
+<dd><p>Forward pass of the model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>input_dict</strong> (<em>Dict</em>) – Input dictionary.</p></li>
+<li><p><strong>state</strong> (<em>List</em>) – List of state tensors.</p></li>
+<li><p><strong>seq_lens</strong> (<em>Tensor</em>) – Lengths of the input sequences.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Tuple of action logits and state.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Tuple[Tensor, List]</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<dl class="simple">
+<dt>An action mask is applied to the logits to prevent the agent from</dt><dd><p>selecting invalid actions.</p>
+</dd>
+</dl>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_model.RectanglePinModel.preprocess">
+<span class="sig-name descname"><span class="pre">preprocess</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.rectangle_pin_model.RectanglePinModel.preprocess" title="Permalink to this definition"></a></dt>
+<dd><p>Preprocess the obs_dict.</p>
+<p>This method preprocesses the obs_dict by:</p>
+<blockquote>
+<div><ul class="simple">
+<li><dl class="simple">
+<dt>Getting the the numerical feature and categorical feature arrays</dt><dd><p>for all pins from the observation space dictionary. The numerical
+feature array is of size (max_num_components, max_num_pins_per_component,
+4) and the categorical feature array is of size (max_num_components,
+max_num_pins_per_component, 1).</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>One-hot encoding the categorical feature array for the pins</dt><dd><p>which contains the net_id of a pin. The one-hot encoded array is of
+size (max_num_components, max_num_pins_per_component, 4).</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Concatenating the one-hot encoded categorical feature array with the</dt><dd><p>numerical feature array to form the all pins feature tensor. The
+all pins feature tensor is of size (max_num_components,
+max_num_pins_per_component, num_nets + 4 + 1).</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>obs_dict</strong> (<em>Dict</em>) – Observation space dictionary.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>Tuple of placement mask,</dt><dd><p>placement mask, all pins numerical feature tensor, and all pins
+feature tensor.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Tuple[tf.Tensor, tf.Tensor, tf.Tensor]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-agent.models.rectangle_pin_spatial_model">
+<span id="agent-models-rectangle-pin-spatial-model-module"></span><h2>agent.models.rectangle_pin_spatial_model module<a class="headerlink" href="#module-agent.models.rectangle_pin_spatial_model" title="Permalink to this headline"></a></h2>
+<p>Policy model for the rectangle component placement task where the components have pins and where
+the pins, components and nets are represented spatially.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_spatial_model.RectanglePinSpatialModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">agent.models.rectangle_pin_spatial_model.</span></span><span class="sig-name descname"><span class="pre">RectanglePinSpatialModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_space</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action_space</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_outputs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.rectangle_pin_spatial_model.RectanglePinSpatialModel" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#agent.models.square_model.SquareModel" title="agent.models.square_model.SquareModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">agent.models.square_model.SquareModel</span></code></a></p>
+<p>A model to predict the action logits and value for placing components
+with pins on a 2D grid.</p>
+<p>This model takes as inputs a 2D grid, a pin grid, a component grid, and a
+placement mask array. The model learns an encoding of these features by
+using the encodings for:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>The grid (same as SquareModel)</p></li>
+<li><p>The pin grid</p></li>
+<li><p>The component grid</p></li>
+<li><p>The placement mask</p></li>
+</ul>
+</div></blockquote>
+<p>The grid encoding is created like in SquareModel. The pin grid is a 3d grid
+with the same height and width as the 2d grid, but with a depth of
+max_num_nets + 1. The first channel is a mask for the pins, the remaining
+channels are a one-hot encoding of the net ids. The component grid is a 4d
+spatial representation of components with pins on them.</p>
+<p>The placement mask is encoded by simply one-hot encoding it. The encodings grid,
+pin grid, component and placement mask are concatenated along the feature axis
+to get an encoding of dimensions. This encoding is then flattened and concatenated
+with the flattened grid encoding to get a single encoding.</p>
+<p>The concatenated encoding is passed through two separate dense layers to
+generate action logits and a value prediction.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_spatial_model.RectanglePinSpatialModel.pin_grid_input">
+<span class="sig-name descname"><span class="pre">pin_grid_input</span></span><a class="headerlink" href="#agent.models.rectangle_pin_spatial_model.RectanglePinSpatialModel.pin_grid_input" title="Permalink to this definition"></a></dt>
+<dd><p>Input tensor for pin grid.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>tf.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_spatial_model.RectanglePinSpatialModel.component_grid_input">
+<span class="sig-name descname"><span class="pre">component_grid_input</span></span><a class="headerlink" href="#agent.models.rectangle_pin_spatial_model.RectanglePinSpatialModel.component_grid_input" title="Permalink to this definition"></a></dt>
+<dd><p>Input tensor for component grid.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>tf.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_spatial_model.RectanglePinSpatialModel.placement_mask_input">
+<span class="sig-name descname"><span class="pre">placement_mask_input</span></span><a class="headerlink" href="#agent.models.rectangle_pin_spatial_model.RectanglePinSpatialModel.placement_mask_input" title="Permalink to this definition"></a></dt>
+<dd><p>Input tensor for placement mask.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>tf.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_spatial_model.RectanglePinSpatialModel.encoding_pin_grid">
+<span class="sig-name descname"><span class="pre">encoding_pin_grid</span></span><a class="headerlink" href="#agent.models.rectangle_pin_spatial_model.RectanglePinSpatialModel.encoding_pin_grid" title="Permalink to this definition"></a></dt>
+<dd><p>Encoded flattened pin grid features.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>tf.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_spatial_model.RectanglePinSpatialModel.encoding_components">
+<span class="sig-name descname"><span class="pre">encoding_components</span></span><a class="headerlink" href="#agent.models.rectangle_pin_spatial_model.RectanglePinSpatialModel.encoding_components" title="Permalink to this definition"></a></dt>
+<dd><p>Encoded flattened component grid features.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>tf.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_spatial_model.RectanglePinSpatialModel.encoding">
+<span class="sig-name descname"><span class="pre">encoding</span></span><a class="headerlink" href="#agent.models.rectangle_pin_spatial_model.RectanglePinSpatialModel.encoding" title="Permalink to this definition"></a></dt>
+<dd><p>Encoded flattened features.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>tf.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_spatial_model.RectanglePinSpatialModel.logits_model">
+<span class="sig-name descname"><span class="pre">logits_model</span></span><a class="headerlink" href="#agent.models.rectangle_pin_spatial_model.RectanglePinSpatialModel.logits_model" title="Permalink to this definition"></a></dt>
+<dd><p>Model to predict action logits.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>tf.keras.Model</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_spatial_model.RectanglePinSpatialModel.value_model">
+<span class="sig-name descname"><span class="pre">value_model</span></span><a class="headerlink" href="#agent.models.rectangle_pin_spatial_model.RectanglePinSpatialModel.value_model" title="Permalink to this definition"></a></dt>
+<dd><p>Model to predict value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>tf.keras.Model</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_spatial_model.RectanglePinSpatialModel.build_encoding_spatial">
+<span class="sig-name descname"><span class="pre">build_encoding_spatial</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.rectangle_pin_spatial_model.RectanglePinSpatialModel.build_encoding_spatial" title="Permalink to this definition"></a></dt>
+<dd><p>Build the encoding for the model by computing pin encoding,
+component encoding and appending them to the grid encoding.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>model_config</strong> (<em>dict</em>) – Model config dict.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_spatial_model.RectanglePinSpatialModel.build_logits_model_spatial">
+<span class="sig-name descname"><span class="pre">build_logits_model_spatial</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.rectangle_pin_spatial_model.RectanglePinSpatialModel.build_logits_model_spatial" title="Permalink to this definition"></a></dt>
+<dd><p>Build the logits model.</p>
+<p>The logits model takes as input the grid, pin grid, component grid and
+placement mask and outputs action logits.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_spatial_model.RectanglePinSpatialModel.build_value_model_spatial">
+<span class="sig-name descname"><span class="pre">build_value_model_spatial</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.rectangle_pin_spatial_model.RectanglePinSpatialModel.build_value_model_spatial" title="Permalink to this definition"></a></dt>
+<dd><p>Build the value model.</p>
+<p>The value model takes as input the grid, pin grid, component grid and
+placement mask and outputs a value prediction.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_spatial_model.RectanglePinSpatialModel.encode_component_grid">
+<span class="sig-name descname"><span class="pre">encode_component_grid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.rectangle_pin_spatial_model.RectanglePinSpatialModel.encode_component_grid" title="Permalink to this definition"></a></dt>
+<dd><p>Encode the component grid.</p>
+<p>The component grid is processed by passing it through a series of
+convolutional blocks. The output of the last convolutional block is
+flattened to get a single encoding and then appended to the placement
+mask one hot encoding.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>model_config</strong> (<em>dict</em>) – Model config dict.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_spatial_model.RectanglePinSpatialModel.encode_pin_grid">
+<span class="sig-name descname"><span class="pre">encode_pin_grid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.rectangle_pin_spatial_model.RectanglePinSpatialModel.encode_pin_grid" title="Permalink to this definition"></a></dt>
+<dd><p>Encode the pin grid.</p>
+<p>The pin grid is processed by passing it through a series of convolutional
+blocks. The output of the last convolutional block is flattened to get
+a single encoding.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>model_config</strong> (<em>dict</em>) – Model config dict.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.models.rectangle_pin_spatial_model.RectanglePinSpatialModel.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seq_lens</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.rectangle_pin_spatial_model.RectanglePinSpatialModel.forward" title="Permalink to this definition"></a></dt>
+<dd><p>Forward pass of the model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>input_dict</strong> (<em>Dict</em>) – Input dictionary.</p></li>
+<li><p><strong>state</strong> (<em>List</em>) – List of state tensors.</p></li>
+<li><p><strong>seq_lens</strong> (<em>Tensor</em>) – Lengths of the input sequences.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Tuple of action logits and state.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Tuple[Tensor, List]</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<dl class="simple">
+<dt>An action mask is applied to the logits to prevent the agent from</dt><dd><p>selecting invalid actions.</p>
+</dd>
+</dl>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-agent.models.square_model">
+<span id="agent-models-square-model-module"></span><h2>agent.models.square_model module<a class="headerlink" href="#module-agent.models.square_model" title="Permalink to this headline"></a></h2>
+<p>Policy model for the square component placement task.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="agent.models.square_model.SquareModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">agent.models.square_model.</span></span><span class="sig-name descname"><span class="pre">SquareModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_space</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action_space</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_outputs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.square_model.SquareModel" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ray.rllib.models.tf.tf_modelv2.TFModelV2</span></code></p>
+<p>A model to predict the action logits and value for a square
+component placement task.</p>
+<p>This model takes a 2D grid as input and learns an encoding of the grid using
+a convolutional neural network with:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Convolutional layers</p></li>
+<li><p>Batch normalization</p></li>
+<li><p>ReLU activations</p></li>
+<li><p>Optional max pooling</p></li>
+</ul>
+</div></blockquote>
+<p>The encoding is flattened and passed through two separate dense layers to
+generate action logits and a value prediction. The dimensions of
+the encoding depends on the specified convolutional layers.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.models.square_model.SquareModel.action_space">
+<span class="sig-name descname"><span class="pre">action_space</span></span><a class="headerlink" href="#agent.models.square_model.SquareModel.action_space" title="Permalink to this definition"></a></dt>
+<dd><p>Action space of the environment.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>gym.spaces</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.models.square_model.SquareModel.grid_input">
+<span class="sig-name descname"><span class="pre">grid_input</span></span><a class="headerlink" href="#agent.models.square_model.SquareModel.grid_input" title="Permalink to this definition"></a></dt>
+<dd><p>Input tensor for the grid.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.models.square_model.SquareModel.encoding_grid">
+<span class="sig-name descname"><span class="pre">encoding_grid</span></span><a class="headerlink" href="#agent.models.square_model.SquareModel.encoding_grid" title="Permalink to this definition"></a></dt>
+<dd><p>Encoded grid.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.models.square_model.SquareModel.logits_model">
+<span class="sig-name descname"><span class="pre">logits_model</span></span><a class="headerlink" href="#agent.models.square_model.SquareModel.logits_model" title="Permalink to this definition"></a></dt>
+<dd><p>Logits model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>tf.keras.Model</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.models.square_model.SquareModel.value_model">
+<span class="sig-name descname"><span class="pre">value_model</span></span><a class="headerlink" href="#agent.models.square_model.SquareModel.value_model" title="Permalink to this definition"></a></dt>
+<dd><p>Value model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>tf.keras.Model</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.models.square_model.SquareModel.build_encoding_square">
+<span class="sig-name descname"><span class="pre">build_encoding_square</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.square_model.SquareModel.build_encoding_square" title="Permalink to this definition"></a></dt>
+<dd><p>Build a convolutional neural network to encode the input grid.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>model_config</strong> (<em>Dict</em>) – Model configuration dictionary.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.models.square_model.SquareModel.build_logits_model_square">
+<span class="sig-name descname"><span class="pre">build_logits_model_square</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.square_model.SquareModel.build_logits_model_square" title="Permalink to this definition"></a></dt>
+<dd><p>Build a model to calculate the logits.</p>
+<p>Use a dense layer from the encoded grid to calculate the logits,
+where the number of output neurons is equal to size of the action space.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.models.square_model.SquareModel.build_value_model_square">
+<span class="sig-name descname"><span class="pre">build_value_model_square</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.square_model.SquareModel.build_value_model_square" title="Permalink to this definition"></a></dt>
+<dd><p>Build a model to calculate the value function.</p>
+<p>Use a dense layer from the encoded grid to calculate the value function,
+where the number of output neurons is equal to 1 (the value of the state).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.models.square_model.SquareModel.encode_grid">
+<span class="sig-name descname"><span class="pre">encode_grid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.square_model.SquareModel.encode_grid" title="Permalink to this definition"></a></dt>
+<dd><p>Encode the grid using a convolutional neural network.</p>
+<p>Process the grid using the specified number of convolutional blocks,
+where each block consists of a convolutional layer, an activation layer,
+and an optimal max pooling layer.</p>
+<p>The encoded grid is flattened and used as input to the logits model. The dimensions
+of the grid are specified in the model configuration dictionary (height and width).
+The dimensions of the encoded grid depend on the specific configuration of the
+ConvBlocks class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>model_config</strong> (<em>Dict</em>) – Model configuration dictionary.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.models.square_model.SquareModel.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seq_lens</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.square_model.SquareModel.forward" title="Permalink to this definition"></a></dt>
+<dd><p>Perform forward pass through the model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>input_dict</strong> (<em>Dict</em>) – Input dictionary containing “obs” and “action_mask” tensors.</p></li>
+<li><p><strong>state</strong> – Model state tensor.</p></li>
+<li><p><strong>seq_lens</strong> – Sequence length tensor.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Logits and model state tensors.</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<dl class="simple">
+<dt>An action mask is applied to the logits to prevent the agent from</dt><dd><p>selecting invalid actions.</p>
+</dd>
+</dl>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.models.square_model.SquareModel.value_function">
+<span class="sig-name descname"><span class="pre">value_function</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#agent.models.square_model.SquareModel.value_function" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate the value function of the model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Tensor containing the value function.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-agent.models">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-agent.models" title="Permalink to this headline"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
